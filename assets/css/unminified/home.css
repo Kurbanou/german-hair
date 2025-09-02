@@ -1,0 +1,286 @@
+.home-page {
+    --e-banner-height: 1038px;
+}
+
+.home-page main {
+    min-height: var(--e-banner-height);
+}
+
+.header .home-banner {
+    z-index: -1;
+}
+
+.home-banner {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    bottom: 95px;
+    top: 0;
+}
+
+.home-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.home-banner-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.4) 99.91%);
+}
+
+.home-profit-card {
+    padding: 40px 84px;
+    border-radius: 60px;
+    color: var(--e-white-color);
+    background-color: rgba(68, 154, 208, 0.4);
+    box-shadow: 0px 4px 50px 10px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(80px);
+}
+
+.home-profit-card__item {
+    position: relative;
+    padding: 0 35px;
+    line-height: 26px;
+}
+
+.home-profit-card__item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 0px;
+    height: 50px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-profit-card__item:last-child:after {
+    content: none;
+}
+
+.services-list>div>*:last-child {
+    flex: 0 0 140px;
+}
+
+.services-list>div>* {
+    padding: 0 10px;
+}
+
+.services-list-header {
+    color: rgba(33, 92, 129, 0.4);
+    line-height: 46px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.home-for-those-who-section__btn-wrapper {
+    padding-left: 2.5em;
+}
+
+.home-for-those-who-section__left-wrapper {
+    max-width: 512px;
+    flex: auto;
+    width: 100%;
+    max-height: 408px;
+}
+
+.home-for-those-who-section__image-wrapper {
+    position: absolute;
+    width: 240px;
+    height: 228px;
+    overflow: hidden;
+}
+
+.home-for-those-who-section__image-wrapper:first-child {
+    width: 434px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 20px;
+}
+
+.home-for-those-who-section__image-wrapper:last-child {
+    bottom: 24px;
+    left: 0;
+    z-index: 1;
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    border-bottom-left-radius: 100px;
+}
+
+.home-reasons-to-chose-section .reason-item {
+    max-width: 333px;
+}
+
+.home-banner__video-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+    .home-profit-card__item:first-child {
+        padding-left: 0;
+    }
+
+    .home-profit-card__item:last-child {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 1359px) {
+    .home-page {
+        --e-banner-height: 100vh;
+    }
+
+    .home-profit-card {
+        padding: 32px 48px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .home-profit-card__item {
+        padding: 0 24px;
+    }
+
+    .home-for-those-who-section__left-wrapper {
+        flex: 0 0 40%;
+        height: 400px;
+        max-height: 100%;
+    }
+
+    .home-for-those-who-section__image-wrapper {
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    .home-for-those-who-section__image-wrapper:first-child {
+        width: 85%;
+        padding-bottom: 80%;
+        height: 0;
+        top: 0;
+    }
+
+    .home-for-those-who-section__image-wrapper:last-child {
+        width: 47%;
+        padding-bottom: 44%;
+        height: 0;
+        top: 0;
+        transform: translateY(70%);
+        bottom: unset;
+    }
+
+
+    .home-for-those-who-section__image-wrapper img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 1119px) {
+    .home-profit-card__item {
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .home-for-those-who-section-content {
+        flex-direction: column;
+    }
+
+    .home-for-those-who-section__left-wrapper {
+        flex: 0 0 350px;
+        height: 350px;
+        max-width: 440px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .home-page {
+        --e-banner-height: 520px;
+    }
+
+    .home-banner {
+        bottom: calc(var(--e-section-gap) + 27px);
+    }
+
+    .home-profit-card {
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+        color: var(--e-main-color);
+        backdrop-filter: none;
+        gap: 12px 14px;
+        flex-wrap: wrap;
+    }
+
+    .home-profit-card__item {
+        flex: 0 0 calc(50% - 7px);
+        padding: 6px 24px 10px;
+        background: rgba(68, 154, 208, 0.2);
+        backdrop-filter: blur(80px);
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        line-height: 24px;
+        gap: 6px;
+    }
+
+    .home-for-those-who-section__image-wrapper:first-child {
+        position: relative;
+        left: 15%;
+    }
+
+    .home-for-those-who-section__left-wrapper {
+        position: relative;
+        flex: auto;
+        height: auto;
+
+    }
+
+    .home-for-those-who-section__btn-wrapper {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .home-profit-card__item {
+        padding: 6px 8px;
+    }
+    .home-for-those-who-section__logo svg {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .home-profit-card__item {
+        flex: 1 1 100%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .services-list-header {
+        line-height: 24px;
+    }
+    .services-list>div>*:last-child {
+        flex: auto;
+    }
+}
