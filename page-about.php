@@ -1,14 +1,16 @@
 <?php
 
 /**
- * The about-page template file
+ * Template Name: О нас
+ * Description: Шаблон страницы "О нас"
  */
 
 get_header(); ?>
 
-	<?php
+<?php
 
-    ?>
+?>
+test about
 
 <?php
 get_footer();

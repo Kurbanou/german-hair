@@ -1,16 +1,17 @@
 <?php
+
 /**
  * Displays top navigation
  */
-$customizer_header_contact_phone = get_theme_mod( 'main_contact_phone_setting', '+71234567890' );
+$customizer_header_contact_phone = get_theme_mod('main_contact_phone_setting', '+71234567890');
 
-$customizer_header_contact_whatsapp = get_theme_mod( 'main_contact_whatsapp_setting', '/' );
-$customizer_header_contact_whatsapp_label = get_theme_mod( 'main_contact_whatsapp_label_setting', '' );
+$customizer_header_contact_whatsapp = get_theme_mod('main_contact_whatsapp_setting', '/');
+$customizer_header_contact_whatsapp_label = get_theme_mod('main_contact_whatsapp_label_setting', '');
 
-$customizer_header_contact_instagram = get_theme_mod( 'main_contact_instagram_setting', '/' );
-$customizer_header_contact_instagram_label = get_theme_mod( 'main_contact_instagram_label_setting', '' );
+$customizer_header_contact_instagram = get_theme_mod('main_contact_instagram_setting', '/');
+$customizer_header_contact_instagram_label = get_theme_mod('main_contact_instagram_label_setting', '');
 
-$customizer_header_contact_address = get_theme_mod( 'main_contact_address_setting', '' );
+$customizer_header_contact_address = get_theme_mod('main_contact_address_setting', '');
 
 $header_contacts = [
 	[
@@ -29,7 +30,7 @@ $header_contacts = [
 		'label' => get_phone_formated($customizer_header_contact_phone),
 		'isset' => isset($customizer_header_contact_phone) && !!$customizer_header_contact_phone,
 		'icon' => '',
-		'href' => 'tel:'.$customizer_header_contact_phone,
+		'href' => 'tel:' . $customizer_header_contact_phone,
 	],
 ];
 
@@ -81,7 +82,7 @@ $nav_list_right = [
 	],
 	[
 		'label' => 'О нас',
-		'href' => '/',
+		'href' => '/about',
 	]
 ];
 
@@ -122,7 +123,7 @@ $nav_list_mobile = [
 	],
 	[
 		'label' => 'О нас',
-		'href' => '/',
+		'href' => '/about',
 	],
 	[
 		'label' => 'Вопросы и ответы',
@@ -161,16 +162,17 @@ $header_contacts_mobile = [
 		<div class="header__contacts flex items-center justify-between mb-s text-s">
 			<div class="flex">
 				<ul class="flex flex-gap-xs items-center text-second">
-					<?php foreach($header_contacts as $contact): ?>
+					<?php foreach ($header_contacts as $contact): ?>
 						<? if ($contact['isset']): ?>
 							<li>
-								<a class="text-second <?php echo $contact['icon'] ? ' text-second-ico' : ''; ?>" href="<?php echo esc_html( $contact['href'] ); ?>" 
-									<?php if ($contact['icon']) { echo ' title="' . esc_html( $contact['label'] ) . '"'; } ?>
-								>
+								<a class="text-second <?php echo $contact['icon'] ? ' text-second-ico' : ''; ?>" href="<?php echo esc_html($contact['href']); ?>"
+									<?php if ($contact['icon']) {
+										echo ' title="' . esc_html($contact['label']) . '"';
+									} ?>>
 									<? if ($contact['icon']): ?>
 										<? get_icon($contact['icon'], 'l'); ?>
 									<? else: ?>
-										<?php echo esc_html( $contact['label'] ); ?>
+										<?php echo esc_html($contact['label']); ?>
 									<? endif; ?>
 								</a>
 							</li>
@@ -185,17 +187,17 @@ $header_contacts_mobile = [
 		</div>
 
 		<nav class="header__nav weight-700 text-uppercase flex justify-between items-center flex-gap-l w-full" role="navigation">
-			<?php if ( is_array( $nav_list_left ) && !empty( $nav_list_left ) ): ?>
+			<?php if (is_array($nav_list_left) && !empty($nav_list_left)): ?>
 				<ul class="header__nav-menu flex justify-between items-center flex-gap-l flex-1">
-					<?php foreach($nav_list_left as $nav): ?>
-						<?php $has_sub_menu = isset( $nav['sub_nav_list'] ) && !empty( $nav['sub_nav_list'] ); ?>
+					<?php foreach ($nav_list_left as $nav): ?>
+						<?php $has_sub_menu = isset($nav['sub_nav_list']) && !empty($nav['sub_nav_list']); ?>
 						<li><a class="text-second relative" href="<?php echo $nav['href']; ?>"><?php echo $nav['label']; ?>
-								<?php if ( $has_sub_menu ): ?><span class="absolute header__nav-arrow"><? get_icon( 'arrow-down', 'm' ); ?></span><? endif; ?>
+								<?php if ($has_sub_menu): ?><span class="absolute header__nav-arrow"><? get_icon('arrow-down', 'm'); ?></span><? endif; ?>
 							</a>
-							<?php if ( $has_sub_menu ): ?>
+							<?php if ($has_sub_menu): ?>
 								<ul class="header__sub-nav-menu">
-									<?php foreach($nav['sub_nav_list'] as $sub_nav): ?>
-										<li><a class="text-second" href="<?php echo esc_html( $sub_nav['href'] ); ?>"><?php echo esc_html( $sub_nav['label'] ); ?></a></li>
+									<?php foreach ($nav['sub_nav_list'] as $sub_nav): ?>
+										<li><a class="text-second" href="<?php echo esc_html($sub_nav['href']); ?>"><?php echo esc_html($sub_nav['label']); ?></a></li>
 									<?php endforeach; ?>
 								</ul>
 							<? endif; ?>
@@ -208,17 +210,17 @@ $header_contacts_mobile = [
 				<?php get_logo(); ?>
 			</div>
 
-			<?php if ( is_array( $nav_list_right ) && !empty( $nav_list_right) ): ?>
+			<?php if (is_array($nav_list_right) && !empty($nav_list_right)): ?>
 				<ul class="header__nav-menu flex justify-between items-center flex-gap-l flex-1">
-					<?php foreach($nav_list_right as $nav): ?>
-						<?php $has_sub_menu = isset( $nav['sub_nav_list'] ) && !empty( $nav['sub_nav_list'] ); ?>
+					<?php foreach ($nav_list_right as $nav): ?>
+						<?php $has_sub_menu = isset($nav['sub_nav_list']) && !empty($nav['sub_nav_list']); ?>
 						<li><a class="text-second relative" href="<?php echo $nav['href']; ?>"><?php echo $nav['label']; ?>
-								<?php if ( $has_sub_menu ): ?><span class="absolute header__nav-arrow"><? get_icon( 'arrow-down', 'm' ); ?></span><? endif; ?>
+								<?php if ($has_sub_menu): ?><span class="absolute header__nav-arrow"><? get_icon('arrow-down', 'm'); ?></span><? endif; ?>
 							</a>
-							<?php if ( $has_sub_menu ): ?>
+							<?php if ($has_sub_menu): ?>
 								<ul class="header__sub-nav-menu">
-									<?php foreach($nav['sub_nav_list'] as $sub_nav): ?>
-										<li><a class="text-second" href="<?php echo esc_html( $sub_nav['href'] ); ?>"><?php echo esc_html( $sub_nav['label'] ); ?></a></li>
+									<?php foreach ($nav['sub_nav_list'] as $sub_nav): ?>
+										<li><a class="text-second" href="<?php echo esc_html($sub_nav['href']); ?>"><?php echo esc_html($sub_nav['label']); ?></a></li>
 									<?php endforeach; ?>
 								</ul>
 							<? endif; ?>
@@ -251,19 +253,19 @@ $header_contacts_mobile = [
 		</div>
 
 		<div class="header-mobile-menu flex-1">
-			<?php if ( is_array( $nav_list_mobile ) && !empty( $nav_list_mobile) ): ?>
+			<?php if (is_array($nav_list_mobile) && !empty($nav_list_mobile)): ?>
 				<ul class="header__nav-menu flex flex-col weight-700 text-uppercase">
-					<?php foreach($nav_list_mobile as $nav): ?>
-						<?php $has_sub_menu = isset( $nav['sub_nav_list'] ) && !empty( $nav['sub_nav_list'] ); ?>
+					<?php foreach ($nav_list_mobile as $nav): ?>
+						<?php $has_sub_menu = isset($nav['sub_nav_list']) && !empty($nav['sub_nav_list']); ?>
 						<li <?php echo $has_sub_menu ? ' class="slide-toggle-item _show" ' : ''; ?>>
-							<? if ( $has_sub_menu ): ?>
+							<? if ($has_sub_menu): ?>
 								<div class="slide-toggle-item-head flex items-center justify-between cursor-pointer" <?php echo $has_sub_menu ? ' data-action="slide-toggle" ' : ''; ?>>
 									<a href="<?php echo $nav['href']; ?>"><?php echo $nav['label']; ?></a>
-									<span class="header__nav-arrow"><? get_icon( 'arrow-down', 'm' ); ?></span>
+									<span class="header__nav-arrow"><? get_icon('arrow-down', 'm'); ?></span>
 								</div>
 								<ul class="slide-toggle-item-body header__sub-nav-menu">
-									<?php foreach($nav['sub_nav_list'] as $sub_nav): ?>
-										<li><a href="<?php echo esc_html( $sub_nav['href'] ); ?>"><?php echo esc_html( $sub_nav['label'] ); ?></a></li>
+									<?php foreach ($nav['sub_nav_list'] as $sub_nav): ?>
+										<li><a href="<?php echo esc_html($sub_nav['href']); ?>"><?php echo esc_html($sub_nav['label']); ?></a></li>
 									<?php endforeach; ?>
 								</ul>
 							<? else: ?>
@@ -276,12 +278,12 @@ $header_contacts_mobile = [
 				</ul>
 			<? endif; ?>
 
-			<?php if ( is_array( $header_contacts_mobile ) && !empty( $header_contacts_mobile) ): ?>
+			<?php if (is_array($header_contacts_mobile) && !empty($header_contacts_mobile)): ?>
 				<ul class="flex flex-col weight-700 flex-gap-xs items-start">
-					<?php foreach($header_contacts_mobile as $contact): ?>
+					<?php foreach ($header_contacts_mobile as $contact): ?>
 						<? if ($contact['isset']): ?>
 							<li>
-								<? if ( $contact['href'] ): ?>
+								<? if ($contact['href']): ?>
 									<a class="flex items-center flex-gap-xs" href="<?php echo $contact['href']; ?>">
 										<? if ($contact['icon']): ?>
 											<span class="icon-size-l ico-primary"><? get_icon($contact['icon'], 'l'); ?></span>
