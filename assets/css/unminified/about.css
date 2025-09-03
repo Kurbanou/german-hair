@@ -288,3 +288,16 @@
 .about-transformation-card:nth-child(4) {
   order: 4;
 }
+
+/* about-porfolio */
+.about-porfolio {
+  margin-top: 80px;
+}
+
+.about-porfolio h2 {
+  margin-bottom: 30px;
+}
+
+.about-porfolio .container {
+  overflow: hidden;
+}
