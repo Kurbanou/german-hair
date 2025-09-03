@@ -87,12 +87,11 @@
   --e-common-card-padding: 22px;
   --e-common-card-radius-m: 30px 30px 20px 20px;
 }
+/* banner */
 .about-banner {
   padding-top: 213px;
   padding-bottom: 60px;
   color: var(--e-white-color);
-  background-size: cover;
-  background-position: center;
 }
 
 .about-banner h1 {
@@ -135,4 +134,25 @@
   .about-logo svg {
     display: block;
   }
+}
+/* mission */
+
+.about-mission__content {
+  display: flex;
+}
+.about-mission__content_item {
+  width: 100%;
+  max-width: 574px;
+}
+
+.about-mission {
+  position: relative;
+}
+
+.about-mission__content_item.img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 890px;
 }

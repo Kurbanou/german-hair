@@ -36,3 +36,20 @@ require GH_THEME_DIR . 'inc/customizer/customizer.php';
 add_theme_support('title-tag');
 
 add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Инициализация Carbon Fields (если включено и доступно)
+ */
+
+use Carbon_Fields\Carbon_Fields;
+
+add_action('after_setup_theme', function () {
+	if (class_exists('\Carbon_Fields\Carbon_Fields')) {
+		Carbon_Fields::boot();
+	}
+});
+
+// Подключаем регистрацию полей после boot
+add_action('carbon_fields_register_fields', function () {
+	require_once GH_THEME_DIR . 'inc/carbon-fields.php';
+});
