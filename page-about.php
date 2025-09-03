@@ -8,7 +8,7 @@
 get_header();
 
 
-$sections = ['sprite', 'banner', 'mission',];
+$sections = ['sprite', 'banner', 'mission', 'benefits'];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/about/about-{$section}.php")) {
 		get_template_part("template-parts/about/about", $section);
