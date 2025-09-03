@@ -94,9 +94,6 @@
   color: var(--e-white-color);
 }
 
-.about-banner h1 {
-}
-
 .about-banner__content {
   display: flex;
   justify-content: space-between;
@@ -136,10 +133,10 @@
   }
 }
 /* mission */
-
-.about-mission__content {
-  display: flex;
+.about-mission {
+  margin-top: 70px;
 }
+
 .about-mission__content_item {
   width: 100%;
   max-width: 574px;
@@ -155,4 +152,72 @@
   top: 0;
   width: 100%;
   max-width: 890px;
+}
+
+.about-mission__content_item.text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-mission__content_item.text p {
+  font-family: var(--e-font-family);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.about-mission__content_item h2 {
+  margin-bottom: 6px;
+}
+
+.about-mission__content_item.reasons {
+  margin-top: 88px;
+}
+
+.reason-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  margin-top: 24px;
+}
+
+.reason-list li {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 257px;
+  align-items: center;
+}
+
+.reason-list_icon {
+  flex-shrink: 0;
+}
+
+.reason-list_icon svg {
+  fill: rgba(177, 121, 89, 1);
+  width: 46px;
+}
+
+.reason-list_title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 28px;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.reason-list_text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
+  margin-top: 6px;
 }
