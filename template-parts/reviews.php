@@ -10,7 +10,7 @@ usort($reviews, function ($a, $b) {
     return strtotime($b['created_at']) - strtotime($a['created_at']);
 });
 
-if ($reviews): ?>
+if (!empty($reviews)): ?>
     <section class="comments-page">
         <h1>
             <?= esc_html(
@@ -23,8 +23,17 @@ if ($reviews): ?>
                     <?php if (!empty($review['photo'])): ?>
                         <img src="<?= wp_get_attachment_image_url($review['photo'], 'medium'); ?>" alt="<?= esc_attr($review['name']); ?>">
                     <?php endif; ?>
-                    <p class="review-text"><?= esc_html($review['text']); ?></p>
-                    <p class="review-author"><?= esc_html($review['name']) . ', ' . esc_html($review['age']) . ' лет'; ?></p>
+
+                    <?php if (!empty($review['text'])): ?>
+                        <p class="review-text"><?= esc_html($review['text']); ?></p>
+                    <?php endif; ?>
+
+                    <p class="review-author">
+                        <?= esc_html($review['name']); ?>
+                        <?php if (!empty($review['age'])): ?>
+                            , <?= esc_html($review['age']) . ' ' . plural_years($review['age']); ?>
+                        <?php endif; ?>
+                    </p>
                 </div>
             <?php endforeach; ?>
         </div>
