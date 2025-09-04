@@ -298,6 +298,64 @@
   margin-bottom: 30px;
 }
 
-.about-porfolio .container {
-  overflow: hidden;
+/*prices  */
+.about-prices {
+  margin-top: 80px;
+}
+
+.about-prices h2 {
+  margin-bottom: 30px;
+}
+.price-head {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: rgba(33, 92, 129, 0.6);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.price-card {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.price-head,
+.price-card {
+  padding: 0 10px;
+}
+
+.price-head_item,
+.price-card_item {
+  min-width: 355px;
+  flex-shrink: 0;
+}
+
+.price-head_item:first-child,
+.price-card_item:first-child {
+  flex-grow: 1;
+}
+
+/*about-reviews */
+
+.about-reviews {
+  margin-top: 80px;
+}
+
+.about-reviews h2 {
+  margin-bottom: 30px;
 }

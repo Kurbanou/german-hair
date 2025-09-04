@@ -1,8 +1,20 @@
 .slider-post {
+  overflow: hidden;
+  position: relative;
+}
+.slider-post_container {
+  position: relative;
   display: flex;
   transform: translateX(0);
   gap: 35px;
   width: fit-content;
+  z-index: 2;
+}
+
+.slider-post_pag {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 .post-card_img {

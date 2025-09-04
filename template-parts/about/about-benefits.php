@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Displays benefits section
  */
@@ -28,8 +29,8 @@ $card_list = [
             'Текстура, идентичная натуральным волосам',
         ]
     ],
- 
-      [
+
+    [
         'title' => 'Долговечность',
         'list' => [
             'Волосы носятся до тех пор, пока устраивает длина (12-16 месяцев)',
@@ -43,14 +44,14 @@ $card_list = [
 <section class="about-benefits">
     <div class="container">
         <div class="section-content">
-            <h2 class="h2 text-second-dark">Наши преимущества</h2>            
+            <h2 class="h2 text-second-dark">Наши преимущества</h2>
             <div class="about-transformation-list">
-                <?php foreach( $card_list as $card ): ?>
+                <?php foreach ($card_list as $card): ?>
                     <div class="about-transformation-card">
                         <div class="h3 text-second-dark"><?php echo $card['title']; ?></div>
-                        <? if( isset($card['list']) && is_array ($card['list']) && !empty($card['list']) ): ?>
+                        <? if (isset($card['list']) && is_array($card['list']) && !empty($card['list'])): ?>
                             <ul class="about__list-disk">
-                                <?php foreach( $card['list'] as $item ): ?>
+                                <?php foreach ($card['list'] as $item): ?>
                                     <li><?php echo $item; ?></li>
                                 <?php endforeach; ?>
                             </ul>
@@ -59,5 +60,5 @@ $card_list = [
                 <?php endforeach; ?>
             </div>
         </div>
-    </div> 
+    </div>
 </section>

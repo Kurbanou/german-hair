@@ -28,7 +28,7 @@ $reason_list = [
 
 <section class="about-mission">
     <div class="container">
-        <div class="about-mission__content">            
+        <div class="about-mission__content">
             <div class="about-mission__content_item text">
                 <h2 class="h2 text-second-dark ">Наша миссия</h2>
                 <p>Сделать наращивание волос максимально безопасным, естественным и комфортным.</p>
@@ -37,22 +37,22 @@ $reason_list = [
             <div class="about-mission__content_item img">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/about/mission.jpg'; ?>" alt="img">
             </div>
-            <div class="about-mission__content_item reasons">                
-                <h2 class="h2 text-second-dark ">Почему нас выбирают?</h2>                
+            <div class="about-mission__content_item reasons">
+                <h2 class="h2 text-second-dark ">Почему нас выбирают?</h2>
                 <div class="about-reasons">
                     <ul class="reason-list">
                         <?php foreach ($reason_list as $item): ?>
-                            <li>                               
+                            <li>
                                 <div class="reason-list_icon"><?php get_icon($item['icon_name'], 'xl'); ?></div>
                                 <div>
                                     <div class="reason-list_title"><?php echo $item['title']; ?></div>
                                     <div class="reason-list_text"><?php echo $item['text']; ?></div>
-                                </div>                                
+                                </div>
                             </li>
                         <? endforeach; ?>
                     </ul>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 </section>
