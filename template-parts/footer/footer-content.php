@@ -50,7 +50,7 @@ $nav_list_left = [
 	],
 	[
 		'label' => 'О нас',
-		'href' => '/',
+		'href' => '/about',
 	],
 	[
 		'label' => 'Полезные статьи',

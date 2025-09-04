@@ -48,11 +48,9 @@
   letter-spacing: 0;
   text-transform: none;
   color: rgba(33, 92, 129, 1);
-  width: 400px;
   height: 866px;
   display: flex;
   flex-direction: column;
-
   gap: 16px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;

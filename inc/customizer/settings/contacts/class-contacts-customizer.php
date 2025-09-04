@@ -64,9 +64,22 @@ if (!class_exists( 'GH_Contacts_Customizer_Addition')) {
                 $wp_customize,
                 'main_contact_phone_setting',
                 array(
-                    'label'    => 'Контактный номер',
+                    'label'    => 'Ссылка',
                     'section'  => 'phone_section',
                     'settings' => 'main_contact_phone_setting',
+                    'type'     => 'text',
+                    'input_attrs' => array(
+                        'placeholder' => '+79999999999',
+                    )
+                )
+            ));
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'main_contact_phone_label_setting',
+                array(
+                    'label'    => 'Подпись',
+                    'section'  => 'phone_section',
+                    'settings' => 'main_contact_phone_label_setting',
                     'type'     => 'text',
                     'input_attrs' => array(
                         'placeholder' => '+79999999999',
@@ -145,6 +158,11 @@ if (!class_exists( 'GH_Contacts_Customizer_Addition')) {
                 'capability'        => 'edit_theme_options',
                 'sanitize_callback' => 'gh_sanitize_phone',
                 'default' => '',
+            ));
+            $wp_customize->add_setting('main_contact_phone_label_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'sanitize_text_field',
+                'default'           => '',
             ));
             $wp_customize->add_setting('main_contact_instagram_setting', array(
                 'capability'        => 'edit_theme_options',

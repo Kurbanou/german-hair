@@ -335,10 +335,6 @@
   align-items: center;
 }
 
-.price-head,
-.price-card {
-}
-
 .price-head_item,
 .price-card_item {
   min-width: 355px;
@@ -366,4 +362,75 @@
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* palette */
+.about-palette {
+  margin-top: 80px;
+  position: relative;
+  padding: 60px 0;
+}
+
+.about-palette h2 {
+  margin-bottom: 30px;
+}
+.about-palette ul {
+  padding-left: 20px;
+  padding-top: 16px;
+}
+
+.about-palette li {
+  position: relative;
+  padding-left: 10px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+.about-palette li::before {
+  content: "•";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  font-size: 1.25em;
+}
+
+.about-palette_text {
+  margin-bottom: 16px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600; /* SemiBold */
+  font-style: normal; /* 'SemiBold' → 'normal' */
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.about-palette_img {
+  position: absolute;
+  width: 100%;
+  max-width: 892px;
+  top: 0;
+  right: 0;
+}
+
+.about-palette_img img {
+  display: block;
+  width: 100%;
+}
+
+/* about-consultation */
+.about-consultation {
+  margin-top: 80px;
+  position: relative;
+  padding: 60px 0;
+}
+
+.about-consultation h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
 }
