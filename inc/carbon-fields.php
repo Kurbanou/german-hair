@@ -27,4 +27,3 @@ Container::make('post_meta', 'Контент страницы')
                 Field::make('date', 'created_at', 'Дата отзыва'),
             ])
     ]);
-ё
