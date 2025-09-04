@@ -1,4 +1,6 @@
 <?php
+wp_enqueue_style('portfolio-style', get_template_directory_uri() . '/assets/css/unminified/faq.css', [], '1.0');
+
 $faq_title = carbon_get_post_meta(get_the_ID(), 'faq_title');
 $faq_items = carbon_get_post_meta(get_the_ID(), 'faq_items');
 

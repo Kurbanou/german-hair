@@ -1,0 +1,50 @@
+/* reviews */
+
+.review-card {
+  gap: 10px;
+  border-radius: 16px;
+  border-width: 2px;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  border: 2px solid rgba(33, 92, 129, 0.05);
+}
+
+.review-author {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: rgba(177, 121, 89, 1);
+}
+
+.review-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-text {
+  margin-top: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400; /* Regular */
+  font-style: normal; /* 'Regular' → 'normal' */
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0; /* Можно также указать 0px */
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+@media (max-width: 768px) {
+  .reviews-list {
+    grid-template-columns: 1fr;
+  }
+}

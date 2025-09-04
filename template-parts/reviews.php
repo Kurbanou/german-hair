@@ -1,4 +1,6 @@
 <?php
+wp_enqueue_style('reviews-style', get_template_directory_uri() . '/assets/css/unminified/reviews.css', [], '1.0');
+
 $page_id = get_the_ID();
 $reviews = carbon_get_post_meta($page_id, 'page_reviews');
 
@@ -11,31 +13,42 @@ usort($reviews, function ($a, $b) {
 });
 
 if (!empty($reviews)): ?>
-    <section class="comments-page">
-        <h1>
-            <?= esc_html(
-                carbon_get_post_meta($page_id, 'reviews_title') ?: 'Отзывы клиентов'
-            ); ?>
-        </h1>
-        <div class="reviews-list">
-            <?php foreach ($reviews as $review): ?>
-                <div class="review-card">
-                    <?php if (!empty($review['photo'])): ?>
-                        <img src="<?= wp_get_attachment_image_url($review['photo'], 'medium'); ?>" alt="<?= esc_attr($review['name']); ?>">
-                    <?php endif; ?>
+    
+    <div class="reviews-list">
+        <?php foreach ($reviews as $review): ?>
+            <div class="review-card">
+                <div class="review-head">
+                    <div class="review-img"
+                        style="
+                            <?php if (!empty($review['photo'])): ?>
+                                background-image: url('<?= wp_get_attachment_image_url($review['photo'], 'thumbnail'); ?>');
+                                background-size: cover;
+                                background-position: center;
+                            <?php else: ?>
+                                background-color: rgba(242, 242, 242, 1);
+                            <?php endif; ?>
+                            border-radius: 50%;
+                            width: 70px;
+                            height: 70px;
+                        ">
+                    </div>
 
-                    <?php if (!empty($review['text'])): ?>
-                        <p class="review-text"><?= esc_html($review['text']); ?></p>
-                    <?php endif; ?>
-
-                    <p class="review-author">
+                    <div class="review-author">
                         <?= esc_html($review['name']); ?>
                         <?php if (!empty($review['age'])): ?>
                             , <?= esc_html($review['age']) . ' ' . plural_years($review['age']); ?>
                         <?php endif; ?>
-                    </p>
+                    </div>
+
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+                
+                <div class="review-text"> 
+                    <?php if (!empty($review['text'])): ?>
+                    <?= esc_html($review['text']); ?>
+                    <?php endif; ?>
+                </div>               
+            </div>
+        <?php endforeach; ?>
+    </div>
+    
 <?php endif; ?>

@@ -19,7 +19,7 @@
 
             <div class="price-card">
                 <div class="price-card_item">Классическое наращивание</div>
-                <div class="price-card_item">55–60 см, 250–300 прядей</div>
+                <div class="price-card_item">55 см, 250–300 прядей</div>
                 <div class="price-card_item">от 35 000 ₽</div>
             </div>
 
