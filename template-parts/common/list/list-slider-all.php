@@ -71,8 +71,16 @@ wp_enqueue_script('portfolio-slider', get_template_directory_uri() . '/assets/js
   </div>
 
   <div class="slider-post_pag">
-    <div class="slider-post_pag-left"></div>
-    <div class="slider-post_pag-right"></div>
+    <div class="slider-post_pag-left">
+      <svg id="icon-arrow-left" width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.20151 12.375H35V9.625H6.20151L14.1421 1.925L12.1215 0L0.777779 11L12.1215 22L14.1421 20.075L6.20151 12.375Z" fill="#215C81" />
+      </svg>
+    </div>
+    <div class="slider-post_pag-right">
+      <svg id="icon-arrow-right" width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28.7985 12.375H0V9.625H28.7985L20.8579 1.925L22.8785 0L34.2222 11L22.8785 22L20.8579 20.075L28.7985 12.375Z" fill="#215C81" />
+      </svg>
+    </div>
   </div>
 
 

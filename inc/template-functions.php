@@ -40,7 +40,7 @@ function get_icon(string $id, string $size = 'l')
 
 function get_icon_none_class(string $id)
 {
-	echo "<svg <use xlink:href=\"#icon-$id\"></use></svg>";
+	echo "<svg> <use xlink:href=\"#icon-$id\"></use></svg>";
 }
 
 function get_footer_content(string $content)
