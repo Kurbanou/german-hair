@@ -27,7 +27,7 @@ $reason_list = [
 
 
 <section class="about-mission">
-    <div class="container">
+    
         <div class="about-mission__content">
             <div class="about-mission__content_item text">
                 <h2 class="h2 text-second-dark ">Наша миссия</h2>
@@ -54,5 +54,5 @@ $reason_list = [
                 </div>
             </div>
         </div>
-    </div>
+    
 </section>

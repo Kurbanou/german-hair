@@ -1,103 +1,25 @@
-:root {
-  --e-main-background-color: rgba(255, 255, 255, 1);
-  --e-white-color: #fff;
-
-  --e-main-color: rgb(33, 92, 129);
-  --e-main-color-hover: rgba(68, 154, 208, 0.8);
-  --e-main-color-active: rgba(68, 154, 208, 0.8);
-
-  --e-main-top-gap: 54px;
-  --main-padding-top: calc(
-    var(--e-header-top-gap, 0) + var(--e-header-height, 0) +
-      var(--e-main-top-gap, 0)
-  );
-
-  --e-second-color: rgba(255, 231, 217, 1);
-  --e-second-color-hover: rgba(68, 154, 208, 0.8);
-  --e-second-color-active: rgba(68, 154, 208, 0.8);
-
-  --e-second-dark-color: rgba(184, 132, 102, 1);
-  --e-second-dark-color-hover: rgba(184, 132, 102, 1);
-  --e-second-dark-color-active: rgba(184, 132, 102, 1);
-
-  --e-primary-color: rgba(177, 121, 89, 1);
-  --e-primary-color-hover: rgba(208, 159, 130, 1);
-  --e-primary-color-active: rgba(208, 159, 130, 1);
-
-  --e-container-width: 1280px;
-  --e-container-padding: 40px;
-
-  --e-section-gap: 100px;
-  --e-sub-section-gap: 60px;
-
-  --e-sub-section-max-width: 820px;
-
-  --e-container-padding-v1: var(--e-container-padding-vert-1)
-    var(--e-container-padding);
-  --e-container-padding-v2: var(--e-container-padding-vert-2)
-    var(--e-container-padding);
-
-  --e-header-container-padding: 55px;
-
-  --e-font-family: "Manrope", Arial, sans-serif;
-  --e-font-family-second: "Vetrino", Arial, sans-serif;
-  --e-font-size-xs: 0.75rem;
-  --e-font-size-s: 0.875rem;
-  --e-font-size-m: 1rem;
-  --e-font-size-l: 1.125rem;
-  --e-font-size-xl: 1.25rem;
-  --e-font-size-xxl: 1.375rem;
-  --e-font-header-size-xs: 1.75rem;
-  --e-font-header-size-s: 2rem;
-  --e-font-header-size-m: 2.5rem;
-  --e-font-header-size-l: 3rem;
-  --e-font-header-size-xl: 3.75rem;
-  --e-font-header-size-xxl: 4.5rem;
-
-  --e-gap-extra-thin: 4px;
-  --e-gap-thin: 8px;
-  --e-gap-xs: 12px;
-  --e-gap-s: 16px;
-  --e-gap-m: 20px;
-  --e-gap-sm: 30px;
-  --e-gap-l: 40px;
-  --e-gap-xl: 60px;
-
-  --e-btn-bg: rgba(68, 154, 208, 1);
-  --e-btn-bg-hover: rgba(68, 154, 208, 0.7);
-  --e-btn-bg-active: rgba(68, 154, 208, 0.7);
-  --e-btn-bg-light: rgba(68, 154, 208, 0.8);
-
-  --e-btn-color: var(--e-white-color);
-  --e-btn-color-hover: var(--e-white-color);
-  --e-btn-color-active: var(--e-white-color);
-
-  --e-transition-duration: 0.2s;
-  --e-transition-timing-function: ease;
-  --e-transition: var(--e-transition-duration)
-    var(--e-transition-timing-function);
-
-  --e-card-bg-odd: rgba(226, 244, 255, 0.6);
-  --e-card-bg-even: rgba(255, 241, 226, 0.6);
-
-  --e-card-radius-m: 20px;
-  --e-card-padding: 26px 30px;
-  --e-card-default-height: 280px;
-
-  --e-common-card-padding: 22px;
-  --e-common-card-radius-m: 30px 30px 20px 20px;
-}
 /* banner */
+.about-banner h1 {
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 10px;
+}
+.about-banner button {
+  width: fit-content;
+}
+
 .about-banner {
-  padding-top: 213px;
+  padding-top: 97px;
   padding-bottom: 60px;
   color: var(--e-white-color);
 }
 
 .about-banner__content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
+  flex-wrap: wrap;
+  row-gap: 36px;
 }
 
 .about-logo svg {
@@ -123,13 +45,100 @@
   margin-bottom: 16px;
 }
 
-@media (min-width: 990px) {
+.discounts {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  column-gap: 20px;
+  flex-shrink: 0;
+}
+
+.discount {
+  font-family: var(--e-font-family);
+  font-weight: 600;
+  font-size: 60px;
+  vertical-align: middle;
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.discount .proc {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.discount .text {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@media (min-width: 1222px) {
+  .about-banner__content {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1222px) {
+  .discounts {
+    flex-direction: row;
+    align-items: center;
+  }
+  .discounts button {
+    order: -1;
+    flex-shrink: 0;
+  }
+  .banner-p {
+    margin-bottom: 0;
+  }
+
+  .about-banner {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 991px) {
+  .discounts {
+    min-width: 388px;
+  }
+
+  .about-banner {
+    padding-top: 213px;
+  }
+
   h1 {
     display: none;
   }
 
   .about-logo svg {
     display: block;
+  }
+}
+@media (max-width: 600px) {
+  .discount .proc {
+    font-size: 34px;
+  }
+  .about-banner__content p,
+  .discount .text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .discount .text {
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 440px) {
+  .discounts {
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: center;
   }
 }
 /* mission */

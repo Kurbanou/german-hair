@@ -36,14 +36,10 @@ $fon = get_field('fon');
                     <p>С 2015 года мы помогаем клиентам обрести густые, длинные и здоровые волосы, используя инновационные технологии и премиальные материалы.</p>
                 </div>
                 <div class="about-banner__content_item">
-                    <div class="home-main-section__body">
-                        <div class="flex flex-wrap items-center flex-gap-xs mb-s mb-s_responsive">
-                            <div class="text-h-xl text-shadow weight-700">
-                                <span>- 50%</span>
-                            </div>
-                            <div class="text-l leading-2 weight-600 text-shadow">
-                                <span>на первое наращивание</span>
-                            </div>
+                    <div class="discounts">
+                        <div class="discount">                            
+                            <div class="proc">- 50%</div>  
+                            <div class="text">на первое наращивание</div>                            
                         </div>
                         <button class="btn btn-light btn-glowing">узнать стоимость со скидкой</button>
                     </div>
