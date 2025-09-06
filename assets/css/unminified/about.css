@@ -135,6 +135,7 @@
 /* mission */
 .about-mission {
   margin-top: 70px;
+  position: relative;
 }
 
 .about-mission__content_item {
@@ -152,6 +153,19 @@
   top: 0;
   width: 100%;
   max-width: 890px;
+}
+
+@media (max-width: 1700px) {
+  .about-mission__content_item.img {
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: -20px;
+  }
+  .about-mission__content_item.img img {
+    width: 100%;
+    margin-left: 22px;
+  }
 }
 
 .about-mission__content_item.text {
@@ -227,6 +241,7 @@
 
 .about-benefits {
   margin-top: 80px;
+  position: relative;
 }
 
 .about-transformation-list {
@@ -293,6 +308,7 @@
 /* about-porfolio */
 .about-porfolio {
   margin-top: 80px;
+  position: relative;
 }
 
 .about-porfolio h2 {
@@ -302,6 +318,7 @@
 /*prices  */
 .about-prices {
   margin-top: 80px;
+  position: relative;
 }
 
 .about-prices h2 {
