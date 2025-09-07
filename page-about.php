@@ -14,7 +14,7 @@ $sections = [
 	'mission', 
 	'reasons', 
 	'benefits', 
-	// 'porfolio', 
+	'porfolio', 
 	// 'prices', 
 	// 'reviews',
 	// 'palette',

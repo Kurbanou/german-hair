@@ -14,7 +14,7 @@
         </svg>
     </div>
     <div class="container">
-        <h2 class="h2 text-second-dark">Наши работы говорят сами за себя</h2>
+        <h2 class="h2 text-second-dark">Фото и видео работ</h2>
         <?php
         get_template_part('template-parts/common/list/list', 'slider-all');
         ?>

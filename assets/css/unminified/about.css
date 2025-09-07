@@ -25,6 +25,7 @@
   }
   .section-bg-mobile {
     display: block;
+    transform: translateY(-212%);
   }
 }
 
@@ -474,6 +475,24 @@
 
 .about-porfolio h2 {
   margin-bottom: 30px;
+}
+
+.about-porfolio .section-bg {
+  transform: translateY(-82%);
+}
+@media (max-width: 768px) {
+  .about-porfolio h2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-porfolio {
+    margin-top: 130px;
+  }
+  .about-porfolio .section-bg-mobile {
+    transform: translateY(-211%);
+  }
 }
 
 /*prices  */
