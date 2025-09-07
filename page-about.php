@@ -13,7 +13,7 @@ $sections = [
 	'banner', 
 	'mission', 
 	'reasons', 
-	// 'benefits', 
+	'benefits', 
 	// 'porfolio', 
 	// 'prices', 
 	// 'reviews',
