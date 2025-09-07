@@ -1,4 +1,11 @@
 /* banner */
+@media (max-width: 768px) {
+  p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+  }
+}
+
 .about-banner h1 {
   font-size: 48px;
   line-height: 56px;
@@ -147,7 +154,8 @@
   position: relative;
 }
 
-.about-mission__content_item {
+.about-mission__content_item.text,
+.about-mission__content_item.reasons {
   width: 100%;
   max-width: 574px;
 }
@@ -162,19 +170,6 @@
   top: 0;
   width: 100%;
   max-width: 890px;
-}
-
-@media (max-width: 1700px) {
-  .about-mission__content_item.img {
-    position: relative;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: -20px;
-  }
-  .about-mission__content_item.img img {
-    width: 100%;
-    margin-left: 22px;
-  }
 }
 
 .about-mission__content_item.text {
@@ -196,10 +191,9 @@
   margin-bottom: 6px;
 }
 
-.about-mission__content_item.reasons {
+.about-reasons {
   margin-top: 88px;
 }
-
 .reason-list {
   display: flex;
   flex-wrap: wrap;
@@ -244,6 +238,82 @@
   letter-spacing: 0;
   font-variant-numeric: lining-nums proportional-nums;
   margin-top: 6px;
+}
+
+@media (max-width: 1700px) {
+  .reasons h2 {
+    text-align: center;
+  }
+
+  .about-mission__content_item.reasons {
+    max-width: 100%;
+  }
+  .reasons .reason-list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1700px) {
+  .about-mission__content_item.img {
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    max-width: unset;
+    width: 100%;
+    display: flex;
+
+    justify-content: flex-end;
+  }
+  .about-mission__content_item.text {
+    max-width: unset;
+  }
+  .about-mission__content_item.img img {
+    width: 92%;
+  }
+}
+@media (max-width: 768px) {
+  .reason-list_title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .reason-list_text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .reason-list {
+    gap: 26px;
+  }
+  .reason-list li {
+    height: auto;
+  }
+}
+.about-mission .section-bg-mobile,
+.about-reasons .section-bg-mobile {
+  display: none;
+}
+@media (max-width: 480px) {
+  .about-mission {
+    margin-top: 112px;
+  }
+  .about-reasons {
+    margin-top: 133px;
+    position: relative;
+  }
+  .about-mission .section-bg-mobile,
+  .about-reasons .section-bg-mobile {
+    display: block;
+    min-height: 36px;
+    max-height: 66px;
+    height: 8.5vw;
+    top: -86px;
+    bottom: unset;
+  }
+}
+
+.rtl {
+  width: 100vw;
+  overflow: hidden;
+  direction: rtl; /* меняет направление потока */
 }
 
 /* about-benefits */

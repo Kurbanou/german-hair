@@ -11,7 +11,8 @@ get_header();
 $sections = [
 	'sprite', 
 	'banner', 
-	// 'mission', 
+	'mission', 
+	'reasons', 
 	// 'benefits', 
 	// 'porfolio', 
 	// 'prices', 
