@@ -937,6 +937,8 @@ a.link-card {
 }
 
 .common-list-card {
+  width: 100%;
+  animation: fadeInUp 0.3s ease forwards;
   position: relative;
   padding: var(--e-common-card-padding);
   border-radius: var(--e-common-card-radius-m);
@@ -945,6 +947,17 @@ a.link-card {
   background-color: #fff;
   line-height: 1.5em;
   cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (hover: hover) {
