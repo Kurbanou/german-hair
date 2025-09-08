@@ -23,6 +23,7 @@ $data = array_map(function($post) {
 
 wp_localize_script('portfolio-slider', 'sliderData', [
   'posts' => $data,
+  'totalCount' => count($posts),
 ]);
 ?>
 
