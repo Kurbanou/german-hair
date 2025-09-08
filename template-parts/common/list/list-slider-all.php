@@ -28,15 +28,23 @@ wp_localize_script('portfolio-slider', 'sliderData', [
 
 <div class="slider-post">
   <div class="slider-post_container" id="slider-posts">
-    <!-- тут будут карточки -->
+    <?php foreach ($posts as $post): ?>
+      <?php get_template_part('template-parts/common//list/list-card', null, [
+        'post' => $post,
+        'add_class' => 'slider-card',
+        'name_label' => 'Процедура',
+        'desc_label' => 'Описание',
+        'use_href' => true,
+      ]); ?>
+    <?php endforeach; ?>
   </div>
 
   <div class="slider-post_pag">
     <div class="slider-post_pag-left">
-     <?php echo get_icon('arrow-left', 'l'); ?>
+      <?php echo get_icon('arrow-left', 'l'); ?>
     </div>
     <div class="slider-post_pag-right">
-    <?php echo get_icon('arrow-right', 'l'); ?>
+      <?php echo get_icon('arrow-right', 'l'); ?>
     </div>
   </div>
 </div>
