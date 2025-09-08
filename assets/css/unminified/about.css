@@ -505,6 +505,8 @@
   margin-bottom: 30px;
 }
 .price-head {
+  min-width: 100%;
+  width: fit-content;
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-style: normal;
@@ -526,6 +528,8 @@
 }
 
 .price-card {
+  min-width: 100%;
+  width: fit-content;
   font-family: "Manrope", sans-serif;
   font-weight: 600;
   font-style: normal;
