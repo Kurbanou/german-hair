@@ -9,13 +9,13 @@ get_header();
 
 
 $sections = [
-	'sprite', 
-	'banner', 
-	'mission', 
-	'reasons', 
-	'benefits', 
-	'porfolio', 
-	// 'prices', 
+	'sprite',
+	'banner',
+	'mission',
+	'reasons',
+	'benefits',
+	'porfolio',
+	'prices',
 	// 'reviews',
 	// 'palette',
 	// 'consultation',

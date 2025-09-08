@@ -1,6 +1,6 @@
 .slider-post {
   position: relative;
-  height: 866px;
+  /* height: 866px; */
 }
 
 .post-card_img {
@@ -12,6 +12,7 @@
 }
 
 .post-card_head {
+  font-size: 12px;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -132,6 +133,16 @@
 }
 
 @media (max-width: 1200px) {
+  .slider-post_container {
+    height: auto;
+  }
+  .post-card {
+    padding: 40px 22px;
+    font-size: 14px;
+  }
+  .post-card_img {
+    height: 494px;
+  }
   .about-porfolio {
     /* overflow: hidden; */
   }
