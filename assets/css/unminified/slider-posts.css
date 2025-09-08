@@ -1,6 +1,6 @@
 .slider-post {
   position: relative;
-  /* height: 866px; */
+  height: 866px;
 }
 
 .post-card_img {
@@ -133,7 +133,8 @@
 }
 
 @media (max-width: 1200px) {
-  .slider-post_container {
+  .slider-post_container,
+  .slider-post {
     height: auto;
   }
   .post-card {

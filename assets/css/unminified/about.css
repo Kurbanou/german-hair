@@ -339,7 +339,7 @@
     min-height: 36px;
     max-height: 66px;
     height: 8.5vw;
-    top: -72px;
+    top: 0px;
     bottom: unset;
   }
 }
@@ -656,10 +656,35 @@
   display: block;
   width: 100%;
 }
+
+.about-palette .section-bg {
+  transform: translateY(-220px);
+}
+
+@media (max-width: 1400px) {
+  .about-palette {
+    margin-top: 135px;
+    padding: 0;
+  }
+  .about-palette_img {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    margin-left: auto;
+  }
+  .about-palette_img img {
+    padding-left: 42px;
+  }
+}
+
 @media (max-width: 768px) {
-  .about-reviews h2 {
-    text-align: center;
+  .about-palette h2 {
     margin-bottom: 20px;
+  }
+  .about-palette_text,
+  .about-palette li {
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 

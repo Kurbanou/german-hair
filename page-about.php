@@ -17,7 +17,7 @@ $sections = [
 	'porfolio',
 	'prices',
 	'reviews',
-	// 'palette',
+	'palette',
 	// 'consultation',
 ];
 foreach ($sections as $section) {
