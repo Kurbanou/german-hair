@@ -27,21 +27,21 @@ $href = $use_href ? ( get_permalink() ?: '' ) : '';
             <? endif; ?>
         </div>
         <div class="common-list-card__name">
-            <div class="_label flex items-center flex-gap-extra-thin text-xs weight-600 text-uppercase">
+            <div class="_label flex items-center flex-gap-extra-thin text-xs weight-500 text-uppercase">
                 <span><?php get_icon('card-sample-ico', 'm'); ?></span>
                 <span><?php echo esc_html( $card_name_label ); ?></span>
             </div>
-            <div class="_value flex weight-600 text-line-clamp-1">
+            <div class="_value flex weight-500 text-line-clamp-1">
                 <span><?php echo esc_html( the_title() ); ?></span>
             </div>
         </div>
         <? if ( isset( $description ) && $description ): ?>
         <div class="common-list-card__desc">
-            <div class="_label flex items-center flex-gap-extra-thin text-xs weight-600 text-uppercase">
+            <div class="_label flex items-center flex-gap-extra-thin text-xs weight-500 text-uppercase">
                 <span><?php get_icon('card-sample-ico', 'm'); ?></span>
                 <span><?php echo esc_html( $card_desc_label ); ?></span>
             </div>
-            <div class="_value flex weight-600 text-line-clamp-3">
+            <div class="_value flex weight-500 text-line-clamp-3">
                 <span><?php echo esc_html( $description ); ?></span>
             </div>
         </div>

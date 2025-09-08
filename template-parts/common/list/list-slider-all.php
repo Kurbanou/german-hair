@@ -24,20 +24,11 @@ $data = array_map(function($post) {
 wp_localize_script('portfolio-slider', 'sliderData', [
   'posts' => $data,
 ]);
-
-
-
-
 ?>
-
-
-
-
-
-
 
 <div class="slider-post">
   <div class="slider-post_container" id="slider-posts">
+    <!-- тут будут карточки -->
   </div>
 
   <div class="slider-post_pag">
