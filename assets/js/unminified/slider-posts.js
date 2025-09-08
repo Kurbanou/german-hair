@@ -11,8 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function render() {
     const chunkSize = getChunkSize();
     cards.forEach((card, i) => {
-      card.style.display =
-        i >= index && i < index + chunkSize ? "block" : "none";
+      if (i >= index && i < index + chunkSize) {
+        card.style.display = "block";
+        card.style.animationDelay = `${(i - index) * 150}ms`;
+        card.classList.add("slider-card"); // если не добавлен
+      } else {
+        card.style.display = "none";
+        card.style.animationDelay = "0ms";
+        card.classList.remove("slider-card"); // сбросить анимацию
+      }
     });
   }
 
