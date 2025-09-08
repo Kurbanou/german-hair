@@ -525,6 +525,10 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  width: auto;
+  touch-action: pan-x;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .price-card {
@@ -743,4 +747,23 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+@media (max-width: 768px) {
+  .about-consultation {
+    margin-top: 135px;
+  }
+  .about-consultation h2 {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  .about-contacts {
+    max-width: 262px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+  .about-contacts-item {
+    line-height: 1;
+  }
 }

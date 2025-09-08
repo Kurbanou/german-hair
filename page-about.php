@@ -18,7 +18,7 @@ $sections = [
 	'prices',
 	'reviews',
 	'palette',
-	// 'consultation',
+	'consultation',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/about/about-{$section}.php")) {
