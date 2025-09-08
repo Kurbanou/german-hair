@@ -16,7 +16,7 @@ $sections = [
 	'benefits',
 	'porfolio',
 	'prices',
-	// 'reviews',
+	'reviews',
 	// 'palette',
 	// 'consultation',
 ];

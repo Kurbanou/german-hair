@@ -557,6 +557,12 @@
   flex-grow: 1;
 }
 @media (max-width: 768px) {
+  .price-card {
+    font-size: 14px;
+  }
+  .price-head {
+    font-size: 12px;
+  }
   .about-prices {
     margin-top: 135px;
   }
@@ -569,6 +575,7 @@
 
 .about-reviews {
   margin-top: 80px;
+  position: relative;
 }
 
 .about-reviews h2 {
@@ -580,6 +587,18 @@
   margin-top: 56px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 768px) {
+  .about-reviews button {
+    margin-top: 30px;
+  }
+  .about-reviews {
+    margin-top: 135px;
+  }
+  .about-reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 /* palette */
@@ -636,6 +655,12 @@
 .about-palette_img img {
   display: block;
   width: 100%;
+}
+@media (max-width: 768px) {
+  .about-reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 /* about-consultation */
