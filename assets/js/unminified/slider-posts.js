@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const width = window.innerWidth;
     return width <= 1200 ? cards.length : 3;
   }
-  sliderData.posts.forEach((post, i) => {
-    console.log(`${i + 1}. ${post.title}`);
-  });
+  // sliderData.posts.forEach((post, i) => {
+  //   console.log(`${i + 1}. ${post.title}`);
+  // });
 
   function render() {
     const chunkSize = getChunkSize();
