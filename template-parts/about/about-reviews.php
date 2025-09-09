@@ -15,8 +15,7 @@
         if (!empty($reviews)) {
             echo "<script>console.log('Отзывы:', " . json_encode($reviews, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . ");</script>";
 
-
-            // get_template_part('template-parts/reviews'); // подключаем reviews.php
+            get_template_part('template-parts/reviews'); // подключаем reviews.php
         }
         ?>
         <button class="btn btn-light btn-glowing">Читать все отзывы</button>

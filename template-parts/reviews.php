@@ -1,8 +1,7 @@
 <?php
 wp_enqueue_style('reviews-style', get_template_directory_uri() . '/assets/css/unminified/reviews.css', [], '1.0');
 
-$page_id = get_the_ID();
-$reviews = carbon_get_post_meta($page_id, 'page_reviews');
+$reviews = carbon_get_post_meta(get_queried_object_id(), 'page_reviews');
 
 if (empty($reviews)) {
     $reviews = carbon_get_theme_option('client_reviews');
