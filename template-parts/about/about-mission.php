@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Displays about banner
+ * Displays about mission
  */
 ?>
 
