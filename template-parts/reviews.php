@@ -13,7 +13,7 @@ usort($reviews, function ($a, $b) {
 });
 
 if (!empty($reviews)): ?>
-    
+
     <div class="reviews-list">
         <?php foreach ($reviews as $review): ?>
             <div class="review-card">
@@ -41,14 +41,14 @@ if (!empty($reviews)): ?>
                     </div>
 
                 </div>
-                
-                <div class="review-text"> 
+
+                <div class="review-text">
                     <?php if (!empty($review['text'])): ?>
-                    <?= esc_html($review['text']); ?>
+                        <?= esc_html($review['text']); ?>
                     <?php endif; ?>
-                </div>               
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
-    
+
 <?php endif; ?>
