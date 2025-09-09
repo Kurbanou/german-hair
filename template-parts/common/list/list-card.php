@@ -46,7 +46,7 @@ $href = $use_href ? (get_permalink($post) ?: '') : '';
                     <span><?php echo esc_html($card_desc_label); ?></span>
                 </div>
                 <div class="_value flex weight-500 text-line-clamp-3">
-                    <span><?php echo esc_html($description); ?></span>
+                    <?php echo wp_kses_post($description); ?>
                 </div>
             </div>
         <?php endif; ?>
