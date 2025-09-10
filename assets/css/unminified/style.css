@@ -136,6 +136,11 @@ a {
   transition: color var(--e-transition);
   color: var(--e-main-color);
 }
+.rtl {
+  width: 100vw;
+  overflow: hidden;
+  direction: rtl;
+}
 
 @media (hover: hover) {
   a:hover {
@@ -711,6 +716,12 @@ a.text-second-dark {
   width: 50px;
   height: 50px;
   flex: 0 0 50px;
+}
+
+.icon-size-60 {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
 }
 
 .btn {

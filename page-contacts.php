@@ -9,6 +9,7 @@ get_header();
 
 $sections = [
 	'title',
+	'promo',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/contacts/contacts-{$section}.php")) {
