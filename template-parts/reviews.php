@@ -1,5 +1,4 @@
 <?php
-wp_enqueue_style('reviews-style', get_template_directory_uri() . '/assets/css/unminified/reviews.css', [], '1.0');
 
 $reviews = carbon_get_post_meta(get_queried_object_id(), 'page_reviews');
 

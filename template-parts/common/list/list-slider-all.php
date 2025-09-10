@@ -3,8 +3,7 @@
 /**
  * Displays slider posts
  */
-wp_enqueue_style('portfolio-style', get_template_directory_uri() . '/assets/css/unminified/slider-posts.css', [], '1.0');
-wp_enqueue_script('portfolio-slider', get_template_directory_uri() . '/assets/js/unminified/slider-posts.js', [], '1.0', true);
+
 $posts = get_posts([
   'numberposts' => -1,
   'post_type'   => 'post',
@@ -12,7 +11,7 @@ $posts = get_posts([
   'order'       => 'DESC',
 ]);
 
-$data = array_map(function($post) {
+$data = array_map(function ($post) {
   return [
     'title'       => get_the_title($post),
     'image'       => wp_get_attachment_url(get_field('preview_image', $post)),
