@@ -149,8 +149,10 @@
     padding-top: 213px;
   }
 
-  h1 {
-    display: none;
+  .about-banner h1 {
+    line-height: 0;
+    font-size: 0;
+    margin: 0;
   }
 
   .about-logo svg {

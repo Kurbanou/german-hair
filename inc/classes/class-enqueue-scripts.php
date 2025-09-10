@@ -65,7 +65,11 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 				wp_enqueue_style('reviews-style', gh_get_assets_uri('reviews', 'css'), array(), gh_get_version('reviews', 'css'));
 				wp_enqueue_style('portfolio-style', gh_get_assets_uri('slider-posts', 'css'), array(), gh_get_version('slider-posts', 'css'));
 
-				wp_enqueue_script('portfolio-slider', gh_get_assets_uri('slider-posts', 'js'), array('jquery'), gh_get_version('slider-posts', 'js'), true);
+				wp_enqueue_script('portfolio-slider', gh_get_assets_uri('slider-posts', 'js'), array(), gh_get_version('slider-posts', 'js'), true);
+			}
+
+			if (is_page_template('page-contacts.php')) {
+				wp_enqueue_style('contacts-style', gh_get_assets_uri('contacts', 'css'), array(), gh_get_version('contacts', 'css'));
 			}
 
 

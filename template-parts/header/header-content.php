@@ -78,7 +78,7 @@ $nav_list_right = [
 	],
 	[
 		'label' => 'Контакты',
-		'href' => '/',
+		'href' => '/contacts',
 	],
 	[
 		'label' => 'О нас',
@@ -131,7 +131,7 @@ $nav_list_mobile = [
 	],
 	[
 		'label' => 'Контакты',
-		'href' => '/',
+		'href' => '/contacts',
 	]
 ];
 

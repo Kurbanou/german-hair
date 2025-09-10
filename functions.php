@@ -53,3 +53,11 @@ add_action('after_setup_theme', function () {
 add_action('carbon_fields_register_fields', function () {
 	require_once GH_THEME_DIR . 'inc/carbon-fields.php';
 });
+
+// Добавляем класс если нет банера
+add_filter('body_class', function ($classes) {
+	if (is_page() && empty(get_field('fon'))) {
+		$classes[] = 'header-dark';
+	}
+	return $classes;
+});
