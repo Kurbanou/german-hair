@@ -1,0 +1,62 @@
+<?php
+/**
+ * Displays contacts map
+ */
+?>
+
+
+<section class="contacts map">
+    <div class="section-bg rtl">
+        <!-- SVG background -->
+        <svg width="1920" height="201" viewBox="0 0 1920 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2521 200C2521 200 2044.18 144.04 1723 62C1539 15 1327.62 -0.0513229 1075.5 39C872.05 70.513 649.5 103.5 443.5 92.5C249.071 82.1179 135.101 48.4253 -6 1" stroke="#967866" stroke-opacity="0.2" />
+            <rect width="22" height="22" rx="11" transform="matrix(-1 0 0 1 1698 44)" fill="#EAE4E0" />
+        </svg>
+    </div>
+    <div class="container">
+        <h2 class="h2 text-second-dark">Приходите за идеальными волосами в наш салон!</h2>
+        <p>Наши контакты:</p>
+        <div class="contacts_block_container">
+            <?php foreach ($contacts_block as $contact): ?>
+                <div class="contacts_block_item">
+                    <?php if (!empty($contact['icon'])): ?>
+                        <div class="contacts_block_item_icon">
+                            <?php get_icon($contact['icon'], '60'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="contacts_block_item_content">
+                        <?php if (!empty($contact['title'])): ?>
+                            <div class="contacts_block_item_title"><?php echo esc_html($contact['title']); ?></div>
+                        <?php endif; ?>
+                        <?php
+                            foreach ($contact['content'] as $item) {
+                                $value = trim($item['value']);
+                                if (empty($value)) continue;
+
+                                switch ($item['type']) {
+                                    case 'phone':
+                                        echo '<div class="contacts_block_item_line">';
+                                        echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
+                                        echo '</div>';
+                                        break;
+                                    case 'link':
+                                        echo '<div class="contacts_block_item_line"><a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a></div>';
+                                        break;
+                                    case 'mail':
+                                        echo '<div class="contacts_block_item_line"><a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a></div>';
+                                        break;
+                                  default:
+                                        if (!empty($value)) {
+                                            echo '<div class="contacts_block_item_line">' . wp_kses_post(html_entity_decode($value)) . '</div>';
+                                        }
+                                        break;
+
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
