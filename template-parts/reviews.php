@@ -7,9 +7,15 @@ if (empty($reviews)) {
     $reviews = carbon_get_theme_option('client_reviews');
 }
 
+// Сортируем по дате (сначала новые)
 usort($reviews, function ($a, $b) {
     return strtotime($b['created_at']) - strtotime($a['created_at']);
 });
+
+// Оставляем только 2 последних
+$reviews = array_slice($reviews, 0, 2);
+
+
 
 if (!empty($reviews)): ?>
 
