@@ -26,15 +26,8 @@ p {
   transform: translateY(-180px);
 }
 
-@media screen and (min-width: 990px) {
-  .contacts .section-bg {
-    display: block;
-  }
-}
-@media screen and (max-width: 768px) {
-  .contacts .section-bg-mobile {
-    display: block;
-  }
+.promo .section-bg {
+  transform: translateY(-136px);
 }
 
 .contacts.title {
@@ -51,8 +44,68 @@ p {
   letter-spacing: 0;
   margin-bottom: 30px;
 }
+/* promo */
+.promo {
+  margin-top: 90px;
+  position: relative;
+}
+.contacts_block_container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.contacts_block_item {
+  padding: 30px 26px;
+  border-radius: 20px;
+  background: rgba(255, 241, 226, 0.6);
+  display: flex;
+  gap: 15px;
+}
+.contacts_block_item_content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contacts_block_item:nth-child(even) {
+  background: rgba(226, 244, 255, 0.6);
+}
+
+.contacts_block_item_title {
+  margin-top: 15px;
+  font-family: "Vetrino", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
+  line-height: 1; /* 100% = 1 */
+  letter-spacing: 0;
+}
+
+.promo h2 {
+  margin-bottom: 30px;
+}
+
+.contacts_block_item_line {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 1200px) {
+  .contacts_block_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 991px) {
+  .promo {
+    margin-top: 90px;
+  }
+
   p {
     font-weight: 500;
     font-size: 14px;
@@ -65,5 +118,36 @@ p {
     margin-bottom: 10px;
     font-size: 32px;
     line-height: 52px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .contacts .section-bg {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contacts_block_container {
+    grid-template-columns: 1fr;
+  }
+  .contacts .section-bg-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contacts_block_item {
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacts_block_item_title {
+    margin-top: 0;
+  }
+  .contacts.title h1 {
+    font-size: 20px;
+    line-height: 24px;
   }
 }

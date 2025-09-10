@@ -44,7 +44,7 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
         private function register_sections($wp_customize)
         {
             $wp_customize->add_section('phone_section', array(
-                'title'    => 'Телефон',
+                'title'    => 'Телефоны',
                 'panel'    => 'panel_contacts',
                 'priority' => 99,
             ));
@@ -63,10 +63,77 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
                 'panel'    => 'panel_contacts',
                 'priority' => 99,
             ));
+            $wp_customize->add_section('time_section', array(
+                'title'    => 'График работы',
+                'panel'    => 'panel_contacts',
+                'priority' => 99,
+            ));
+            $wp_customize->add_section('mail_section', array(
+                'title'    => 'Почта',
+                'panel'    => 'panel_contacts',
+                'priority' => 99,
+            ));
+            $wp_customize->add_section('rekv_section', array(
+                'title'    => 'Реквизиты',
+                'panel'    => 'panel_contacts',
+                'priority' => 99,
+            ));
         }
 
         private function register_controls($wp_customize)
         {
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'main_contact_ogrnip_setting',
+                array(
+                    'label'    => 'ИНН',
+                    'section'  => 'rekv_section',
+                    'settings' => 'main_contact_ogrnip_setting',
+                    'type'     => 'text',
+                    'input_attrs' => array(
+                        'placeholder' => '854967435623',
+                    )
+                )
+            ));
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'main_contact_inn_setting',
+                array(
+                    'label'    => 'ОГРНИП',
+                    'section'  => 'rekv_section',
+                    'settings' => 'main_contact_inn_setting',
+                    'type'     => 'text',
+                    'input_attrs' => array(
+                        'placeholder' => '854967435623',
+                    )
+                )
+            ));
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'main_contact_mail_setting',
+                array(
+                    'label'    => 'Почта',
+                    'section'  => 'mail_section',
+                    'settings' => 'main_contact_mail_setting',
+                    'type'     => 'text',
+                    'input_attrs' => array(
+                        'placeholder' => 'example@gmail.com',
+                    )
+                )
+            ));
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'main_contact_time_setting',
+                array(
+                    'label'    => 'График работы',
+                    'section'  => 'time_section',
+                    'settings' => 'main_contact_time_setting',
+                    'type'     => 'textarea',
+                    'input_attrs' => array(
+                        'placeholder' => 'C 10:00 до 22:00',
+                    )
+                )
+            ));
             $wp_customize->add_control(new WP_Customize_Control(
                 $wp_customize,
                 'main_contact_phone_setting',
@@ -74,6 +141,19 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
                     'label'    => 'Контактный номер',
                     'section'  => 'phone_section',
                     'settings' => 'main_contact_phone_setting',
+                    'type'     => 'text',
+                    'input_attrs' => array(
+                        'placeholder' => '+79999999999',
+                    )
+                )
+            ));
+             $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'second_contact_phone_setting',
+                array(
+                    'label'    => 'Контактный номер-2',
+                    'section'  => 'phone_section',
+                    'settings' => 'second_contact_phone_setting',
                     'type'     => 'text',
                     'input_attrs' => array(
                         'placeholder' => '+79999999999',
@@ -149,7 +229,32 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
 
         private function register_settings($wp_customize)
         {
+            $wp_customize->add_setting('main_contact_inn_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'gh_sanitize_text',
+                'default' => '',
+            ));
+            $wp_customize->add_setting('main_contact_ogrnip_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'gh_sanitize_text',
+                'default' => '',
+            ));
+            $wp_customize->add_setting('main_contact_mail_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'gh_sanitize_text',
+                'default' => '',
+            ));
+            $wp_customize->add_setting('main_contact_time_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'gh_sanitize_textarea',
+                'default' => '',
+            ));
             $wp_customize->add_setting('main_contact_phone_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'gh_sanitize_phone',
+                'default' => '',
+            ));
+            $wp_customize->add_setting('second_contact_phone_setting', array(
                 'capability'        => 'edit_theme_options',
                 'sanitize_callback' => 'gh_sanitize_phone',
                 'default' => '',
