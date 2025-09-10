@@ -22,19 +22,13 @@ if (!empty($reviews)): ?>
         <?php foreach ($reviews as $review): ?>
             <div class="review-card">
                 <div class="review-head">
-                    <div class="review-img"
-                        style="
-                            <?php if (!empty($review['photo'])): ?>
-                                background-image: url('<?= wp_get_attachment_image_url($review['photo'], 'thumbnail'); ?>');
-                                background-size: cover;
-                                background-position: center;
-                            <?php else: ?>
-                                background-color: rgba(242, 242, 242, 1);
-                            <?php endif; ?>
-                            border-radius: 50%;
-                            width: 70px;
-                            height: 70px;
-                        ">
+                    <div class="review-img">
+                        <?php if (!empty($review['photo'])): ?>
+                            <img
+                                src="<?= esc_url(wp_get_attachment_image_url($review['photo'], 'thumbnail')); ?>"
+                                alt="<?= esc_attr($review['name']); ?>"
+                                loading="lazy" />
+                        <?php endif; ?>
                     </div>
 
                     <div class="review-author">
