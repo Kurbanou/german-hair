@@ -10,6 +10,7 @@ get_header();
 $sections = [
 	'title',
 	'promo',
+	'map',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/contacts/contacts-{$section}.php")) {
