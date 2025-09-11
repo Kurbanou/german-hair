@@ -26,4 +26,14 @@ foreach ($sections as $section) {
 	}
 }
 
+
+$faq_items = carbon_get_post_meta(get_the_ID(), 'faq_items');
+
+if (!empty($faq_items)) {
+	get_template_part('template-parts/faq'); // подключаем faq.php
+}
+
+
+
+
 get_footer();
