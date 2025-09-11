@@ -15,6 +15,7 @@
 }
 
 .faq .section-bg,
+.faq-section .section-bg-mobile,
 .faq .section-bg-mobile {
   display: none;
   position: absolute;
@@ -40,6 +41,34 @@
 .faq.content {
   margin-top: 100px;
   position: relative;
+}
+
+/* faq-section */
+.faq-section {
+  margin-top: 60px;
+  position: relative;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.faq-item {
+  background: rgba(234, 228, 224, 0.4);
+  border: 0.5px solid rgba(244, 244, 244, 1);
+  padding: 26px 20px;
+  border-radius: 14px;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.is-open .faq-answer {
+  max-height: 500px; /* или auto через JS, если нужно */
 }
 
 @media (max-width: 991px) {
@@ -73,8 +102,12 @@
 }
 
 @media screen and (max-width: 480px) {
-  .faq.content .section-bg-mobile {
+  .faq.content .section-bg-mobile,
+  .faq-section .section-bg-mobile {
     display: block;
     transform: translateY(-80px);
+  }
+  .faq-section {
+    margin-top: 135px;
   }
 }
