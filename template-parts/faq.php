@@ -15,10 +15,10 @@ if (!$faq_items) return;
         <div class="faq-list">
             <?php foreach ($faq_items as $index => $item): ?>
                 <div class="faq-item">
-                    <button class="faq-question" data-index="<?= $index; ?>">
+                    <div class="faq-question" data-index="<?= $index; ?>">
                         <?= esc_html($item['question']); ?>
                         <?php get_icon('faq-arrow', 'm'); ?>
-                    </button>
+                    </div>
                     <div class="faq-answer">
                         <?= apply_filters('the_content', $item['answer']); ?>
                     </div>

@@ -73,6 +73,11 @@
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 0;
+  color: rgba(33, 92, 129, 1);
+  transition: all 0.2s linear;
+}
+.is-open .faq-question {
+  margin-bottom: 22px;
 }
 
 .faq-question svg {
@@ -87,10 +92,17 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  opacity: 0;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
 }
 
 .is-open .faq-answer {
   max-height: 500px; /* или auto через JS, если нужно */
+  opacity: 1;
 }
 
 @media (max-width: 991px) {
