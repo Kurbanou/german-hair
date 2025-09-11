@@ -61,3 +61,31 @@ add_filter('body_class', function ($classes) {
 	}
 	return $classes;
 });
+
+// Включи поддержку комментариев для страниц
+add_action('init', function() {
+    add_post_type_support('page', 'comments');
+});
+
+// проверку токена перед сохранением комментария
+add_filter('preprocess_comment', function($commentdata) {
+    $token = $_POST['g-recaptcha-response'] ?? '';
+    $secret = '6LcAJcMrAAAAAArFheCuUqbTIlp4gOigXVXtnegM'; // твой секретный ключ
+
+    $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
+        'body' => [
+            'secret'   => $secret,
+            'response' => $token,
+            'remoteip' => $_SERVER['REMOTE_ADDR'],
+        ],
+    ]);
+
+    $result = json_decode(wp_remote_retrieve_body($response), true);
+
+    if (empty($result['success'])) {
+        wp_die('Ошибка reCAPTCHA. Попробуйте ещё раз.');
+    }
+
+    return $commentdata;
+});
+

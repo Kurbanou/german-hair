@@ -105,9 +105,73 @@
   opacity: 1;
 }
 
+.faq-comments {
+  margin-top: 100px;
+}
+
+.comment-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  background: rgba(234, 228, 224, 0.2);
+  border-radius: 14px;
+}
+
+.comment-list li,
+.children li {
+  max-width: 1165px;
+  background: rgba(234, 228, 224, 0.2);
+  padding: 20px;
+}
+
+.comment-date {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+}
+.coment-name,
+.comment-content {
+  color: rgba(0, 132, 215, 1);
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+.comment-content {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.children .comment-body {
+  padding-left: 50px;
+}
+
 @media (max-width: 991px) {
+  .children .comment-body {
+    padding-left: 0px;
+  }
+  .comment-list,
+  .children {
+    padding: 10px;
+  }
   .faq.title {
     margin-top: 90px;
+  }
+
+  .faq-comments {
+    margin-top: 50px;
+  }
+
+  .comment-list {
+    padding: 20px;
   }
 
   .faq p {

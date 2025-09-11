@@ -15,7 +15,7 @@
         </svg>
     </div>
     <div class="container">
-        <h1 class="h2 mb-s  text-second-dark">В этом разделе вы узнаете:</h1>
+        <h3 class="h3 mb-s  text-second-dark">В этом разделе вы узнаете:</h3>
         <div class="flex flex-gap-l mb-s">
             <ul class="list-disk  weight-500">
                 <li>Портит ли капсульное наращивание волос ваши волосы</li>
