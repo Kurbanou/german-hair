@@ -5,38 +5,37 @@
  * Usage: get_template_part('template-parts/breadcrumbs');
  */
 
+
 if (is_front_page()) {
-    return; // не выводим на главной
+    return;
+}
+
+$object = get_queried_object();
+$title = '';
+
+if (is_home()) {
+    $page_for_posts_id = get_option('page_for_posts');
+    $title = $page_for_posts_id ? get_the_title($page_for_posts_id) : 'Блог';
+} elseif (is_singular()) {
+    $title = isset($object->post_title) ? $object->post_title : '';
+} elseif (is_category() || is_tag() || is_tax()) {
+    $title = isset($object->name) ? $object->name : '';
+} elseif (is_post_type_archive()) {
+    $title = post_type_archive_title('', false);
+} elseif (is_author()) {
+    $title = get_the_author_meta('display_name', $object->ID);
+} elseif (is_search()) {
+    $title = 'Результаты поиска: ' . get_search_query();
+} elseif (is_404()) {
+    $title = 'Страница не найдена';
+} elseif (is_archive()) {
+    $title = get_the_archive_title();
 }
 ?>
+
 <div class="container">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a href="<?= esc_url(home_url('/')); ?>">Главная</a> &gt;
-
-        <?php if (is_singular('post')) : ?>
-            <span><?= esc_html(get_the_title()); ?></span>
-
-        <?php elseif (is_page()) : ?>
-            <span><?= esc_html(get_the_title()); ?></span>
-
-        <?php elseif (is_category()) : ?>
-            <span><?= single_cat_title('', false); ?></span>
-
-        <?php elseif (is_tag()) : ?>
-            <span><?= single_tag_title('', false); ?></span>
-
-        <?php elseif (is_search()) : ?>
-            <span>Результаты поиска: <?= esc_html(get_search_query()); ?></span>
-
-        <?php elseif (is_archive()) : ?>
-            <span><?= post_type_archive_title('', false); ?></span>
-
-        <?php elseif (is_404()) : ?>
-            <span>Страница не найдена</span>
-
-        <?php else : ?>
-            <span><?= esc_html(get_the_title()); ?></span>
-        <?php endif; ?>
+        <span><?= esc_html($title); ?></span>
     </nav>
-
 </div>
