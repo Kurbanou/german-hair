@@ -59,8 +59,30 @@
   border: 0.5px solid rgba(244, 244, 244, 1);
   padding: 26px 20px;
   border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0;
 }
 
+.faq-question svg {
+  transform: rotate(180deg);
+  transition: all 0.1s linear;
+}
+
+.faq-item.is-open .faq-question svg {
+  transform: rotate(0deg);
+}
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -85,6 +107,10 @@
     margin-bottom: 10px;
     font-size: 32px;
     line-height: 52px;
+  }
+  .faq-question {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
