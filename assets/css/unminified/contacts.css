@@ -130,11 +130,14 @@ p {
   .contacts_block_container {
     grid-template-columns: 1fr;
   }
-  .contacts .section-bg-mobile {
-    display: block;
-  }
 }
 
+@media screen and (max-width: 480px) {
+  .contacts .section-bg-mobile {
+    display: block;
+    transform: translateY(-80px);
+  }
+}
 @media screen and (max-width: 400px) {
   .contacts_block_item {
     flex-direction: column;

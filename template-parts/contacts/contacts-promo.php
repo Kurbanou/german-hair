@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Displays contacts promo
  */
 
-function get_contacts_block_data() {
+function get_contacts_block_data()
+{
     return [
         [
             'icon'  => 'adress-group',
@@ -82,34 +84,39 @@ $contacts_block = get_contacts_block_data();
                             <div class="contacts_block_item_title"><?php echo esc_html($contact['title']); ?></div>
                         <?php endif; ?>
                         <?php
-                            foreach ($contact['content'] as $item) {
-                                $value = trim($item['value']);
-                                if (empty($value)) continue;
+                        foreach ($contact['content'] as $item) {
+                            $value = trim($item['value']);
+                            if (empty($value)) continue;
 
-                                switch ($item['type']) {
-                                    case 'phone':
-                                        echo '<div class="contacts_block_item_line">';
-                                        echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
-                                        echo '</div>';
-                                        break;
-                                    case 'link':
-                                        echo '<div class="contacts_block_item_line"><a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a></div>';
-                                        break;
-                                    case 'mail':
-                                        echo '<div class="contacts_block_item_line"><a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a></div>';
-                                        break;
-                                  default:
-                                        if (!empty($value)) {
-                                            echo '<div class="contacts_block_item_line">' . wp_kses_post(html_entity_decode($value)) . '</div>';
-                                        }
-                                        break;
-
-                                }
+                            switch ($item['type']) {
+                                case 'phone':
+                                    echo '<div class="contacts_block_item_line">';
+                                    echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
+                                    echo '</div>';
+                                    break;
+                                case 'link':
+                                    echo '<div class="contacts_block_item_line"><a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a></div>';
+                                    break;
+                                case 'mail':
+                                    echo '<div class="contacts_block_item_line"><a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a></div>';
+                                    break;
+                                default:
+                                    if (!empty($value)) {
+                                        echo '<div class="contacts_block_item_line">' . wp_kses_post(html_entity_decode($value)) . '</div>';
+                                    }
+                                    break;
                             }
+                        }
                         ?>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+    </div>
+    <div class="section-bg-mobile ">
+        <svg width="480" height="39" viewBox="0 0 480 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.21051C0 1.21051 89.9547 26.0885 150.267 29.51C196.844 32.1524 223.721 30.7527 269.688 24.4909C306.781 19.4378 332.85 17.295 371.503 17.295C406.99 17.295 454.274 30.0641 480 37.6687" stroke="#967866" stroke-opacity="0.2" />
+            <rect x="95" y="17.069" width="16" height="16" rx="8" fill="#EAE4E0" />
+        </svg>
     </div>
 </section>
