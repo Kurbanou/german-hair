@@ -74,7 +74,7 @@ $nav_list_left = [
 $nav_list_right = [
 	[
 		'label' => 'Вопросы и ответы',
-		'href' => '/',
+		'href' => '/faq',
 	],
 	[
 		'label' => 'Контакты',
@@ -127,7 +127,7 @@ $nav_list_mobile = [
 	],
 	[
 		'label' => 'Вопросы и ответы',
-		'href' => '/',
+		'href' => '/faq',
 	],
 	[
 		'label' => 'Контакты',

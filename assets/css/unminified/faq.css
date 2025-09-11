@@ -1,1 +1,80 @@
 /* faq */
+.faq.title {
+  margin-top: 260px;
+  position: relative;
+}
+
+.faq.title h1 {
+  font-family: "Vetrino", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  line-height: 82px;
+  letter-spacing: 0;
+  margin-bottom: 30px;
+}
+
+.faq .section-bg,
+.faq .section-bg-mobile {
+  display: none;
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  transform: translateY(0px);
+}
+
+.faq.title .section-bg {
+  transform: translateY(-180px);
+}
+
+.faq.content .section-bg {
+  transform: translateY(-100px);
+}
+
+/* content */
+.faq.content {
+  margin-top: 100px;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .faq.title {
+    margin-top: 90px;
+  }
+
+  .faq p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .faq.title h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .faq .section-bg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .faq.title h1 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .faq.content .section-bg-mobile {
+    display: block;
+    transform: translateY(-80px);
+  }
+}

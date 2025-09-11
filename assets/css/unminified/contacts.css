@@ -1,6 +1,6 @@
 /* contacts */
 /* contacts title */
-p {
+.contacts p {
   font-family: "Manrope", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -22,7 +22,7 @@ p {
   transform: translateY(0px);
 }
 
-.title .section-bg {
+.contacts.title .section-bg {
   transform: translateY(-180px);
 }
 
@@ -94,7 +94,7 @@ p {
   line-height: 26px;
   letter-spacing: 0;
 }
-
+/* map */
 .map {
   margin-top: 100px;
   position: relative;
@@ -146,7 +146,7 @@ p {
     margin-top: 90px;
   }
 
-  p {
+  .contacts p {
     font-weight: 500;
     font-size: 14px;
     line-height: 26px;
