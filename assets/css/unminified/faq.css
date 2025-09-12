@@ -117,6 +117,7 @@
   padding: 40px;
   background: rgba(234, 228, 224, 0.2);
   border-radius: 14px;
+  transition: all 0.3s linear;
 }
 
 .comment-list li,

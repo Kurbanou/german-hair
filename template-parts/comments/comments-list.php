@@ -55,11 +55,10 @@ echo '<nav class="comment-pagination"><ul id="pagination-list" class="pagination
 
 // Передаём данные в JS
 echo '<script>';
-echo 'const allComments = ' . wp_json_encode($ordered_comments) . ';';
-echo 'const commentsPerPage = ' . $comments_per_page . ';';
-echo 'console.log(allComments);';
-echo 'console.log(commentsPerPage);';
-
+echo 'window.allComments = ' . wp_json_encode($ordered_comments) . ';';
+echo 'window.commentsPerPage = ' . $comments_per_page . ';';
+echo 'console.log("allComments:", window.allComments);';
+echo 'console.log("commentsPerPage:", window.commentsPerPage);';
 echo '</script>';
 
 

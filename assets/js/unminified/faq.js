@@ -11,126 +11,130 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const list = document.getElementById("comment-list");
-  const pagination = document.getElementById("pagination-list");
+  const waitForComments = (callback, timeout = 5000) => {
+    const start = Date.now();
 
-  if (
-    !list ||
-    !pagination ||
-    !Array.isArray(allComments) ||
-    allComments.length === 0
-  ) {
-    console.warn("Комментариев нет или контейнеры не найдены");
-    return;
-  }
-
-  const commentsPerPage = window.commentsPerPage || 5;
-  let currentPage = 1;
-
-  function renderComments(page = 1) {
-    list.innerHTML = "";
-    const start = (page - 1) * commentsPerPage;
-    const end = start + commentsPerPage;
-    const pageComments = allComments.slice(start, end);
-
-    pageComments.forEach((comment) => {
-      const li = document.createElement("li");
-      li.className =
-        parseInt(comment.parent_id) > 0 ? "comment-reply" : "comment-root";
-
-      li.innerHTML = ` 
-        <div class="comment-date">${escapeHtml(comment.formatted_date)}</div>
-        <div class="comment-body">
-          <div class="comment-name">${getAuthor(comment)}</div>
-            ${
-              comment.author_role
-                ? `<span class="comment-role">${escapeHtml(
-                    comment.author_role
-                  )}</span>`
-                : ""
-            }
-          <div class="comment-content">${escapeHtml(
-            comment.content
-          )}</div>         
-        </div>
-        
-      `;
-
-      list.appendChild(li);
-    });
-
-    renderPagination(page);
-  }
-
-  function renderPagination(currentPage) {
-    const totalPages = Math.ceil(allComments.length / commentsPerPage);
-    pagination.innerHTML = "";
-
-    if (totalPages <= 1) return;
-
-    const createPageItem = (label, page, isActive = false) => {
-      const li = document.createElement("li");
-      const div = document.createElement("div");
-      div.className = isActive ? "pagination-page active" : "pagination-page";
-      div.dataset.page = page;
-      div.textContent = label;
-      li.appendChild(div);
-      return li;
+    const check = () => {
+      if (
+        window.allComments &&
+        Array.isArray(window.allComments) &&
+        window.allComments.length > 0
+      ) {
+        callback();
+      } else if (Date.now() - start < timeout) {
+        setTimeout(check, 50);
+      }
     };
 
-    if (currentPage > 1)
-      pagination.appendChild(createPageItem("←", currentPage - 1));
-    pagination.appendChild(createPageItem("1", 1, currentPage === 1));
+    check();
+  };
 
-    if (currentPage > 3) pagination.appendChild(createEllipsis());
+  waitForComments(() => {
+    const allComments = window.allComments;
+    const commentsPerPage = window.commentsPerPage || 5;
 
-    for (
-      let i = Math.max(2, currentPage - 1);
-      i <= Math.min(totalPages - 1, currentPage + 1);
-      i++
-    ) {
-      pagination.appendChild(createPageItem(i, i, currentPage === i));
+    const list = document.getElementById("comment-list");
+    const pagination = document.getElementById("pagination-list");
+
+    if (!list || !pagination) return;
+
+    const commentMap = {};
+    allComments.forEach((comment) => {
+      const parentId = String(comment.parent_id || "0");
+      if (!commentMap[parentId]) commentMap[parentId] = [];
+      commentMap[parentId].push(comment);
+    });
+
+    let currentPage = 1;
+
+    function renderComments(page = 1) {
+      list.innerHTML = "";
+
+      const parents = commentMap["0"] || [];
+      const start = (page - 1) * commentsPerPage;
+      const end = start + commentsPerPage;
+      const pageParents = parents.slice(start, end);
+
+      pageParents.forEach((parent) => {
+        renderThread(parent);
+      });
+
+      renderPagination(page);
     }
 
-    if (currentPage < totalPages - 2) pagination.appendChild(createEllipsis());
-    pagination.appendChild(
-      createPageItem(totalPages, totalPages, currentPage === totalPages)
-    );
+    function renderThread(parentComment) {
+      const parentLi = createCommentElement(parentComment);
+      list.appendChild(parentLi);
 
-    if (currentPage < totalPages)
-      pagination.appendChild(createPageItem("→", currentPage + 1));
-  }
+      const replies = commentMap[String(parentComment.id)] || [];
+      replies.forEach((reply) => {
+        const replyLi = createCommentElement(reply, true);
+        list.appendChild(replyLi);
+      });
+    }
 
-  function createEllipsis() {
-    const li = document.createElement("li");
-    li.className = "pagination-ellipsis";
-    li.textContent = "...";
-    return li;
-  }
+    function createCommentElement(comment, isReply = false) {
+      const li = document.createElement("li");
+      li.className = isReply ? "comment-reply" : "comment-root";
 
-  pagination.addEventListener("click", (e) => {
-    const target = e.target.closest("[data-page]");
-    if (target) {
-      const page = parseInt(target.dataset.page, 10);
-      if (!isNaN(page)) {
-        currentPage = page;
-        renderComments(currentPage);
+      li.innerHTML = `
+        <div class="comment-header">
+          <span class="comment-author">${getAuthor(comment)}</span>
+          ${
+            comment.author_role
+              ? `<span class="comment-role">${escapeHtml(
+                  comment.author_role
+                )}</span>`
+              : ""
+          }
+          <span class="comment-date">${escapeHtml(
+            comment.formatted_date
+          )}</span>
+        </div>
+        <div class="comment-body">
+          <div class="comment-content">${escapeHtml(comment.content)}</div>
+        </div>
+      `;
+
+      return li;
+    }
+
+    function renderPagination(currentPage) {
+      const totalPages = Math.ceil(
+        (commentMap["0"] || []).length / commentsPerPage
+      );
+      pagination.innerHTML = "";
+
+      if (totalPages <= 1) return;
+
+      for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.dataset.page = i;
+        btn.className = i === currentPage ? "active" : "";
+        btn.addEventListener("click", () => {
+          currentPage = i;
+          renderComments(currentPage);
+        });
+        li.appendChild(btn);
+        pagination.appendChild(li);
       }
     }
-  });
 
-  function getAuthor(comment) {
-    if (comment.author_role === "administrator") {
-      return "Менеджер " + escapeHtml(comment.author);
+    function getAuthor(comment) {
+      if (comment.author_role === "administrator") {
+        return "Менеджер " + escapeHtml(comment.author);
+      }
+      return escapeHtml(comment.author || "Гость");
     }
-    return escapeHtml(comment.author || "Гость");
-  }
 
-  function escapeHtml(text) {
-    const div = document.createElement("div");
-    div.textContent = text;
-    return div.innerHTML;
-  }
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
 
-  renderComments(currentPage);
+    renderComments(currentPage);
+  });
 });
