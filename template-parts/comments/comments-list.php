@@ -51,7 +51,7 @@ function custom_comment_renderer($comment, $args, $depth)
 // Получение данных
 $post_id = get_query_var('post_id') ?: get_the_ID();
 $cpage = get_query_var('cpage') ?: 1;
-$comments_per_page = 5;
+$comments_per_page = 2;
 
 $comment_count = get_comments([
     'post_id' => $post_id,

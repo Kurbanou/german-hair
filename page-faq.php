@@ -7,7 +7,7 @@
 
 get_header();
 
-$post_id = get_the_ID(); // ✅ обязательно для data-post-id
+$post_id = get_the_ID(); //  обязательно для data-post-id
 
 // Секции FAQ
 $sections = ['title', 'content'];
@@ -23,24 +23,11 @@ if (!empty($faq_items)) {
     get_template_part('template-parts/faq');
 }
 
-// Контейнер комментариев
-echo '<div id="faq-comments-container" data-post-id="' . esc_attr($post_id) . '">';
+// Форма комментария
+get_template_part('template-parts/comments/comments', 'container');
 
-// Вывод комментариев
-$approved_comments = get_comments([
-    'post_id' => $post_id,
-    'status'  => 'approve',
-]);
-
-if (!empty($approved_comments)) {
-    get_template_part('template-parts/comments/comments', 'list');
-} else {
-    echo '<p>Пока нет комментариев. Будьте первым!</p>';
-}
-
-echo '</div>';
 
 // Форма комментария
-get_template_part('template-parts/comments/comment', 'form');
+get_template_part('template-parts/comments/comments', 'form');
 
 get_footer();
