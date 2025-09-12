@@ -111,3 +111,53 @@ function get_media_placeholder()
 {
 	echo "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP88OHjfwAJewPSoCFtSwAAAABJRU5ErkJggg==";
 }
+
+
+
+function human_time_diff_custom($comment_date)
+{ // Кастомный вывод даты комента
+	$timestamp = strtotime($comment_date);
+	$now = current_time('timestamp');
+	$diff = $now - $timestamp;
+
+	if ($diff < 60) return 'только что';
+	elseif ($diff < 3600) return floor($diff / 60) . ' мин назад';
+	elseif ($diff < 86400) return floor($diff / 3600) . ' ч назад';
+	elseif ($diff < 604800) return floor($diff / 86400) . ' дн назад';
+	else return date('d.m.Y', $timestamp);
+}
+
+function custom_comment_renderer($comment, $args, $depth)
+{ // Кастомный вывод комментария
+	$user_id = $comment->user_id;
+	$author = get_comment_author($comment);
+	$role_class = 'comment-user';
+
+	// Определяем роль
+	if ($user_id) {
+		$user = get_userdata($user_id);
+		if ($user && in_array('administrator', $user->roles)) {
+			$role_class = 'comment-manager';
+			$author = 'Менеджер ' . $user->display_name;
+		}
+	}
+
+	// Ответ или корневой
+	$is_reply = $comment->comment_parent > 0;
+	$reply_class = $is_reply ? 'comment-reply' : 'comment-root';
+
+	// Контент и дата
+	$content = get_comment_text($comment);
+	$date = human_time_diff_custom($comment->comment_date);
+
+	// Вывод HTML
+?>
+	<li class="<?php echo esc_attr("$role_class $reply_class"); ?>">
+		<div class="comment-date"><?php echo esc_html($date); ?></div>
+		<div class="comment-body">
+			<span class="comment-name"><?php echo esc_html($author); ?>:</span>
+			<span class="comment-content"><?php echo esc_html($content); ?></span>
+		</div>
+	</li>
+<?php
+}
