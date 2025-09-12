@@ -92,3 +92,43 @@ add_filter('preprocess_comment', function ($commentdata) {
 
     return $commentdata;
 });
+
+
+// ajax пагинации коментов
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script(
+        'faq-js',
+        get_template_directory_uri() . '/assets/js/unminified/faq.js',
+        [],
+        null,
+        true
+    );
+
+    wp_localize_script('faq-js', 'GH_Ajax', [
+        'url' => admin_url('admin-ajax.php'),
+    ]);
+});
+
+add_action('wp_ajax_load_comments', 'ajax_load_comments');
+add_action('wp_ajax_nopriv_load_comments', 'ajax_load_comments');
+
+function ajax_load_comments()
+{
+    $post_id = intval($_POST['post_id']);
+    $cpage = intval($_POST['cpage']);
+
+    if (!$post_id || !$cpage) {
+        wp_send_json_error(['message' => 'Недостаточно данных']);
+    }
+
+    $post = get_post($post_id);
+    setup_postdata($post);
+    set_query_var('post_id', $post_id);
+    set_query_var('cpage', $cpage);
+
+    ob_start();
+    include locate_template('template-parts/comments/comments-list.php');
+    $html = ob_get_clean();
+
+    wp_send_json_success(['html' => $html]);
+}

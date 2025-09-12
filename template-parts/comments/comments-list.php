@@ -11,17 +11,11 @@ function human_time_diff_custom($comment_date)
     $now = current_time('timestamp');
     $diff = $now - $timestamp;
 
-    if ($diff < 60) {
-        return 'только что';
-    } elseif ($diff < 3600) {
-        return floor($diff / 60) . ' мин назад';
-    } elseif ($diff < 86400) {
-        return floor($diff / 3600) . ' ч назад';
-    } elseif ($diff < 604800) {
-        return floor($diff / 86400) . ' дн назад';
-    } else {
-        return date('d.m.Y', $timestamp);
-    }
+    if ($diff < 60) return 'только что';
+    elseif ($diff < 3600) return floor($diff / 60) . ' мин назад';
+    elseif ($diff < 86400) return floor($diff / 3600) . ' ч назад';
+    elseif ($diff < 604800) return floor($diff / 86400) . ' дн назад';
+    else return date('d.m.Y', $timestamp);
 }
 
 // Кастомный вывод комментария
@@ -45,7 +39,7 @@ function custom_comment_renderer($comment, $args, $depth)
     $content = get_comment_text($comment);
     $date = human_time_diff_custom($comment->comment_date);
 
-    echo '<li class="' . esc_attr($role_class . ' ' . $reply_class) . '">';
+    echo '<li class="' . esc_attr("$role_class $reply_class") . '">';
     echo '<div class="comment-date">' . esc_html($date) . '</div>';
     echo '<div class="comment-body">';
     echo '<span class="coment-name">' . esc_html($author) . ': </span>';
@@ -54,10 +48,20 @@ function custom_comment_renderer($comment, $args, $depth)
     echo '</li>';
 }
 
-// Вывод комментариев с пагинацией
-echo '<section class="faq-comments">';
-echo '<div class="container">';
-echo '<h3 class="h3 text-second-dark mb-sm">Ваши вопросы</h3>';
+// Получение данных
+$post_id = get_query_var('post_id') ?: get_the_ID();
+$cpage = get_query_var('cpage') ?: 1;
+$comments_per_page = 5;
+
+$comment_count = get_comments([
+    'post_id' => $post_id,
+    'status'  => 'approve',
+    'count'   => true,
+]);
+
+$total_pages = ceil($comment_count / $comments_per_page);
+
+// Вывод комментариев
 echo '<ul class="comment-list">';
 
 wp_list_comments([
@@ -66,7 +70,8 @@ wp_list_comments([
     'style'        => 'ul',
     'avatar_size'  => 40,
     'callback'     => 'custom_comment_renderer',
-    'per_page'     => 999999,
+    'per_page'     => $comments_per_page,
+    'page'         => $cpage,
     'reverse_top_level' => false,
 ]);
 
@@ -75,22 +80,16 @@ echo '</ul>';
 // Пагинация
 if ($total_pages > 1) {
     echo '<div class="comment-pagination">';
-
-    $base_url = add_query_arg(['post_id' => $post_id], get_permalink($post_id));
-
     echo paginate_links([
-        'base'      => $base_url . '%_%',
-        'format'    => '?cpage=%#%',
-        'current'   => $cpage,
+        'base'      => trailingslashit(get_permalink($post_id)) . 'comment-page-%#%/',
+        'format'    => '',
+        'current'   => max(1, $cpage),
         'total'     => $total_pages,
         'prev_text' => '← Назад',
         'next_text' => 'Вперёд →',
         'mid_size'  => 2,
-        'add_args'  => ['post_id' => $post_id],
+        'end_size'  => 1,
+        'type'      => 'plain',
     ]);
-
     echo '</div>';
 }
-
-echo '</div>';
-echo '</section>';
