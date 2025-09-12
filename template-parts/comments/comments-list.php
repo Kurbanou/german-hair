@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Шаблон: Вывод одобренных комментариев с пагинацией и датой "n дней назад"
  */
 
 // Функция форматирования даты
-function human_time_diff_custom($comment_date) {
+function human_time_diff_custom($comment_date)
+{
     $timestamp = strtotime($comment_date);
     $now = current_time('timestamp');
     $diff = $now - $timestamp;
@@ -23,7 +25,8 @@ function human_time_diff_custom($comment_date) {
 }
 
 // Кастомный вывод комментария
-function custom_comment_renderer($comment, $args, $depth) {
+function custom_comment_renderer($comment, $args, $depth)
+{
     $user_id = $comment->user_id;
     $author = get_comment_author($comment);
     $role_class = 'comment-user';
@@ -63,18 +66,31 @@ wp_list_comments([
     'style'        => 'ul',
     'avatar_size'  => 40,
     'callback'     => 'custom_comment_renderer',
-    'per_page'     => 5,
+    'per_page'     => 999999,
     'reverse_top_level' => false,
 ]);
 
 echo '</ul>';
 
 // Пагинация
-paginate_comments_links([
-    'prev_text' => '← Назад',
-    'next_text' => 'Вперёд →',
-]);
+if ($total_pages > 1) {
+    echo '<div class="comment-pagination">';
+
+    $base_url = add_query_arg(['post_id' => $post_id], get_permalink($post_id));
+
+    echo paginate_links([
+        'base'      => $base_url . '%_%',
+        'format'    => '?cpage=%#%',
+        'current'   => $cpage,
+        'total'     => $total_pages,
+        'prev_text' => '← Назад',
+        'next_text' => 'Вперёд →',
+        'mid_size'  => 2,
+        'add_args'  => ['post_id' => $post_id],
+    ]);
+
+    echo '</div>';
+}
 
 echo '</div>';
 echo '</section>';
-?>

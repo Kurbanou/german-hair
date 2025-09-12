@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // FAQ аккордеон
   const faqItems = document.querySelectorAll(".faq-item");
-
   faqItems.forEach((item) => {
     item.addEventListener("click", () => {
       faqItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("is-open");
-        }
+        if (otherItem !== item) otherItem.classList.remove("is-open");
       });
-
       item.classList.toggle("is-open");
     });
   });

@@ -1,7 +1,7 @@
 <?php
 
 if (! defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 
 /**
@@ -44,33 +44,37 @@ add_filter('show_admin_bar', '__return_false');
 use Carbon_Fields\Carbon_Fields;
 
 add_action('after_setup_theme', function () {
-	if (class_exists('\Carbon_Fields\Carbon_Fields')) {
-		Carbon_Fields::boot();
-	}
+    if (class_exists('\Carbon_Fields\Carbon_Fields')) {
+        Carbon_Fields::boot();
+    }
 });
 
 // Подключаем регистрацию полей после boot
 add_action('carbon_fields_register_fields', function () {
-	require_once GH_THEME_DIR . 'inc/carbon-fields.php';
+    require_once GH_THEME_DIR . 'inc/carbon-fields.php';
 });
 
 // Добавляем класс если нет банера
 add_filter('body_class', function ($classes) {
-	if (is_page() && empty(get_field('fon'))) {
-		$classes[] = 'header-dark';
-	}
-	return $classes;
+    if (is_page() && empty(get_field('fon'))) {
+        $classes[] = 'header-dark';
+    }
+    return $classes;
 });
 
 // Включи поддержку комментариев для страниц
-add_action('init', function() {
+add_action('init', function () {
     add_post_type_support('page', 'comments');
 });
 
 // проверку токена перед сохранением комментария
-add_filter('preprocess_comment', function($commentdata) {
+add_filter('preprocess_comment', function ($commentdata) {
+    if (is_admin()) {
+        return $commentdata; // не проверяем капчу в админке
+    }
+
     $token = $_POST['g-recaptcha-response'] ?? '';
-    $secret = '6LcAJcMrAAAAAArFheCuUqbTIlp4gOigXVXtnegM'; // твой секретный ключ
+    $secret = '6LcAJcMrAAAAAArFheCuUqbTIlp4gOigXVXtnegM';
 
     $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
         'body' => [
@@ -88,4 +92,3 @@ add_filter('preprocess_comment', function($commentdata) {
 
     return $commentdata;
 });
-
