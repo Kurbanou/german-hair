@@ -107,18 +107,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (totalPages <= 1) return;
 
-      for (let i = 1; i <= totalPages; i++) {
+      const createPageButton = (
+        label,
+        page,
+        isActive = false,
+        isDisabled = false
+      ) => {
         const li = document.createElement("li");
-        const btn = document.createElement("button");
-        btn.textContent = i;
-        btn.dataset.page = i;
-        btn.className = i === currentPage ? "active" : "";
-        btn.addEventListener("click", () => {
-          currentPage = i;
-          renderComments(currentPage);
-        });
+        const btn = document.createElement("span");
+        btn.textContent = label;
+        btn.dataset.page = page;
+        if (isActive) btn.classList.add("active");
+        if (isDisabled) {
+          btn.disabled = true;
+          btn.classList.add("disabled");
+        } else {
+          btn.addEventListener("click", () => {
+            currentPage = page;
+            renderComments(currentPage);
+          });
+        }
         li.appendChild(btn);
-        pagination.appendChild(li);
+        return li;
+      };
+
+      // ← Предыдущая
+      if (currentPage > 1) {
+        pagination.appendChild(createPageButton("←", currentPage - 1));
+      }
+
+      // Первая страница
+      pagination.appendChild(createPageButton("1", 1, currentPage === 1));
+
+      // Текущая страница (некликабельная)
+      if (
+        currentPage !== 1 &&
+        currentPage !== totalPages &&
+        currentPage !== totalPages - 1
+      ) {
+        pagination.appendChild(
+          createPageButton(String(currentPage), currentPage, true, true)
+        );
+      }
+
+      // Многоточие (только после текущей)
+      if (currentPage < totalPages - 2) {
+        const ellipsis = document.createElement("li");
+        ellipsis.textContent = "…";
+        pagination.appendChild(ellipsis);
+      }
+
+      // Две последние страницы
+      if (totalPages > 1) {
+        pagination.appendChild(
+          createPageButton(
+            String(totalPages - 1),
+            totalPages - 1,
+            currentPage === totalPages - 1
+          )
+        );
+        pagination.appendChild(
+          createPageButton(
+            String(totalPages),
+            totalPages,
+            currentPage === totalPages
+          )
+        );
+      }
+
+      // → Следующая
+      if (currentPage < totalPages) {
+        pagination.appendChild(createPageButton("→", currentPage + 1));
       }
     }
 
