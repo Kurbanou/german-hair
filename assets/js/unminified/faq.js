@@ -95,6 +95,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderPagination(currentPage) {
+      const left = `
+<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.49933 5.70679L7.12111 9.99952L5.70703 11.4136L0 5.70656L5.70703 0L7.12111 1.41408L2.49933 5.70679Z" fill="#215C81"/>
+</svg>
+`;
+
+      const right = `
+<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.50067 6.29321L0.87889 2.00048L2.29297 0.5864L8 6.29344L2.29297 12L0.87889 10.5859L5.50067 6.29321Z" fill="#215C81"/>
+</svg>
+`;
       const totalPages = Math.ceil(
         (commentMap["0"] || []).length / commentsPerPage
       );
@@ -110,8 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ) => {
         const li = document.createElement("li");
         const btn = document.createElement("button");
-        btn.textContent = label;
         btn.dataset.page = page;
+
+        if (label.trim().startsWith("<svg")) {
+          btn.innerHTML = label;
+        } else {
+          btn.textContent = label;
+        }
+
         if (isActive) btn.classList.add("active");
         if (isDisabled) {
           btn.disabled = true;
@@ -122,13 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
             renderComments(currentPage);
           });
         }
+
         li.appendChild(btn);
         return li;
       };
 
       // ← Предыдущая
       if (currentPage > 1) {
-        pagination.appendChild(createPageButton("←", currentPage - 1));
+        pagination.appendChild(createPageButton(left, currentPage - 1));
       }
 
       const pages = [];
@@ -175,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // → Следующая
       if (currentPage < totalPages) {
-        pagination.appendChild(createPageButton("→", currentPage + 1));
+        pagination.appendChild(createPageButton(right, currentPage + 1));
       }
     }
 
