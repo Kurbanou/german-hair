@@ -4,7 +4,7 @@
  */
 
 $post_id = get_query_var('post_id') ?: get_the_ID();
-$comments_per_page = 5;
+$comments_per_page = 2;
 
 // Получаем все одобренные комментарии
 $all_comments = get_comments([
@@ -61,3 +61,5 @@ echo 'console.log(allComments);';
 echo 'console.log(commentsPerPage);';
 
 echo '</script>';
+
+

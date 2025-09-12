@@ -8,17 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
       item.classList.toggle("is-open");
     });
   });
+});
 
-  const allComments = window.allComments || [];
-  const commentsPerPage = window.commentsPerPage || 5;
-
+document.addEventListener("DOMContentLoaded", () => {
   const list = document.getElementById("comment-list");
   const pagination = document.getElementById("pagination-list");
 
-  if (!list || !pagination || allComments.length === 0) {
+  if (
+    !list ||
+    !pagination ||
+    !Array.isArray(allComments) ||
+    allComments.length === 0
+  ) {
     console.warn("Комментариев нет или контейнеры не найдены");
     return;
   }
+
+  const commentsPerPage = window.commentsPerPage || 5;
+  let currentPage = 1;
 
   function renderComments(page = 1) {
     list.innerHTML = "";
@@ -29,16 +36,26 @@ document.addEventListener("DOMContentLoaded", function () {
     pageComments.forEach((comment) => {
       const li = document.createElement("li");
       li.className =
-        comment.comment_parent > 0 ? "comment-reply" : "comment-root";
-      li.innerHTML = `
-        <div class="comment-date">${formatDate(comment.comment_date)}</div>
+        parseInt(comment.parent_id) > 0 ? "comment-reply" : "comment-root";
+
+      li.innerHTML = ` 
+        <div class="comment-date">${escapeHtml(comment.formatted_date)}</div>
         <div class="comment-body">
-          <span class="comment-name">${getAuthor(comment)}:</span>
-          <span class="comment-content">${escapeHtml(
-            comment.comment_content
-          )}</span>
+          <div class="comment-name">${getAuthor(comment)}</div>
+            ${
+              comment.author_role
+                ? `<span class="comment-role">${escapeHtml(
+                    comment.author_role
+                  )}</span>`
+                : ""
+            }
+          <div class="comment-content">${escapeHtml(
+            comment.content
+          )}</div>         
         </div>
+        
       `;
+
       list.appendChild(li);
     });
 
@@ -51,69 +68,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (totalPages <= 1) return;
 
-    if (currentPage > 1) {
-      pagination.innerHTML += `<li><div class="pagination-arrow" data-page="${
-        currentPage - 1
-      }">←</div></li>`;
-    }
+    const createPageItem = (label, page, isActive = false) => {
+      const li = document.createElement("li");
+      const div = document.createElement("div");
+      div.className = isActive ? "pagination-page active" : "pagination-page";
+      div.dataset.page = page;
+      div.textContent = label;
+      li.appendChild(div);
+      return li;
+    };
 
-    pagination.innerHTML += `<li><div class="pagination-page${
-      currentPage === 1 ? " active" : ""
-    }" data-page="1">1</div></li>`;
+    if (currentPage > 1)
+      pagination.appendChild(createPageItem("←", currentPage - 1));
+    pagination.appendChild(createPageItem("1", 1, currentPage === 1));
 
-    if (currentPage > 3) {
-      pagination.innerHTML += `<li class="pagination-ellipsis">...</li>`;
-    }
+    if (currentPage > 3) pagination.appendChild(createEllipsis());
 
     for (
       let i = Math.max(2, currentPage - 1);
       i <= Math.min(totalPages - 1, currentPage + 1);
       i++
     ) {
-      pagination.innerHTML += `<li><div class="pagination-page${
-        currentPage === i ? " active" : ""
-      }" data-page="${i}">${i}</div></li>`;
+      pagination.appendChild(createPageItem(i, i, currentPage === i));
     }
 
-    if (currentPage < totalPages - 2) {
-      pagination.innerHTML += `<li class="pagination-ellipsis">...</li>`;
-    }
+    if (currentPage < totalPages - 2) pagination.appendChild(createEllipsis());
+    pagination.appendChild(
+      createPageItem(totalPages, totalPages, currentPage === totalPages)
+    );
 
-    pagination.innerHTML += `<li><div class="pagination-page${
-      currentPage === totalPages ? " active" : ""
-    }" data-page="${totalPages}">${totalPages}</div></li>`;
-
-    if (currentPage < totalPages) {
-      pagination.innerHTML += `<li><div class="pagination-arrow" data-page="${
-        currentPage + 1
-      }">→</div></li>`;
-    }
+    if (currentPage < totalPages)
+      pagination.appendChild(createPageItem("→", currentPage + 1));
   }
 
-  pagination.addEventListener("click", function (e) {
-    const el = e.target;
-    if (el.dataset.page) {
-      renderComments(parseInt(el.dataset.page));
+  function createEllipsis() {
+    const li = document.createElement("li");
+    li.className = "pagination-ellipsis";
+    li.textContent = "...";
+    return li;
+  }
+
+  pagination.addEventListener("click", (e) => {
+    const target = e.target.closest("[data-page]");
+    if (target) {
+      const page = parseInt(target.dataset.page, 10);
+      if (!isNaN(page)) {
+        currentPage = page;
+        renderComments(currentPage);
+      }
     }
   });
 
-  function formatDate(dateStr) {
-    const timestamp = new Date(dateStr).getTime();
-    const now = Date.now();
-    const diff = Math.floor((now - timestamp) / 1000);
-
-    if (diff < 60) return "только что";
-    if (diff < 3600) return Math.floor(diff / 60) + " мин назад";
-    if (diff < 86400) return Math.floor(diff / 3600) + " ч назад";
-    if (diff < 604800) return Math.floor(diff / 86400) + " дн назад";
-    return new Date(dateStr).toLocaleDateString("ru-RU");
-  }
-
   function getAuthor(comment) {
-    if (comment.user_id && comment.author_role === "administrator") {
-      return "Менеджер " + comment.author;
+    if (comment.author_role === "administrator") {
+      return "Менеджер " + escapeHtml(comment.author);
     }
-    return comment.author || "Гость";
+    return escapeHtml(comment.author || "Гость");
   }
 
   function escapeHtml(text) {
@@ -122,5 +132,5 @@ document.addEventListener("DOMContentLoaded", function () {
     return div.innerHTML;
   }
 
-  renderComments(1);
+  renderComments(currentPage);
 });
