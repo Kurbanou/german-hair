@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) otherItem.classList.remove("is-open");
+      });
+      item.classList.toggle("is-open");
+    });
+  });
+
   const allComments = window.allComments || [];
   const commentsPerPage = window.commentsPerPage || 5;
 
