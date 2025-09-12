@@ -79,20 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       li.innerHTML = `
         <div class="comment-header">
-          <span class="comment-author">${getAuthor(comment)}</span>
-          ${
-            comment.author_role
-              ? `<span class="comment-role">${escapeHtml(
-                  comment.author_role
-                )}</span>`
-              : ""
-          }
+        
           <span class="comment-date">${escapeHtml(
             comment.formatted_date
           )}</span>
         </div>
         <div class="comment-body">
-          <div class="comment-content">${escapeHtml(comment.content)}</div>
+          <span class="comment-name">${getAuthor(comment)}:</span>
+          
+          <span class="comment-content">${escapeHtml(comment.content)}</span>
         </div>
       `;
 
@@ -114,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isDisabled = false
       ) => {
         const li = document.createElement("li");
-        const btn = document.createElement("span");
+        const btn = document.createElement("button");
         btn.textContent = label;
         btn.dataset.page = page;
         if (isActive) btn.classList.add("active");
@@ -136,44 +131,47 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination.appendChild(createPageButton("←", currentPage - 1));
       }
 
-      // Первая страница
-      pagination.appendChild(createPageButton("1", 1, currentPage === 1));
+      const pages = [];
 
-      // Текущая страница (некликабельная)
-      if (
-        currentPage !== 1 &&
-        currentPage !== totalPages &&
-        currentPage !== totalPages - 1
-      ) {
-        pagination.appendChild(
-          createPageButton(String(currentPage), currentPage, true, true)
-        );
+      if (totalPages <= 5) {
+        for (let i = 1; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        pages.push(1); // всегда первая
+
+        if (currentPage > 3) {
+          pages.push("…");
+        }
+
+        const start = Math.max(2, currentPage - 1);
+        const end = Math.min(totalPages - 1, currentPage + 1);
+
+        for (let i = start; i <= end; i++) {
+          pages.push(i);
+        }
+
+        if (currentPage < totalPages - 2) {
+          pages.push("…");
+        }
+
+        pages.push(totalPages); // всегда последняя
       }
 
-      // Многоточие (только после текущей)
-      if (currentPage < totalPages - 2) {
-        const ellipsis = document.createElement("li");
-        ellipsis.textContent = "…";
-        pagination.appendChild(ellipsis);
-      }
-
-      // Две последние страницы
-      if (totalPages > 1) {
-        pagination.appendChild(
-          createPageButton(
-            String(totalPages - 1),
-            totalPages - 1,
-            currentPage === totalPages - 1
-          )
-        );
-        pagination.appendChild(
-          createPageButton(
-            String(totalPages),
-            totalPages,
-            currentPage === totalPages
-          )
-        );
-      }
+      // Отрисовка
+      pages.forEach((item) => {
+        if (item === "…") {
+          const li = document.createElement("li");
+          li.textContent = "…";
+          pagination.appendChild(li);
+        } else {
+          const isActive = item === currentPage;
+          const isDisabled = isActive;
+          pagination.appendChild(
+            createPageButton(String(item), item, isActive, isDisabled)
+          );
+        }
+      });
 
       // → Следующая
       if (currentPage < totalPages) {
