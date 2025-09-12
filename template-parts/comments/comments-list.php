@@ -1,53 +1,50 @@
 <?php
 
 /**
- * Шаблон: Вывод одобренных комментариев с пагинацией и датой "n дней назад"
+ * Шаблон: Комментарии с пагинацией и датой "n дней назад"
  */
 
-
-
-// Получение данных
 $post_id = get_query_var('post_id') ?: get_the_ID();
-$cpage = get_query_var('cpage') ?: 1;
-$comments_per_page = 2;
+$comments_per_page = 5;
 
-$comment_count = get_comments([
+// Получаем все одобренные комментарии
+$all_comments = get_comments([
     'post_id' => $post_id,
     'status'  => 'approve',
-    'count'   => true,
+    'orderby' => 'comment_date',
+    'order'   => 'ASC',
 ]);
 
-$total_pages = ceil($comment_count / $comments_per_page);
+// Группируем: родитель → ответы
+$ordered_comments = [];
 
-// Вывод комментариев
-echo '<ul class="comment-list">';
+foreach ($all_comments as $comment) {
+    $comment->author = get_comment_author($comment);
+    $comment->author_role = get_userdata($comment->user_id)?->roles[0] ?? '';
+    $comment->comment_content = $comment->comment_content;
+    $comment->comment_date = $comment->comment_date;
 
-wp_list_comments([
-    'type'         => 'comment',
-    'status'       => 'approve',
-    'style'        => 'ul',
-    'avatar_size'  => 40,
-    'callback'     => 'custom_comment_renderer',
-    'per_page'     => $comments_per_page,
-    'page'         => $cpage,
-    'reverse_top_level' => false,
-]);
+    if ($comment->comment_parent == 0) {
+        $ordered_comments[] = $comment;
 
-echo '</ul>';
-
-// Пагинация
-if ($total_pages > 1) {
-    echo '<div class="comment-pagination">';
-    echo paginate_links([
-        'base'      => trailingslashit(get_permalink($post_id)) . 'comment-page-%#%/',
-        'format'    => '',
-        'current'   => max(1, $cpage),
-        'total'     => $total_pages,
-        'prev_text' => '← Назад',
-        'next_text' => 'Вперёд →',
-        'mid_size'  => 2,
-        'end_size'  => 1,
-        'type'      => 'plain',
-    ]);
-    echo '</div>';
+        foreach ($all_comments as $reply) {
+            if ($reply->comment_parent == $comment->comment_ID) {
+                $reply->author = get_comment_author($reply);
+                $reply->author_role = get_userdata($reply->user_id)?->roles[0] ?? '';
+                $reply->comment_content = $reply->comment_content;
+                $reply->comment_date = $reply->comment_date;
+                $ordered_comments[] = $reply;
+            }
+        }
+    }
 }
+
+// Вывод контейнеров
+echo '<ul id="comment-list" class="comment-list"></ul>';
+echo '<nav class="comment-pagination"><ul id="pagination-list" class="pagination-list"></ul></nav>';
+
+// Передаём данные в JS
+echo '<script>';
+echo 'const allComments = ' . wp_json_encode($ordered_comments) . ';';
+echo 'const commentsPerPage = ' . $comments_per_page . ';';
+echo '</script>';

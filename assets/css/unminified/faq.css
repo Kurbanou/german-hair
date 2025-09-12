@@ -154,6 +154,41 @@
   padding-left: 50px;
 }
 
+/* pag */
+.comment-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination-list {
+  display: inline-flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-page,
+.pagination-arrow {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f0f0f0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.pagination-page.active {
+  background: #0073aa;
+  color: #fff;
+}
+
+.pagination-ellipsis {
+  padding: 6px 12px;
+  color: #999;
+}
+
 @media (max-width: 991px) {
   .children .comment-body {
     padding-left: 0px;
