@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         label,
         page,
         isActive = false,
-        isDisabled = false
+        isDisabled = false,
+        extraClass = ""
       ) => {
         const li = document.createElement("li");
         const btn = document.createElement("button");
@@ -140,13 +141,19 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
 
+        if (extraClass) {
+          btn.classList.add(extraClass);
+        }
+
         li.appendChild(btn);
         return li;
       };
 
       // ← Предыдущая
       if (currentPage > 1) {
-        pagination.appendChild(createPageButton(left, currentPage - 1));
+        pagination.appendChild(
+          createPageButton(left, currentPage - 1, false, false, "arrow")
+        );
       }
 
       const pages = [];
@@ -180,7 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
       pages.forEach((item) => {
         if (item === "…") {
           const li = document.createElement("li");
-          li.textContent = "…";
+          const span = document.createElement("span");
+          span.textContent = "…";
+          span.className = "pagination-ellipsis";
+          li.appendChild(span);
           pagination.appendChild(li);
         } else {
           const isActive = item === currentPage;
@@ -193,7 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // → Следующая
       if (currentPage < totalPages) {
-        pagination.appendChild(createPageButton(right, currentPage + 1));
+        pagination.appendChild(
+          createPageButton(right, currentPage + 1, false, false, "arrow")
+        );
       }
     }
 

@@ -156,38 +156,54 @@
 }
 
 /* pag */
+
 .comment-pagination {
-  margin-top: 20px;
-  text-align: center;
+  width: auto;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-top: 30px;
 }
 
 .pagination-list {
-  display: inline-flex;
+  display: flex;
   gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-.pagination-page,
-.pagination-arrow {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background: #f0f0f0;
-  text-decoration: none;
-  color: #333;
+.pagination-list button,
+.pagination-ellipsis {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
   font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: rgba(33, 92, 129, 1);
+  border: 1px solid rgba(33, 92, 129, 1);
+  border-radius: 10px;
+  user-select: none;
+  cursor: pointer;
 }
 
-.pagination-page.active {
-  background: #0073aa;
-  color: #fff;
+.pagination-list .arrow {
+  border: none;
+}
+
+.pagination-list button.active {
+  pointer-events: none;
+  background: rgba(255, 241, 226, 1);
+  border: 1px solid rgba(255, 241, 226, 1);
+  color: rgba(184, 132, 102, 1);
 }
 
 .pagination-ellipsis {
-  padding: 6px 12px;
-  color: #999;
+  pointer-events: none;
 }
 
 @media (max-width: 991px) {
