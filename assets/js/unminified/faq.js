@@ -269,9 +269,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((span) => (span.textContent = ""));
 
       const fields = [
-        { name: "author", label: "Это обязательное поле" },
-        { name: "phone", label: "Это обязательное поле" },
-        { name: "comment", label: "Это обязательное поле" },
+        { name: "author", label: "Это обязательное поле*" },
+        { name: "phone", label: "Это обязательное поле*" },
+        { name: "comment", label: "Это обязательное поле*" },
       ];
 
       fields.forEach(({ name, label }) => {
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!firstErrorField) firstErrorField = input;
           hasError = true;
         } else if (name === "phone" && !/^\+?\d{7,15}$/.test(input.value)) {
-          if (errorSpan) errorSpan.textContent = "Введены некорректные данные";
+          if (errorSpan) errorSpan.textContent = "Введены некорректные данные*";
           if (!firstErrorField) firstErrorField = input;
           hasError = true;
         }
