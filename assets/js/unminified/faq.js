@@ -303,11 +303,23 @@ document.addEventListener("DOMContentLoaded", () => {
         firstErrorField.focus();
       }
 
-      if (!hasError) {
-        form.submit(); // сначала отправка
-        showPopup("Спасибо! Ваш вопрос отправлен."); // потом попап
-        form.reset();
-      }
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            showPopup("Спасибо! Ваш вопрос отправлен.");
+            form.reset();
+          } else {
+            showPopup("Ошибка при отправке. Попробуйте позже.");
+          }
+        })
+        .catch(() => {
+          showPopup("Ошибка соединения. Проверьте интернет.");
+        });
     });
   });
 
