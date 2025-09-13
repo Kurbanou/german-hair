@@ -304,8 +304,38 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (!hasError) {
-        form.submit(); // или AJAX
+        form.submit(); // сначала отправка
+        showPopup("Спасибо! Ваш вопрос отправлен."); // потом попап
+        form.reset();
       }
     });
   });
+
+  //  Popup-функция
+  function showPopup(message = "Спасибо! Ваш вопрос отправлен.") {
+    const overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+
+    const popup = document.createElement("div");
+    popup.className = "popup";
+
+    const text = document.createElement("p");
+    text.className = "popup-message";
+    text.textContent = message;
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "popup-close";
+    closeBtn.textContent = "Закрыть";
+
+    popup.appendChild(text);
+    popup.appendChild(closeBtn);
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
+    document.body.classList.add("popup-open");
+
+    closeBtn.addEventListener("click", () => {
+      overlay.remove();
+      document.body.classList.remove("popup-open");
+    });
+  }
 });
