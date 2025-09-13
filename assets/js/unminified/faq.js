@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
         .then((response) => {
           if (response.ok) {
-            showPopup("Спасибо! Ваш вопрос отправлен.");
+            showPopup("Ваше сообщение отправлено!");
             form.reset();
           } else {
             showPopup("Ошибка при отправке. Попробуйте позже.");
@@ -324,24 +324,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //  Popup-функция
-  function showPopup(message = "Спасибо! Ваш вопрос отправлен.") {
+  function showPopup(message = "Ваше сообщение отправлено!") {
     const overlay = document.createElement("div");
     overlay.className = "popup-overlay";
+
+    const container = document.createElement("div");
+    container.className = "container";
 
     const popup = document.createElement("div");
     popup.className = "popup";
 
     const text = document.createElement("p");
-    text.className = "popup-message";
+    text.className = "popup-message h3 text-second-dark mb-sm";
     text.textContent = message;
 
+    const sub = document.createElement("p");
+    sub.className = "weight-500 sub";
+    sub.textContent =
+      "Как только на ваше сообщение придет ответ, вы получите письменное уведомление на вашу почту.";
+
     const closeBtn = document.createElement("button");
-    closeBtn.className = "popup-close";
+    closeBtn.className = "popup-close btn btn-light btn-glowing";
     closeBtn.textContent = "Закрыть";
 
     popup.appendChild(text);
+    popup.appendChild(sub);
     popup.appendChild(closeBtn);
-    overlay.appendChild(popup);
+    container.appendChild(popup);
+    overlay.appendChild(container);
     document.body.appendChild(overlay);
     document.body.classList.add("popup-open");
 
