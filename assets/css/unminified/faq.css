@@ -38,7 +38,7 @@
 }
 
 .faq.content .section-bg {
-  transform: translateY(-120px);
+  transform: translateY(-450px);
 }
 
 /* content */
@@ -281,6 +281,7 @@ textarea {
 
 textarea {
   min-height: 124px;
+  resize: none;
 }
 
 .submit {

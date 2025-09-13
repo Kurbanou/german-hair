@@ -9,9 +9,10 @@
 <section class="faq content">
     <div class="section-bg rtl">
         <!-- SVG background -->
-        <svg width="1920" height="201" viewBox="0 0 1920 201" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2521 200C2521 200 2044.18 144.04 1723 62C1539 15 1327.62 -0.0513229 1075.5 39C872.05 70.513 649.5 103.5 443.5 92.5C249.071 82.1179 135.101 48.4253 -6 1" stroke="#967866" stroke-opacity="0.2" />
-            <rect width="22" height="22" rx="11" transform="matrix(-1 0 0 1 1698 44)" fill="#EAE4E0" />
+       <svg width="1920" height="489" viewBox="0 0 1920 489" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <path d="M2293 488C2293 488 1831.61 360.397 1522.26 342.847C1283.35 329.294 1145.5 336.473 909.726 368.591C719.469 394.509 585.757 405.5 387.5 405.5C205.478 405.5 -37.0489 340.005 -169 301" stroke="#967866" stroke-opacity="0.2"/>
+        <rect x="1783" y="382" width="18" height="18" rx="9" transform="rotate(180 1783 382)" fill="#EAE4E0"/>
         </svg>
     </div>
     <div class="container">
