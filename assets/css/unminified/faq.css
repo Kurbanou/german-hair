@@ -225,6 +225,8 @@
 .pagination-ellipsis {
   pointer-events: none;
 }
+
+/* form */
 .comment-form_content {
   margin-top: 100px;
   width: 100%;
@@ -289,10 +291,6 @@ textarea {
   display: block;
 }
 
-input[type="checkbox"]:invalid {
-  border: 2px solid rgba(255, 89, 89, 1);
-}
-
 .form-group,
 .form-line {
   margin-bottom: 15px;
@@ -316,6 +314,20 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   background: rgba(33, 92, 129, 1);
+}
+
+.invalid-checkbox {
+  border: 2px solid rgba(255, 89, 89, 1) !important;
+}
+
+.error-message {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: rgba(255, 89, 89, 1);
 }
 
 @media (max-width: 991px) {

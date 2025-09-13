@@ -8,8 +8,8 @@
     <div class="comment-form_content">
       <h3 class="h3 text-second-dark mb-sm">Не нашли то, что искали?</h3>
       <p class="weight-500 sub">У вас остались вопросы? Задайте их прямо тут, и наши менеджеры ответят вам в рабочее время!</p>
-      <form  class="comment-form_form" method="post" action="<?php echo site_url('/wp-comments-post.php'); ?>">
-        
+      <form  novalidate class="comment-form_form" method="post" action="<?php echo site_url('/wp-comments-post.php'); ?>">
+
         <div class="form-group">
           <div>
             <input type="text" name="author" required placeholder="Ваше имя">
@@ -18,7 +18,7 @@
          
           <div>
             <input type="tel" name="phone" required placeholder="Телефон">
-            <span class="error-message" data-for="tel"></span>
+            <span class="error-message" data-for="phone"></span>
           </div>
           
         </div>

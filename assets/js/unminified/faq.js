@@ -229,17 +229,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // форма комментов
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".comment-form_form");
   if (!form) return;
 
-  // Маска для телефона: только цифры и "+"
   const phoneInput = form.querySelector('input[name="phone"]');
   if (phoneInput) {
+    // Маска при вводе
     phoneInput.addEventListener("input", () => {
       phoneInput.value = phoneInput.value
-        .replace(/[^\d+]/g, "") // Удаляем всё кроме цифр и "+"
-        .replace(/^(\+)?(\d{0,15})/, "$1$2"); // Ограничиваем длину
+        .replace(/[^\d+]/g, "")
+        .replace(/^(\+)?(\d{0,15})/, "$1$2");
+    });
+
+    // Проверка при потере фокуса
+    phoneInput.addEventListener("blur", () => {
+      const errorSpan = form.querySelector('.error-message[data-for="phone"]');
+      errorSpan.textContent = "";
+      const value = phoneInput.value.trim();
+
+      if (value === "") {
+        errorSpan.textContent = "Это обязательное поле";
+      } else if (!/^\+?\d{7,15}$/.test(value)) {
+        errorSpan.textContent = "Введены некорректные данные";
+      }
     });
   }
 
@@ -247,17 +261,17 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     let hasError = false;
+    let firstErrorField = null;
 
-    // Очистка предыдущих ошибок
+    // Очистка ошибок
     form
       .querySelectorAll(".error-message")
       .forEach((span) => (span.textContent = ""));
 
-    // Проверка текстовых полей
     const fields = [
-      { name: "author", label: "Это обязательное поле" },
-      { name: "phone", label: "Это обязательное поле" },
-      { name: "comment", label: "Это обязательное поле" },
+      { name: "author", label: "Это обязательное поле*" },
+      { name: "phone", label: "Это обязательное поле*" },
+      { name: "comment", label: "Это обязательное поле*" },
     ];
 
     fields.forEach(({ name, label }) => {
@@ -268,14 +282,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!input || input.value.trim() === "") {
         if (errorSpan) errorSpan.textContent = label;
+        if (!firstErrorField) firstErrorField = input;
         hasError = true;
       } else if (name === "phone" && !/^\+?\d{7,15}$/.test(input.value)) {
-        if (errorSpan) errorSpan.textContent = "Введены некорректные данные";
+        if (errorSpan) errorSpan.textContent = "Введены некорректные данные*";
+        if (!firstErrorField) firstErrorField = input;
         hasError = true;
       }
     });
 
-    // Проверка чекбокса — только визуально
+    // Чекбокс — только визуально
     const consent = form.elements["consent"];
     if (consent && !consent.checked) {
       consent.classList.add("invalid-checkbox");
@@ -284,7 +300,11 @@ document.addEventListener("DOMContentLoaded", () => {
       consent.classList.remove("invalid-checkbox");
     }
 
-    // Если всё ок — отправляем
+    // Автофокус
+    if (hasError && firstErrorField) {
+      firstErrorField.focus();
+    }
+
     if (!hasError) {
       form.submit(); // или AJAX
     }
