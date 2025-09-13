@@ -113,51 +113,69 @@ function get_media_placeholder()
 }
 
 
+// Рекурсивная функция для плоской структуры: родитель → ответы
+function plural_form($number, $forms) {
+    $number = abs($number) % 100;
+    $n1 = $number % 10;
 
-function human_time_diff_custom($comment_date)
-{ // Кастомный вывод даты комента
-	$timestamp = strtotime($comment_date);
-	$now = current_time('timestamp');
-	$diff = $now - $timestamp;
-
-	if ($diff < 60) return 'только что';
-	elseif ($diff < 3600) return floor($diff / 60) . ' мин назад';
-	elseif ($diff < 86400) return floor($diff / 3600) . ' ч назад';
-	elseif ($diff < 604800) return floor($diff / 86400) . ' дн назад';
-	else return date('d.m.Y', $timestamp);
+    if ($number > 10 && $number < 20) return $forms[2];
+    if ($n1 > 1 && $n1 < 5) return $forms[1];
+    if ($n1 == 1) return $forms[0];
+    return $forms[2];
 }
 
-function custom_comment_renderer($comment, $args, $depth)
-{ // Кастомный вывод комментария
-	$user_id = $comment->user_id;
-	$author = get_comment_author($comment);
-	$role_class = 'comment-user';
+function format_human_date($raw_date, $now = null) {
+    $timestamp = strtotime($raw_date);
+    if (!$timestamp) return '';
 
-	// Определяем роль
-	if ($user_id) {
-		$user = get_userdata($user_id);
-		if ($user && in_array('administrator', $user->roles)) {
-			$role_class = 'comment-manager';
-			$author = 'Менеджер ' . $user->display_name;
-		}
-	}
+    $now = $now ?: time();
+    $diff = $now - $timestamp;
+    $time = date('H:i', $timestamp);
 
-	// Ответ или корневой
-	$is_reply = $comment->comment_parent > 0;
-	$reply_class = $is_reply ? 'comment-reply' : 'comment-root';
+    if ($diff < 60) {
+        $label = 'только что';
+    } elseif ($diff < 3600) {
+        $minutes = floor($diff / 60);
+        $label = "{$minutes} " . plural_form($minutes, ['минута', 'минуты', 'минут']) . " назад";
+    } elseif ($diff < 86400) {
+        $hours = floor($diff / 3600);
+        $label = "{$hours} " . plural_form($hours, ['час', 'часа', 'часов']) . " назад";
+    } else {
+        $days = floor($diff / 86400);
+        $label = $days === 1
+            ? 'вчера'
+            : "{$days} " . plural_form($days, ['день', 'дня', 'дней']) . " назад";
+    }
 
-	// Контент и дата
-	$content = get_comment_text($comment);
-	$date = human_time_diff_custom($comment->comment_date);
+    return "{$label}, {$time}";
+}
 
-	// Вывод HTML
-?>
-	<li class="<?php echo esc_attr("$role_class $reply_class"); ?>">
-		<div class="comment-date"><?php echo esc_html($date); ?></div>
-		<div class="comment-body">
-			<span class="comment-name"><?php echo esc_html($author); ?>:</span>
-			<span class="comment-content"><?php echo esc_html($content); ?></span>
-		</div>
-	</li>
-<?php
+
+
+function flatten_comments($grouped, $parent_id = 0, $now = null) {
+    $result = [];
+    $now = $now ?: time();
+
+    foreach ($grouped[$parent_id] ?? [] as $comment) {
+        $user = get_userdata($comment->user_id);
+        $timestamp = strtotime($comment->comment_date);
+        $days = $timestamp ? floor(($now - $timestamp) / 86400) : null;
+
+        $comment_data = [
+            'id'             => $comment->comment_ID,
+            'parent_id'      => $comment->comment_parent,
+            'author'         => get_comment_author($comment),
+            'author_role'    => $user?->roles[0] ?? '',
+            'content'        => $comment->comment_content,
+            'raw_date'       => $comment->comment_date,
+            'days_ago'       => $days,
+            'formatted_date' => format_human_date($comment->comment_date, $now),
+            'is_reply'       => $comment->comment_parent != 0,
+        ];
+
+        $result[] = $comment_data;
+        $result = array_merge($result, flatten_comments($grouped, $comment->comment_ID, $now));
+    }
+
+    return $result;
 }

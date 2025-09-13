@@ -21,31 +21,10 @@ foreach ($all_comments as $comment) {
     $grouped[$comment->comment_parent][] = $comment;
 }
 
-// Рекурсивная функция для плоской структуры: родитель → ответы
-function flatten_comments($grouped, $parent_id = 0, $now = null) {
-    $result = [];
-    $now = $now ?: time();
 
-    foreach ($grouped[$parent_id] ?? [] as $comment) {
-        $user = get_userdata($comment->user_id);
-        $comment_data = [
-            'id'             => $comment->comment_ID,
-            'parent_id'      => $comment->comment_parent,
-            'author'         => get_comment_author($comment),
-            'author_role'    => $user?->roles[0] ?? '',
-            'content'        => $comment->comment_content,
-            'raw_date'       => $comment->comment_date,
-            'days_ago'       => floor(($now - strtotime($comment->comment_date)) / 86400),
-            'formatted_date' => human_time_diff(strtotime($comment->comment_date), $now) . ' назад',
-            'is_reply'       => $comment->comment_parent != 0,
-        ];
 
-        $result[] = $comment_data;
-        $result = array_merge($result, flatten_comments($grouped, $comment->comment_ID, $now));
-    }
 
-    return $result;
-}
+
 
 $ordered_comments = flatten_comments($grouped);
 

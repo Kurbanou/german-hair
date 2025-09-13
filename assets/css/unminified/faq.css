@@ -34,7 +34,7 @@
 }
 
 .faq.content .section-bg {
-  transform: translateY(-100px);
+  transform: translateY(-120px);
 }
 
 /* content */
@@ -128,6 +128,18 @@
   background: rgba(234, 228, 224, 0.2);
   padding: 20px;
   border-radius: 14px;
+  animation: grow 0.3s ease forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 .comment-date {
