@@ -21,11 +21,6 @@ foreach ($all_comments as $comment) {
     $grouped[$comment->comment_parent][] = $comment;
 }
 
-
-
-
-
-
 $ordered_comments = flatten_comments($grouped);
 
 // Вывод контейнеров
@@ -39,5 +34,3 @@ echo 'window.commentsPerPage = ' . $comments_per_page . ';';
 echo 'console.log("allComments:", window.allComments);';
 echo 'console.log("commentsPerPage:", window.commentsPerPage);';
 echo '</script>';
-
-

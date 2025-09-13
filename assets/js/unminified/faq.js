@@ -1,3 +1,4 @@
+// аккардеон faq
 document.addEventListener("DOMContentLoaded", function () {
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// комменты
 document.addEventListener("DOMContentLoaded", () => {
   const waitForComments = (callback, timeout = 5000) => {
     const start = Date.now();
@@ -223,5 +225,68 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     renderComments(currentPage);
+  });
+});
+
+// форма комментов
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".comment-form_form");
+  if (!form) return;
+
+  // Маска для телефона: только цифры и "+"
+  const phoneInput = form.querySelector('input[name="phone"]');
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => {
+      phoneInput.value = phoneInput.value
+        .replace(/[^\d+]/g, "") // Удаляем всё кроме цифр и "+"
+        .replace(/^(\+)?(\d{0,15})/, "$1$2"); // Ограничиваем длину
+    });
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let hasError = false;
+
+    // Очистка предыдущих ошибок
+    form
+      .querySelectorAll(".error-message")
+      .forEach((span) => (span.textContent = ""));
+
+    // Проверка текстовых полей
+    const fields = [
+      { name: "author", label: "Это обязательное поле" },
+      { name: "phone", label: "Это обязательное поле" },
+      { name: "comment", label: "Это обязательное поле" },
+    ];
+
+    fields.forEach(({ name, label }) => {
+      const input = form.elements[name];
+      const errorSpan = form.querySelector(
+        `.error-message[data-for="${name}"]`
+      );
+
+      if (!input || input.value.trim() === "") {
+        if (errorSpan) errorSpan.textContent = label;
+        hasError = true;
+      } else if (name === "phone" && !/^\+?\d{7,15}$/.test(input.value)) {
+        if (errorSpan) errorSpan.textContent = "Введены некорректные данные";
+        hasError = true;
+      }
+    });
+
+    // Проверка чекбокса — только визуально
+    const consent = form.elements["consent"];
+    if (consent && !consent.checked) {
+      consent.classList.add("invalid-checkbox");
+      hasError = true;
+    } else {
+      consent.classList.remove("invalid-checkbox");
+    }
+
+    // Если всё ок — отправляем
+    if (!hasError) {
+      form.submit(); // или AJAX
+    }
   });
 });
