@@ -228,85 +228,84 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// форма комментов
+// форма
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".comment-form_form");
-  if (!form) return;
+  const forms = document.querySelectorAll("form");
 
-  const phoneInput = form.querySelector('input[name="phone"]');
-  if (phoneInput) {
-    // Маска при вводе
-    phoneInput.addEventListener("input", () => {
-      phoneInput.value = phoneInput.value
-        .replace(/[^\d+]/g, "")
-        .replace(/^(\+)?(\d{0,15})/, "$1$2");
-    });
+  forms.forEach((form) => {
+    const phoneInput = form.querySelector('input[name="phone"]');
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => {
+        phoneInput.value = phoneInput.value
+          .replace(/[^\d+]/g, "")
+          .replace(/^(\+)?(\d{0,15})/, "$1$2");
+      });
 
-    // Проверка при потере фокуса
-    phoneInput.addEventListener("blur", () => {
-      const errorSpan = form.querySelector('.error-message[data-for="phone"]');
-      errorSpan.textContent = "";
-      const value = phoneInput.value.trim();
+      phoneInput.addEventListener("blur", () => {
+        const errorSpan = form.querySelector(
+          '.error-message[data-for="phone"]'
+        );
+        if (!errorSpan) return;
+        errorSpan.textContent = "";
+        const value = phoneInput.value.trim();
 
-      if (value === "") {
-        errorSpan.textContent = "Это обязательное поле";
-      } else if (!/^\+?\d{7,15}$/.test(value)) {
-        errorSpan.textContent = "Введены некорректные данные";
+        if (value === "") {
+          errorSpan.textContent = "Это обязательное поле";
+        } else if (!/^\+?\d{7,15}$/.test(value)) {
+          errorSpan.textContent = "Введены некорректные данные";
+        }
+      });
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let hasError = false;
+      let firstErrorField = null;
+
+      form
+        .querySelectorAll(".error-message")
+        .forEach((span) => (span.textContent = ""));
+
+      const fields = [
+        { name: "author", label: "Это обязательное поле" },
+        { name: "phone", label: "Это обязательное поле" },
+        { name: "comment", label: "Это обязательное поле" },
+      ];
+
+      fields.forEach(({ name, label }) => {
+        const input = form.elements[name];
+        const errorSpan = form.querySelector(
+          `.error-message[data-for="${name}"]`
+        );
+
+        if (!input || input.value.trim() === "") {
+          if (errorSpan) errorSpan.textContent = label;
+          if (!firstErrorField) firstErrorField = input;
+          hasError = true;
+        } else if (name === "phone" && !/^\+?\d{7,15}$/.test(input.value)) {
+          if (errorSpan) errorSpan.textContent = "Введены некорректные данные";
+          if (!firstErrorField) firstErrorField = input;
+          hasError = true;
+        }
+      });
+
+      const consent = form.elements["consent"];
+      if (consent && !consent.checked) {
+        consent.classList.add("invalid-checkbox");
+        hasError = true;
+      } else if (consent) {
+        consent.classList.remove("invalid-checkbox");
+      }
+
+      if (hasError && firstErrorField) {
+        firstErrorField.focus();
+      }
+
+      if (!hasError) {
+        form.submit(); // или AJAX
       }
     });
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let hasError = false;
-    let firstErrorField = null;
-
-    // Очистка ошибок
-    form
-      .querySelectorAll(".error-message")
-      .forEach((span) => (span.textContent = ""));
-
-    const fields = [
-      { name: "author", label: "Это обязательное поле*" },
-      { name: "phone", label: "Это обязательное поле*" },
-      { name: "comment", label: "Это обязательное поле*" },
-    ];
-
-    fields.forEach(({ name, label }) => {
-      const input = form.elements[name];
-      const errorSpan = form.querySelector(
-        `.error-message[data-for="${name}"]`
-      );
-
-      if (!input || input.value.trim() === "") {
-        if (errorSpan) errorSpan.textContent = label;
-        if (!firstErrorField) firstErrorField = input;
-        hasError = true;
-      } else if (name === "phone" && !/^\+?\d{7,15}$/.test(input.value)) {
-        if (errorSpan) errorSpan.textContent = "Введены некорректные данные*";
-        if (!firstErrorField) firstErrorField = input;
-        hasError = true;
-      }
-    });
-
-    // Чекбокс — только визуально
-    const consent = form.elements["consent"];
-    if (consent && !consent.checked) {
-      consent.classList.add("invalid-checkbox");
-      hasError = true;
-    } else {
-      consent.classList.remove("invalid-checkbox");
-    }
-
-    // Автофокус
-    if (hasError && firstErrorField) {
-      firstErrorField.focus();
-    }
-
-    if (!hasError) {
-      form.submit(); // или AJAX
-    }
   });
 });
