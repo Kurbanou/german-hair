@@ -1,4 +1,7 @@
 <?php
+/**   
+ * Description: вывод аккардеона вопросов - ответов через carbon 
+ */
 
 $faq_title = carbon_get_post_meta(get_the_ID(), 'faq_title');
 $faq_items = carbon_get_post_meta(get_the_ID(), 'faq_items');

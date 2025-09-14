@@ -1,4 +1,7 @@
 <?php
+/**   
+ * Description: блок 2 коментария для страницы "О нас" через carbon
+ */
 
 $reviews = carbon_get_post_meta(get_queried_object_id(), 'page_reviews');
 

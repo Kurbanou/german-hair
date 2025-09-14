@@ -1,8 +1,7 @@
 <?php
 
-/**
- * Template Name: container comments
- * Description: Шаблон страницы "Вопросы и ответы"
+/** 
+ * Description: контейнер для страницы "Вопросы и ответы"
  */
 
 $post_id = get_the_ID();
