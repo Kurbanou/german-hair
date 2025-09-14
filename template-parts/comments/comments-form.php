@@ -27,7 +27,7 @@
         <input type="hidden" name="email" value="no@email.local">
 
         <div class="form-line">
-          <textarea name="comment" required placeholder="Ваш вопрос"></textarea>
+          <textarea name="comment" required placeholder="Ваш вопрос..."></textarea>
           <span class="error-message" data-for="comment"></span>
         </div>
 
