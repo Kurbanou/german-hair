@@ -376,6 +376,11 @@ body.popup-open {
     grid-template-columns: repeat(1, 1fr);
   }
 
+  .comment-form * {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
   .comment-form {
     margin-top: 50px;
   }
