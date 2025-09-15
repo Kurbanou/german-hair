@@ -159,6 +159,10 @@
     font-size: 32px;
     line-height: 52px;
   }
+
+  .contacts_block_item {
+    min-height: 189px;
+  }
 }
 
 @media screen and (min-width: 990px) {

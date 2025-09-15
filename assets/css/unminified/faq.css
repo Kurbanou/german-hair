@@ -47,6 +47,17 @@
   position: relative;
 }
 
+@media (max-width: 490px) {
+  .faq.content .flex {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+}
+
+.svg-container {
+  flex-shrink: 0;
+  margin-left: 24px;
+}
 /* faq-section */
 .faq-section {
   margin-top: 60px;
@@ -245,6 +256,10 @@
   justify-content: center;
   align-items: center;
   min-height: 632px;
+}
+
+form .btn {
+  min-width: 195px;
 }
 
 .comment-form .sub {

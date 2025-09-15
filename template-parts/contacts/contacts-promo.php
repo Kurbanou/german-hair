@@ -49,8 +49,8 @@ function get_contacts_block_data()
             'icon'  => 'rekv-group',
             'title' => 'Реквизиты',
             'content' => [
-                ['type' => 'text', 'value' => get_theme_mod('main_contact_inn_setting', '')],
                 ['type' => 'text', 'value' => get_theme_mod('main_contact_ogrnip_setting', '')],
+                ['type' => 'text', 'value' => get_theme_mod('main_contact_inn_setting', '')],
             ],
         ],
     ];
