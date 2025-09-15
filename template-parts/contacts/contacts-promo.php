@@ -34,8 +34,8 @@ function get_contacts_block_data()
             'icon'  => 'social-group',
             'title' => 'Социальные сети',
             'content' => [
-                ['type' => 'link', 'value' => get_theme_mod('main_contact_instagram_setting', '')],
-                ['type' => 'phone', 'value' => get_phone_formated(get_theme_mod('main_contact_whatsapp_setting', ''))],
+                ['type' => 'link', 'value' => get_theme_mod('main_contact_instagram_setting', ''), 'icon' => ''],
+                ['type' => 'phone', 'value' => get_phone_formated(get_theme_mod('main_contact_whatsapp_setting', '')), 'icon' => 'whats'],
             ],
         ],
         [
@@ -84,29 +84,35 @@ $contacts_block = get_contacts_block_data();
                             <div class="contacts_block_item_title"><?php echo esc_html($contact['title']); ?></div>
                         <?php endif; ?>
                         <?php
-                        foreach ($contact['content'] as $item) {
-                            $value = trim($item['value']);
-                            if (empty($value)) continue;
+                            foreach ($contact['content'] as $item) {
+                                $value = trim($item['value']);
+                                if (empty($value)) continue;
 
-                            switch ($item['type']) {
-                                case 'phone':
-                                    echo '<div class="contacts_block_item_line">';
-                                    echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
-                                    echo '</div>';
-                                    break;
-                                case 'link':
-                                    echo '<div class="contacts_block_item_line"><a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a></div>';
-                                    break;
-                                case 'mail':
-                                    echo '<div class="contacts_block_item_line"><a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a></div>';
-                                    break;
-                                default:
-                                    if (!empty($value)) {
-                                        echo '<div class="contacts_block_item_line">' . wp_kses_post(html_entity_decode($value)) . '</div>';
-                                    }
-                                    break;
+                                echo '<div class="contacts_block_item_line">';
+                                if (!empty($item['icon'])) {
+                                    echo '<span class="contact-item-icon">';
+                                    get_icon($item['icon'], 'm');
+                                    echo '</span>';
+                                }
+
+                                switch ($item['type']) {
+                                    case 'phone':
+                                        echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
+                                        break;
+                                    case 'link':
+                                        echo '<a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a>';
+                                        break;
+                                    case 'mail':
+                                        echo '<a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a>';
+                                        break;
+                                    default:
+                                        echo wp_kses_post(html_entity_decode($value));
+                                        break;
+                                }
+
+                                echo '</div>';
                             }
-                        }
+
                         ?>
                     </div>
                 </div>
