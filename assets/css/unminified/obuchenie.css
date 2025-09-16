@@ -1,1 +1,48 @@
 /* obuchenie */
+
+.obuchenie.banner {
+  padding: 240px 0 60px 0;
+}
+
+.obuchenie.banner h1 {
+  font-family: Vetrino;
+  font-weight: 400;
+  font-size: 60px;
+  color: var(--e-white-color);
+  line-height: 100%;
+  max-width: 869px;
+}
+
+.obuchenie.banner .banner-p {
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--e-white-color);
+  line-height: 26px;
+  margin-top: 30px;
+}
+
+.obuchenie.banner .btn {
+  margin-top: 60px;
+}
+
+@media (max-width: 991px) {
+  .obuchenie.banner {
+    padding: 100px 0 30px 0;
+  }
+
+  .obuchenie.banner h1 {
+    font-size: 48px;
+    line-height: 100%;
+  }
+
+  .obuchenie.banner .banner-p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 10px;
+  }
+
+  .obuchenie.banner .btn {
+    margin-top: 30px;
+  }
+}
