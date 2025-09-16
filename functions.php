@@ -74,7 +74,11 @@ add_filter('preprocess_comment', function ($commentdata) {
     }
 
     $token = $_POST['g-recaptcha-response'] ?? '';
-    $secret = '6LcAJcMrAAAAAArFheCuUqbTIlp4gOigXVXtnegM';
+    $secret = defined('RECAPTCHA_SECRET_KEY') ? RECAPTCHA_SECRET_KEY : '';
+
+    if (empty($secret)) {
+        wp_die('reCAPTCHA не настроена. Обратитесь к администратору.');
+    }
 
     $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
         'body' => [
