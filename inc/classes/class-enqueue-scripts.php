@@ -73,6 +73,10 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 				wp_enqueue_style('contacts-style', gh_get_assets_uri('contacts', 'css'), array(), gh_get_version('contacts', 'css'));
 			}
 
+			if (is_page_template('page-obuchenie.php')) {
+				wp_enqueue_style('obuchenie-style', gh_get_assets_uri('obuchenie', 'css'), array(), gh_get_version('obuchenie', 'css'));
+			}
+
 
 			wp_enqueue_script('script', gh_get_assets_uri('script', 'js'), array('jquery'), gh_get_version('script', 'js'), true);
 
