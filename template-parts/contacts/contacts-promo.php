@@ -4,11 +4,18 @@
  * Displays contacts promo
  */
 
-// Функция для форматирования номера в ссылку WhatsApp
+// Форматирование номера в ссылку WhatsApp
 function get_whatsapp_link($phone)
 {
-    $clean_number = preg_replace('/\D+/', '', $phone); // убираем всё кроме цифр
+    $clean_number = preg_replace('/\D+/', '', $phone);
     return 'https://wa.me/' . $clean_number;
+}
+
+// Форматирование имени Instagram в ссылку
+function get_instagram_link($username)
+{
+    $clean_username = ltrim(trim($username), '@');
+    return 'https://instagram.com/' . $clean_username;
 }
 
 function get_contacts_block_data()
@@ -41,7 +48,7 @@ function get_contacts_block_data()
             'icon'  => 'social-group',
             'title' => 'Социальные сети',
             'content' => [
-                ['type' => 'link', 'value' => get_theme_mod('main_contact_instagram_setting', ''), 'icon' => ''],
+                ['type' => 'instagram', 'value' => get_theme_mod('main_contact_instagram_setting', ''), 'icon' => ''],
                 ['type' => 'whatsapp', 'value' => get_theme_mod('main_contact_whatsapp_setting', ''), 'icon' => 'whats'],
             ],
         ],
@@ -108,6 +115,10 @@ $contacts_block = get_contacts_block_data();
                                 case 'whatsapp':
                                     $wa_link = get_whatsapp_link($value);
                                     echo '<a href="' . esc_url($wa_link) . '" target="_blank" rel="noopener">' . esc_html(get_phone_formated($value)) . '</a>';
+                                    break;
+                                case 'instagram':
+                                    $insta_link = get_instagram_link($value);
+                                    echo '<a href="' . esc_url($insta_link) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a>';
                                     break;
                                 case 'link':
                                     echo '<a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a>';
