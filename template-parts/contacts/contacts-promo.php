@@ -4,6 +4,13 @@
  * Displays contacts promo
  */
 
+// Функция для форматирования номера в ссылку WhatsApp
+function get_whatsapp_link($phone)
+{
+    $clean_number = preg_replace('/\D+/', '', $phone); // убираем всё кроме цифр
+    return 'https://wa.me/' . $clean_number;
+}
+
 function get_contacts_block_data()
 {
     return [
@@ -35,7 +42,7 @@ function get_contacts_block_data()
             'title' => 'Социальные сети',
             'content' => [
                 ['type' => 'link', 'value' => get_theme_mod('main_contact_instagram_setting', ''), 'icon' => ''],
-                ['type' => 'phone', 'value' => get_phone_formated(get_theme_mod('main_contact_whatsapp_setting', '')), 'icon' => 'whats'],
+                ['type' => 'whatsapp', 'value' => get_theme_mod('main_contact_whatsapp_setting', ''), 'icon' => 'whats'],
             ],
         ],
         [
@@ -58,7 +65,6 @@ function get_contacts_block_data()
 
 $contacts_block = get_contacts_block_data();
 ?>
-
 
 <section class="contacts promo">
     <div class="section-bg rtl">
@@ -84,42 +90,45 @@ $contacts_block = get_contacts_block_data();
                             <div class="contacts_block_item_title"><?php echo esc_html($contact['title']); ?></div>
                         <?php endif; ?>
                         <?php
-                            foreach ($contact['content'] as $item) {
-                                $value = trim($item['value']);
-                                if (empty($value)) continue;
+                        foreach ($contact['content'] as $item) {
+                            $value = trim($item['value']);
+                            if (empty($value)) continue;
 
-                                echo '<div class="contacts_block_item_line">';
-                                if (!empty($item['icon'])) {
-                                    echo '<span class="contact-item-icon">';
-                                    get_icon($item['icon'], 'm');
-                                    echo '</span>';
-                                }
-
-                                switch ($item['type']) {
-                                    case 'phone':
-                                        echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
-                                        break;
-                                    case 'link':
-                                        echo '<a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a>';
-                                        break;
-                                    case 'mail':
-                                        echo '<a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a>';
-                                        break;
-                                    default:
-                                        echo wp_kses_post(html_entity_decode($value));
-                                        break;
-                                }
-
-                                echo '</div>';
+                            echo '<div class="contacts_block_item_line">';
+                            if (!empty($item['icon'])) {
+                                echo '<span class="contact-item-icon">';
+                                get_icon($item['icon'], 'm');
+                                echo '</span>';
                             }
 
+                            switch ($item['type']) {
+                                case 'phone':
+                                    echo '<a href="' . esc_attr(get_phone_href($value)) . '">' . esc_html(get_phone_formated($value)) . '</a>';
+                                    break;
+                                case 'whatsapp':
+                                    $wa_link = get_whatsapp_link($value);
+                                    echo '<a href="' . esc_url($wa_link) . '" target="_blank" rel="noopener">' . esc_html(get_phone_formated($value)) . '</a>';
+                                    break;
+                                case 'link':
+                                    echo '<a href="' . esc_url($value) . '" target="_blank" rel="noopener">' . esc_html($value) . '</a>';
+                                    break;
+                                case 'mail':
+                                    echo '<a href="mailto:' . esc_attr($value) . '">' . esc_html($value) . '</a>';
+                                    break;
+                                default:
+                                    echo wp_kses_post(html_entity_decode($value));
+                                    break;
+                            }
+
+                            echo '</div>';
+                        }
                         ?>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="section-bg-mobile ">
+    <div class="section-bg-mobile">
         <svg width="480" height="39" viewBox="0 0 480 39" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 1.21051C0 1.21051 89.9547 26.0885 150.267 29.51C196.844 32.1524 223.721 30.7527 269.688 24.4909C306.781 19.4378 332.85 17.295 371.503 17.295C406.99 17.295 454.274 30.0641 480 37.6687" stroke="#967866" stroke-opacity="0.2" />
             <rect x="95" y="17.069" width="16" height="16" rx="8" fill="#EAE4E0" />
