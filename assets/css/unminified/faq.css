@@ -377,6 +377,7 @@ body.popup-open {
 
 .popup-close {
   margin-top: 50px;
+  min-width: 195px;
 }
 
 .checkbox {
@@ -391,9 +392,10 @@ body.popup-open {
 }
 
 @media (max-width: 490px) {
-  .comment-form * {
-    text-align: left !important;
-    align-items: flex-start !important;
+  .comment-form_content .sub,
+  .comment-form_content {
+    text-align: left;
+    align-items: flex-start;
   }
 }
 

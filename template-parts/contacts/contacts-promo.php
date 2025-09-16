@@ -4,12 +4,6 @@
  * Displays contacts promo
  */
 
-// Форматирование номера в ссылку WhatsApp
-function get_whatsapp_link($phone)
-{
-    $clean_number = preg_replace('/\D+/', '', $phone);
-    return 'https://wa.me/' . $clean_number;
-}
 
 // Форматирование имени Instagram в ссылку
 function get_instagram_link($username)

@@ -114,68 +114,78 @@ function get_media_placeholder()
 
 
 // Рекурсивная функция для плоской структуры: родитель → ответы
-function plural_form($number, $forms) {
-    $number = abs($number) % 100;
-    $n1 = $number % 10;
+function plural_form($number, $forms)
+{
+	$number = abs($number) % 100;
+	$n1 = $number % 10;
 
-    if ($number > 10 && $number < 20) return $forms[2];
-    if ($n1 > 1 && $n1 < 5) return $forms[1];
-    if ($n1 == 1) return $forms[0];
-    return $forms[2];
+	if ($number > 10 && $number < 20) return $forms[2];
+	if ($n1 > 1 && $n1 < 5) return $forms[1];
+	if ($n1 == 1) return $forms[0];
+	return $forms[2];
 }
 
-function format_human_date($raw_date, $now = null) {
-    $timestamp = strtotime($raw_date);
-    if (!$timestamp) return '';
+function format_human_date($raw_date, $now = null)
+{
+	$timestamp = strtotime($raw_date);
+	if (!$timestamp) return '';
 
-    $now = $now ?: time();
-    $diff = $now - $timestamp;
-    $time = date('H:i', $timestamp);
+	$now = $now ?: time();
+	$diff = $now - $timestamp;
+	$time = date('H:i', $timestamp);
 
-    if ($diff < 60) {
-        $label = 'только что';
-    } elseif ($diff < 3600) {
-        $minutes = floor($diff / 60);
-        $label = "{$minutes} " . plural_form($minutes, ['минута', 'минуты', 'минут']) . " назад";
-    } elseif ($diff < 86400) {
-        $hours = floor($diff / 3600);
-        $label = "{$hours} " . plural_form($hours, ['час', 'часа', 'часов']) . " назад";
-    } else {
-        $days = floor($diff / 86400);
-        $label = $days === 1
-            ? 'вчера'
-            : "{$days} " . plural_form($days, ['день', 'дня', 'дней']) . " назад";
-    }
+	if ($diff < 60) {
+		$label = 'только что';
+	} elseif ($diff < 3600) {
+		$minutes = floor($diff / 60);
+		$label = "{$minutes} " . plural_form($minutes, ['минута', 'минуты', 'минут']) . " назад";
+	} elseif ($diff < 86400) {
+		$hours = floor($diff / 3600);
+		$label = "{$hours} " . plural_form($hours, ['час', 'часа', 'часов']) . " назад";
+	} else {
+		$days = floor($diff / 86400);
+		$label = $days === 1
+			? 'вчера'
+			: "{$days} " . plural_form($days, ['день', 'дня', 'дней']) . " назад";
+	}
 
-    return "{$label}, {$time}";
+	return "{$label}, {$time}";
 }
 
 
 
-function flatten_comments($grouped, $parent_id = 0, $now = null) {
-    $result = [];
-    $now = $now ?: time();
+function flatten_comments($grouped, $parent_id = 0, $now = null)
+{
+	$result = [];
+	$now = $now ?: time();
 
-    foreach ($grouped[$parent_id] ?? [] as $comment) {
-        $user = get_userdata($comment->user_id);
-        $timestamp = strtotime($comment->comment_date);
-        $days = $timestamp ? floor(($now - $timestamp) / 86400) : null;
+	foreach ($grouped[$parent_id] ?? [] as $comment) {
+		$user = get_userdata($comment->user_id);
+		$timestamp = strtotime($comment->comment_date);
+		$days = $timestamp ? floor(($now - $timestamp) / 86400) : null;
 
-        $comment_data = [
-            'id'             => $comment->comment_ID,
-            'parent_id'      => $comment->comment_parent,
-            'author'         => get_comment_author($comment),
-            'author_role'    => $user?->roles[0] ?? '',
-            'content'        => $comment->comment_content,
-            'raw_date'       => $comment->comment_date,
-            'days_ago'       => $days,
-            'formatted_date' => format_human_date($comment->comment_date, $now),
-            'is_reply'       => $comment->comment_parent != 0,
-        ];
+		$comment_data = [
+			'id'             => $comment->comment_ID,
+			'parent_id'      => $comment->comment_parent,
+			'author'         => get_comment_author($comment),
+			'author_role'    => $user?->roles[0] ?? '',
+			'content'        => $comment->comment_content,
+			'raw_date'       => $comment->comment_date,
+			'days_ago'       => $days,
+			'formatted_date' => format_human_date($comment->comment_date, $now),
+			'is_reply'       => $comment->comment_parent != 0,
+		];
 
-        $result[] = $comment_data;
-        $result = array_merge($result, flatten_comments($grouped, $comment->comment_ID, $now));
-    }
+		$result[] = $comment_data;
+		$result = array_merge($result, flatten_comments($grouped, $comment->comment_ID, $now));
+	}
 
-    return $result;
+	return $result;
+}
+
+// Функция для форматирования номера в ссылку WhatsApp
+function get_whatsapp_link($phone)
+{
+	$clean_number = preg_replace('/\D+/', '', $phone); // убираем всё кроме цифр
+	return 'https://wa.me/' . $clean_number;
 }

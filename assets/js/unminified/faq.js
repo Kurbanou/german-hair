@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderComments(page = 1) {
       list.innerHTML = "";
 
-      const parents = commentMap["0"] || [];
+      // const parents = commentMap["0"] || [];
+      const parents = (commentMap["0"] || []).slice().reverse();
       const start = (page - 1) * commentsPerPage;
       const end = start + commentsPerPage;
       const pageParents = parents.slice(start, end);
