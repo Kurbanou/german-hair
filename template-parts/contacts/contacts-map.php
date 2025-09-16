@@ -8,12 +8,7 @@ $address = get_theme_mod('main_contact_address_setting', '');
 $address_clean = wp_strip_all_tags($address); // удаляет HTML-теги
 $map_url = 'https://www.google.com/maps?q=' . urlencode($address_clean) . '&hl=ru&z=14&output=embed';
 
-// Выводим URL в консоль через JS
-echo "<script>console.log('Map URL: " . esc_js($map_url) . "');</script>";
 ?>
-
-?>
-
 
 <section class="contacts map">
 
