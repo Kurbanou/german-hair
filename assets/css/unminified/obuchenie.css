@@ -1,6 +1,41 @@
 /* obuchenie */
+
+.obuchenie .section-bg,
+.obuchenie .section-bg-mobile {
+  display: none;
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  transform: translateY(0px);
+}
+@media screen and (min-width: 990px) {
+  .obuchenie .section-bg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .obuchenie.benefits {
+    margin-top: 107px;
+  }
+  .obuchenie.benefits .section-bg-mobile {
+    transform: translateY(-50px);
+  }
+
+  .obuchenie .section-bg-mobile {
+    display: block;
+    transform: translateY(-80px);
+  }
+}
+
 section.obuchenie {
   margin-top: 100px;
+  position: relative;
 }
 /* banner */
 .obuchenie.banner {
