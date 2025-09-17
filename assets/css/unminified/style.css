@@ -397,7 +397,6 @@ main > .section:first-child {
   transform: translateY(-0.64em);
   font-size: 1.25em;
 }
-
 .list-disk li {
   position: relative;
   padding: var(--padding) 0;
