@@ -1,6 +1,10 @@
 /* obuchenie */
+section.obuchenie {
+  margin-top: 100px;
+}
 /* banner */
 .obuchenie.banner {
+  margin-top: 0;
   padding: 240px 0 60px 0;
 }
 
@@ -27,12 +31,63 @@
 }
 
 /* benefits */
+.obuchenie.benefits {
+  margin-top: 70px;
+}
 
 .obuchenie h2 {
   margin-bottom: 30px;
 }
 
+.benefits__container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 80px;
+  row-gap: 40px;
+  justify-content: center;
+}
+
+.color-card {
+  background: rgba(255, 241, 226, 0.6);
+  border-radius: 20px;
+  padding: 26px;
+  width: 100%;
+}
+
+.color-card:nth-child(even) {
+  background: rgba(226, 244, 255, 0.6);
+}
+
+.benefits__container .color-card {
+  max-width: 372px;
+}
+
+.obuchenie-benefits__content_icon {
+  margin-bottom: 8px;
+}
+
+.obuchenie-benefits__content_text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+}
+
 @media (max-width: 991px) {
+  .benefits__container .color-card {
+    max-width: 400px;
+  }
+  .benefits__container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+    justify-content: center;
+  }
+  .obuchenie-benefits__content_text {
+    font-size: 14px;
+    line-height: 24px;
+  }
   .obuchenie h2 {
     margin-bottom: 20px;
   }
@@ -53,5 +108,24 @@
 
   .obuchenie.banner .btn {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 481px) {
+  .obuchenie section {
+    margin-top: 136px;
+  }
+  .benefits__container .color-card {
+    max-width: 100%;
+  }
+  .benefits__container {
+    row-gap: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .obuchenie.banner h1 {
+    font-size: 32px;
+    line-height: 100%;
   }
 }
