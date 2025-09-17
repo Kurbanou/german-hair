@@ -12,12 +12,14 @@ $url = get_field('prepodavatel');
       <path d="M1 1C1 1 462.393 128.603 771.743 146.153C1010.65 159.706 1148.5 152.527 1384.27 120.409C1574.53 94.4909 1712.74 120.409 1911 120.409C2093.02 120.409 2331.05 148.995 2463 188" stroke="#967866" stroke-opacity="0.2" />
       <rect x="511" y="107" width="18" height="18" rx="9" fill="#EAE4E0" />
     </svg>
-
   </div>
   <div class="container">
-    <div class="obuchenie-author__content">
-      <div class="obuchenie-author__content-text">
-        <h2 class="h2 text-second-dark">О преподавателе</h2>
+    <div class="content">
+      <div class="content-text">
+        <div class="section-header">
+          <h2 class="h2 text-second-dark">О преподавателе</h2>
+          <div class="logo-title"><?php get_logo(); ?></div>
+        </div>
         <p>Автор курса — <span class="weight-600">Герман Ксения</span>, профессионал,
           которая досконально изучила тему наращивания волос.</p>
         <p>Ее бэкграунд — это много лет практики и собственные авторские методики наращивания, обучающие работать с нуля
@@ -50,17 +52,17 @@ $url = get_field('prepodavatel');
       </div>
       <div class="photo-block">
         <?php if ($url): ?>
-          <img src="<?php echo esc_url($url); ?>" alt="Фото">
+          <img src="<?php echo esc_url($url); ?>" alt="Фото" loading="lazy">
         <?php endif; ?>
       </div>
     </div>
+  </div>
 
-
-    <div class="section-bg-mobile rtl">
-      <svg width="480" height="35" viewBox="0 0 480 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 33.786C0 33.786 72.0736 10.2919 120.397 7.06071C157.716 4.56532 179.25 5.88718 216.079 11.8007C245.799 16.5726 258.932 18.8727 289.088 24.5204C310.75 28.5772 326.521 30.3908 347.133 23.2093C360.537 18.5391 379.568 8.73423 393.84 7.06072C422.976 3.64436 447.501 15.9692 480 18.0534" stroke="#967866" stroke-opacity="0.2" />
-        <rect x="415" y="0.431519" width="16" height="16" rx="8" fill="#EAE4E0" />
-      </svg>
-    </div>
+  <div class="section-bg-mobile rtl">
+    <svg width="480" height="35" viewBox="0 0 480 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 33.786C0 33.786 72.0736 10.2919 120.397 7.06071C157.716 4.56532 179.25 5.88718 216.079 11.8007C245.799 16.5726 258.932 18.8727 289.088 24.5204C310.75 28.5772 326.521 30.3908 347.133 23.2093C360.537 18.5391 379.568 8.73423 393.84 7.06072C422.976 3.64436 447.501 15.9692 480 18.0534" stroke="#967866" stroke-opacity="0.2" />
+      <rect x="415" y="0.431519" width="16" height="16" rx="8" fill="#EAE4E0" />
+    </svg>
+  </div>
 
 </section>
