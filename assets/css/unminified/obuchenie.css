@@ -119,7 +119,6 @@ section.obuchenie {
   font-family: Manrope;
   font-weight: 500;
   width: 100%;
-  max-width: 698px;
 }
 
 .obuchenie-author__content-text p,
@@ -130,6 +129,8 @@ section.obuchenie {
 
 .photo-block {
   width: 100%;
+  max-height: 100%;
+  max-width: 522px;
   border-radius: 20px;
   background: rgba(244, 244, 244, 1);
   display: flex;
@@ -176,8 +177,8 @@ section.obuchenie {
 
 .obuchenie-author__content {
   display: flex;
-  gap: 24px;
-  justify-content: space-between;
+  gap: 60px;
+  justify-content: center;
 }
 
 @media (max-width: 991px) {
