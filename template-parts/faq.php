@@ -13,7 +13,7 @@ if (!$faq_items) return;
 <section class="faq-section">
     <div class="container">
         <?php if ($faq_title): ?>
-            <h3 class="faq-title h3 mb-s  text-second-dark"><?= esc_html($faq_title); ?></h3>
+            <h2 class="faq-title h2 mb-s  text-second-dark"><?= esc_html($faq_title); ?></h2>
         <?php endif; ?>
 
         <div class="faq-list">
