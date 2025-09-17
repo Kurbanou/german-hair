@@ -366,6 +366,12 @@ main > .section:first-child {
   line-height: var(--line-height);
 }
 
+.ul-disk {
+  list-style: none;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .list-disk_size-s {
   --min-height: 42px;
   font-size: var(--e-font-size-l);
@@ -375,6 +381,21 @@ main > .section:first-child {
 .list-disk_size-l {
   font-size: var(--e-font-size-l);
   --line-height: 2rem;
+}
+
+.ul-disk li {
+  position: relative;
+  padding: var(--padding) 0;
+  padding-left: 1em;
+}
+
+.ul-disk li::before {
+  content: "•";
+  position: absolute;
+  left: -0.125em;
+  top: 50%;
+  transform: translateY(-0.64em);
+  font-size: 1.25em;
 }
 
 .list-disk li {

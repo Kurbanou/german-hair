@@ -11,6 +11,7 @@ get_header();
 $sections = [
 	'banner',
 	'benefits',
+	'author',
 
 ];
 foreach ($sections as $section) {

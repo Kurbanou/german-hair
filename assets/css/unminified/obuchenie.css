@@ -13,6 +13,7 @@
   width: 100%;
   transform: translateY(0px);
 }
+
 @media screen and (min-width: 990px) {
   .obuchenie .section-bg {
     display: block;
@@ -107,8 +108,91 @@ section.obuchenie {
   font-size: 18px;
   line-height: 28px;
 }
+/* author */
+.obuchenie.author h2 {
+  margin-bottom: 6px;
+}
+.obuchenie-author__content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: Manrope;
+  font-weight: 500;
+  width: 100%;
+  max-width: 698px;
+}
+
+.obuchenie-author__content-text p,
+.obuchenie-author__content-text ul {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.photo-block {
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(244, 244, 244, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-block img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.quote-block {
+  position: relative;
+  font-family: Calibri;
+  font-weight: 400;
+  font-style: Italic;
+  font-size: 18px;
+  line-height: 26px;
+  border-radius: 20px;
+  padding: 16px;
+  background: rgba(255, 241, 226, 0.6);
+  color: rgba(177, 121, 89, 1);
+}
+.quote-author {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: 700;
+}
+.quote-icon-top {
+  position: absolute;
+  left: 0;
+  top: -6px;
+}
+
+.quote-icon-bottom {
+  position: absolute;
+  bottom: 0;
+  right: -13px;
+}
+
+.obuchenie-author__content {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
 
 @media (max-width: 991px) {
+  .obuchenie.author h2 {
+    margin-bottom: 4px;
+  }
+  .obuchenie-author__content-text {
+    gap: 16px;
+  }
+  .obuchenie-author__content-text p,
+  .obuchenie-author__content-text ul,
+  .quote-block {
+    font-size: 14px;
+    line-height: 24px;
+  }
   .benefits__container .color-card {
     max-width: 400px;
   }
@@ -123,11 +207,12 @@ section.obuchenie {
     font-size: 14px;
     line-height: 24px;
   }
-  .obuchenie h2 {
-    margin-bottom: 20px;
-  }
+
   .obuchenie.banner {
     padding: 100px 0 30px 0;
+  }
+  .obuchenie h2 {
+    margin-bottom: 20px;
   }
 
   .obuchenie.banner h1 {
