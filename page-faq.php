@@ -23,7 +23,7 @@ if (!empty($faq_items)) {
     get_template_part('template-parts/faq');
 }
 
-// Форма комментария
+// Комментарии
 get_template_part('template-parts/comments/comments', 'container');
 
 

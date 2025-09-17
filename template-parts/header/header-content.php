@@ -67,7 +67,7 @@ $nav_list_left = [
 	],
 	[
 		'label' => 'Обучение',
-		'href' => '/',
+		'href' => '/obuchenie',
 	]
 ];
 
@@ -119,7 +119,7 @@ $nav_list_mobile = [
 	],
 	[
 		'label' => 'Обучение',
-		'href' => '/',
+		'href' => '/obuchenie',
 	],
 	[
 		'label' => 'О нас',

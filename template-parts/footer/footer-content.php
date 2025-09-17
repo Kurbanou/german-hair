@@ -39,7 +39,7 @@ $nav_list_left = [
 	],
 	[
 		'label' => 'Обучение',
-		'href' => '/',
+		'href' => '/obuchenie',
 	],
 	[
 		'label' => 'Вопросы и ответы',

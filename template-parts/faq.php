@@ -1,4 +1,5 @@
 <?php
+
 /**   
  * Description: вывод аккардеона вопросов - ответов через carbon 
  */
@@ -12,7 +13,7 @@ if (!$faq_items) return;
 <section class="faq-section">
     <div class="container">
         <?php if ($faq_title): ?>
-            <h2 class="faq-title"><?= esc_html($faq_title); ?></h2>
+            <h3 class="faq-title h3 mb-s  text-second-dark"><?= esc_html($faq_title); ?></h3>
         <?php endif; ?>
 
         <div class="faq-list">
