@@ -8,7 +8,7 @@ $fon = get_field('fon');
 ?>
 
 <?php if ($fon): ?>
-    <section class="obuchenie banner" style="
+  <section class="obuchenie banner" style="
   background-image: 
     linear-gradient(
       180deg,
@@ -22,14 +22,14 @@ $fon = get_field('fon');
   background-repeat: no-repeat;
 ">
 
-    <?php else: ?>
-        <section class="obuchenie banner">
-        <?php endif; ?>
-        <div class="container">
-            <div class="obuchenie-banner__content">
-                <h1 class="h1 mb-m mb-me_responsive text-shadow">Курсы по наращиванию волос в Москве</h1>
-                <p class="banner-p">Всего за 2 дня вы освоите технику, получите сертификат и сможете начать зарабатывать!</p>
-                <button class="btn btn-light btn-glowing">Хочу на курс</button>
-            </div>
-        </div>
-        </section>
+  <?php else: ?>
+    <section class="obuchenie banner">
+    <?php endif; ?>
+    <div class="container">
+      <div class="obuchenie-banner__content">
+        <h1 class="h1 mb-m mb-me_responsive text-shadow">Курсы по наращиванию волос в Москве</h1>
+        <p class="banner-p">Всего за 2 дня вы освоите технику, получите сертификат и сможете начать зарабатывать!</p>
+        <button class="btn btn-light btn-glowing">Хочу на курс</button>
+      </div>
+    </div>
+    </section>

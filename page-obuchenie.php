@@ -15,6 +15,7 @@ $sections = [
 	'location',
 	'choice',
 	'junior',
+	'program',
 
 ];
 foreach ($sections as $section) {
