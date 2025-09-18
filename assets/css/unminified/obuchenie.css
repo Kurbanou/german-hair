@@ -19,6 +19,7 @@
 .choice .section-bg,
 .junior .section-bg,
 .program .section-bg,
+.pricing .section-bg,
 .hand .section-bg {
   transform: translateY(-170px);
 }
@@ -132,6 +133,7 @@ section.obuchenie {
   font-family: Manrope;
   font-weight: 500;
   width: 100%;
+  height: 100%;
 }
 
 .obuchenie .content-text p,
@@ -170,6 +172,7 @@ section.obuchenie {
   max-width: 755px;
   aspect-ratio: 2.9;
 }
+
 .hand .photo-block {
   max-width: 439px;
   aspect-ratio: 1.12;
@@ -253,7 +256,68 @@ section.obuchenie {
   flex-shrink: 0;
 }
 
+.pricing .section-header {
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.pricing_content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.content-text .price {
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.content-text button,
+.content-text .price {
+  align-self: center;
+}
+
+.content-text .price {
+  margin-top: auto;
+}
+
+.pricing .color-card {
+  display: flex;
+  flex-direction: column;
+  height: 580px;
+  width: 400px;
+}
+
+.color-card .h3 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pricing_content .color-card:first-child {
+  order: 1;
+}
+
+@media (max-width: 1100px) {
+  .junior .content {
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 991px) {
+  .pricing .color-card {
+    height: 546px;
+    width: 374px;
+  }
+  .pricing_content {
+    grid-template-columns: 1fr;
+  }
+  .pricing .section-header .logo-title {
+    display: none;
+  }
   .program .container .content:nth-child(3) {
     margin-top: 24px;
   }
@@ -340,6 +404,9 @@ section.obuchenie {
 }
 
 @media (max-width: 450px) {
+  .pricing .color-card {
+    width: 100%;
+  }
   .logo-title {
     display: none;
   }
