@@ -348,6 +348,14 @@ section.obuchenie {
   }
 }
 @media (max-width: 991px) {
+  .obuchenie_date span {
+    font-size: 14px;
+    line-height: 1;
+    margin-top: 6px;
+  }
+  .obuchenie_date {
+    font-size: 24px;
+  }
   .pricing .color-card {
     height: 546px;
     width: 374px;
