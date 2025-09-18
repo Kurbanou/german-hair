@@ -393,8 +393,7 @@ main > .section:first-child {
   content: "•";
   position: absolute;
   left: -0.125em;
-  top: 50%;
-  transform: translateY(-0.64em);
+  top: 0;
   font-size: 1.25em;
 }
 .list-disk li {

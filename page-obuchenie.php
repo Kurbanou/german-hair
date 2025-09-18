@@ -13,6 +13,8 @@ $sections = [
 	'benefits',
 	'author',
 	'location',
+	'choice',
+	'junior',
 
 ];
 foreach ($sections as $section) {
