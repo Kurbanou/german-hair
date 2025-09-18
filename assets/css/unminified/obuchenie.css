@@ -18,7 +18,8 @@
 .location .section-bg,
 .choice .section-bg,
 .junior .section-bg,
-.program .section-bg {
+.program .section-bg,
+.hand .section-bg {
   transform: translateY(-170px);
 }
 
@@ -120,6 +121,7 @@ section.obuchenie {
 .obuchenie.author h2,
 .obuchenie.location h2,
 .obuchenie.junior h2,
+.obuchenie.hand h2,
 .obuchenie.choice h2 {
   margin-bottom: 6px;
 }
@@ -167,6 +169,10 @@ section.obuchenie {
 .junior .photo-block {
   max-width: 755px;
   aspect-ratio: 2.9;
+}
+.hand .photo-block {
+  max-width: 439px;
+  aspect-ratio: 1.12;
 }
 
 .photo-block img {
@@ -254,12 +260,12 @@ section.obuchenie {
   .choice .photo-block {
     display: none;
   }
-  .junior .photo-block {
-    order: 1;
-  }
+  .junior .photo-block,
+  .hand .photo-block,
   .location .photo-block {
     order: 1;
   }
+
   .photo-block {
     max-width: 100%;
   }
@@ -270,6 +276,7 @@ section.obuchenie {
   .obuchenie.author h2,
   .obuchenie.location h2,
   .obuchenie.junior h2,
+  .obuchenie.hand h2,
   .obuchenie.choice h2 {
     margin-bottom: 4px;
   }
