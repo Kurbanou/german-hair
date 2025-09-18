@@ -18,6 +18,7 @@ $sections = [
 	'program',
 	'hand',
 	'pricing',
+	'certificate',
 
 ];
 foreach ($sections as $section) {

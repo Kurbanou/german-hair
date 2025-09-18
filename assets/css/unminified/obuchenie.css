@@ -20,8 +20,9 @@
 .junior .section-bg,
 .program .section-bg,
 .pricing .section-bg,
+.certificate .section-bg,
 .hand .section-bg {
-  transform: translateY(-170px);
+  transform: translateY(-160px);
 }
 
 @media screen and (min-width: 990px) {
@@ -123,6 +124,7 @@ section.obuchenie {
 .obuchenie.location h2,
 .obuchenie.junior h2,
 .obuchenie.hand h2,
+.obuchenie.certificate h2,
 .obuchenie.choice h2 {
   margin-bottom: 6px;
 }
@@ -176,6 +178,10 @@ section.obuchenie {
 .hand .photo-block {
   max-width: 439px;
   aspect-ratio: 1.12;
+}
+.certificate .photo-block {
+  max-width: 514px;
+  aspect-ratio: 1.415;
 }
 
 .photo-block img {
@@ -341,6 +347,7 @@ section.obuchenie {
   .obuchenie.location h2,
   .obuchenie.junior h2,
   .obuchenie.hand h2,
+  .obuchenie.certificate h2,
   .obuchenie.choice h2 {
     margin-bottom: 4px;
   }
