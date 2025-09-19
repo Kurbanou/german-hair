@@ -1,0 +1,64 @@
+/* czeny */
+.czeny.banner {
+  padding: 213px 0 100px 0;
+  color: white;
+}
+
+.czeny.banner h1 {
+  font-family: var(--e-font-family-second);
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 100%;
+}
+
+.czeny.banner p {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.czeny.banner .banner-p {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 16px;
+}
+
+.czeny.banner .banner-p span {
+  font-family: Manrope;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  border-radius: 1000px;
+  border: 0.2px solid rgba(255, 231, 217, 1);
+  padding: 10px 22px;
+}
+
+.czeny.banner .banner-p span:first-child {
+  margin-left: 16px;
+}
+
+@media (max-width: 991px) {
+  .czeny.banner h1 {
+    font-size: 52px;
+  }
+  .czeny.banner p:last-child {
+    margin-bottom: 20px;
+  }
+  .czeny.banner p {
+    font-family: Manrope;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 440px) {
+  .czeny.banner h1 {
+    font-size: 32px;
+  }
+}

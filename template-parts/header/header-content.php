@@ -37,7 +37,7 @@ $header_contacts = [
 $nav_list_left = [
 	[
 		'label' => 'Услуги и цены',
-		'href' => '/',
+		'href' => '/czeny-na-narashhivanie',
 		'sub_nav_list' => [
 			[
 				'label' => 'Капсульное наращивание',
@@ -89,7 +89,7 @@ $nav_list_right = [
 $nav_list_mobile = [
 	[
 		'label' => 'Услуги и цены',
-		'href' => '/',
+		'href' => '/czeny-na-narashhivanie',
 		'sub_nav_list' => [
 			[
 				'label' => 'Капсульное наращивание',
