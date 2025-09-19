@@ -24,10 +24,16 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  row-gap: 16px;
+  column-gap: 16px;
+  row-gap: 5px;
 }
 
-.czeny.banner .banner-p span {
+.czeny.banner .cat {
+  display: flex;
+  row-gap: 10px;
+}
+
+.czeny.banner .cat span {
   font-family: Manrope;
   font-weight: 300;
   font-size: 16px;
@@ -37,11 +43,15 @@
   padding: 10px 22px;
 }
 
-.czeny.banner .banner-p span:first-child {
-  margin-left: 16px;
-}
-
 @media (max-width: 991px) {
+  .czeny.banner {
+    padding: 100px 0 20px 0;
+    color: white;
+  }
+  .czeny.banner .cat span {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
   .czeny.banner h1 {
     font-size: 52px;
   }
@@ -55,9 +65,18 @@
     line-height: 16px;
     margin-bottom: 5px;
   }
+  .czeny.banner button {
+    display: block;
+    width: 100%;
+  }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 475px) {
+  .czeny.banner .cat,
+  .banner-p {
+    flex-direction: column;
+    align-items: center;
+  }
   .czeny.banner h1 {
     font-size: 32px;
   }
