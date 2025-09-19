@@ -88,3 +88,12 @@ section .tablepress {
     margin-top: 25px;
   }
 }
+
+@media (max-width: 470px) {
+  section .tablepress {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+}

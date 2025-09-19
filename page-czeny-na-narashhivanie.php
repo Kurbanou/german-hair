@@ -18,15 +18,17 @@ foreach ($sections as $section) {
 	}
 }
 ?>
-<div class="container">
-	<section class="czeny content">
+
+<section class="czeny content">
+	<div class="container">
 		<?php
 		while (have_posts()) : the_post();
 			the_content();
 		endwhile;
 		?>
-	</section>
-</div>
+	</div>
+</section>
+
 <?php
 get_footer();
 ?>
