@@ -18,11 +18,25 @@ section .tablepress > :where(thead, tfoot) > tr > * {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
+section .tablepress > :where(thead, tfoot) > tr {
+  height: 60px;
+  padding: 0 10px;
+}
+section .tablepress > tbody > tr {
+  height: 70px;
+  padding: 0 10px;
+}
+
+section .tablepress caption {
+  display: none;
+}
+
 section .tablepress > tbody > tr > * {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
+  vertical-align: middle;
 }
 
 section .tablepress-table-description {
@@ -51,15 +65,6 @@ section .tablepress {
   margin: 0 auto 1rem;
   table-layout: auto;
   width: 100%;
-}
-
-.czeny .tablepress-table-name {
-  background: rgba(255, 241, 226, 0.6);
-  width: 100%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding-left: 50vw;
-  padding-right: 50vw;
 }
 
 @media (max-width: 991px) {
