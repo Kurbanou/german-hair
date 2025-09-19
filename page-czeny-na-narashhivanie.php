@@ -17,7 +17,16 @@ foreach ($sections as $section) {
 		get_template_part("template-parts/czeny/czeny", $section);
 	}
 }
-
-
-
+?>
+<div class="container">
+	<section class="czeny content">
+		<?php
+		while (have_posts()) : the_post();
+			the_content();
+		endwhile;
+		?>
+	</section>
+</div>
+<?php
 get_footer();
+?>
