@@ -15,57 +15,7 @@
     </div>
     <div class="container">
         <h2 class="h2 text-second-dark">Стоимость услуг</h2>
-        <?php
-        $services = get_posts([
-            'post_type' => 'service',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'tax_query' => [
-                [
-                    'taxonomy' => 'service-tag',
-                    'field' => 'slug',
-                    'terms' => 'about', //метка
-                ],
-            ],
-            'meta_key' => 'sort',
-            'orderby' => 'meta_value_num',
-            'order' => 'ASC',
-        ]);
-
-        ?>
-
-        <div class="price-container">
-            <div class="price-head">
-                <div class="price-head_item">Услуга</div>
-                <div class="price-head_item">Описание</div>
-                <div class="price-head_item">Цена</div>
-            </div>
-
-            <?php foreach ($services as $service): ?>
-                <?php
-                $title       = get_the_title($service->ID);
-                $description = get_field('description', $service->ID);
-                $price_type  = get_field('price_type', $service->ID);
-                $measure     = get_field('measure', $service->ID);
-
-                if ($price_type === 'single') {
-                    $price = get_field('price', $service->ID);
-                    $price_display = "от {$price} ₽";
-                } else {
-                    $price_from = get_field('price_from', $service->ID);
-                    $price_to   = get_field('price_to', $service->ID);
-                    $price_display = "от {$price_from} – {$price_to} ₽";
-                }
-                ?>
-                <div class="price-card">
-                    <div class="price-card_item"><?= esc_html($title); ?></div>
-                    <div class="price-card_item"><?= esc_html($description); ?></div>
-                    <div class="price-card_item"><?= esc_html($price_display); ?></div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-
-
+        <?php echo do_shortcode('[table id=10 /]'); ?>
     </div>
     <div class="section-bg-mobile rtl">
         <svg width="480" height="37" viewBox="0 0 480 37" fill="none" xmlns="http://www.w3.org/2000/svg">
