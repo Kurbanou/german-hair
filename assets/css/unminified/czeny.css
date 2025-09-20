@@ -49,22 +49,52 @@
 
 .czeny h2 {
   position: relative;
-  background: rgba(255, 241, 226, 0.6);
+  background-color: rgba(255, 241, 226, 0.6);
+  background-blend-mode: overlay; /* или multiply, lighten, etc. */
+  background-repeat: no-repeat;
   margin-left: -50vw;
   margin-right: -50vw;
   padding-left: 50vw;
   padding-right: 50vw;
   margin-top: 50px;
+  background-blend-mode: lighten;
 }
 
 .czeny h2:first-of-type {
   margin-top: 0;
+  background-image: url("../../images/czeny/bg-1.svg");
+  background-position: 50%;
+}
+.czeny h2:nth-of-type(2) {
+  background-image: url("../../images/czeny/bg-2.svg");
+  background-position: 53%;
+}
+.czeny h2:nth-of-type(3) {
+  background-image: url("../../images/czeny/bg-3.svg");
+  background-position: 55%;
+}
+.czeny h2:nth-of-type(4) {
+  background-image: url("../../images/czeny/bg-4.svg");
+  background-position: 66%;
+}
+.czeny h2:nth-of-type(5) {
+  background-image: url("../../images/czeny/bg-5.svg");
+  background-position: 69%;
+}
+.czeny h2:nth-of-type(7) {
+  background-image: url("../../images/czeny/bg-7.svg");
+  background-position: 64%;
+}
+.czeny h2:nth-of-type(8) {
+  background-image: url("../../images/czeny/bg-8.svg");
+  background-position: 62%;
 }
 
 @media (max-width: 991px) {
   .czeny.banner {
     padding: 100px 0 20px 0;
     color: white;
+    background-position: 66% !important;
   }
   .czeny.banner .cat span {
     font-size: 14px;
