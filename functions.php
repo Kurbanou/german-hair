@@ -134,3 +134,17 @@ add_action('wp_enqueue_scripts', function () {
         ]);
     }
 });
+
+add_filter('tablepress_table_output', 'wrap_only_table_in_scroll', 10, 2);
+
+function wrap_only_table_in_scroll($output, $table)
+{
+    // Найдём сам <table>...</table> внутри $output
+    if (preg_match('/(<table.*?>.*?<\/table>)/is', $output, $matches)) {
+        $table_html = $matches[1];
+        $wrapped_table = '<div class="tablepress-scroll">' . $table_html . '</div>';
+        // Заменим оригинальный <table> на обёрнутый
+        $output = str_replace($table_html, $wrapped_table, $output);
+    }
+    return $output;
+}

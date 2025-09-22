@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   align-items: center;
   column-gap: 16px;
-  row-gap: 5px;
+  row-gap: 10px;
 }
 
 .czeny.banner .cat {
@@ -131,6 +131,11 @@
   .czeny.banner button {
     display: block;
     width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .czeny.banner .cat {
+    column-gap: 3px;
   }
 }
 
