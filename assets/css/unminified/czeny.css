@@ -16,6 +16,7 @@
 }
 
 .czeny.banner p {
+  max-width: 694px;
   font-family: Manrope;
   font-weight: 400;
   font-size: 18px;
@@ -34,7 +35,7 @@
 
 .czeny.banner .cat {
   display: flex;
-  row-gap: 10px;
+  gap: 10px;
 }
 
 .czeny.banner .cat span {
@@ -56,8 +57,11 @@
   margin-right: -50vw;
   padding-left: 50vw;
   padding-right: 50vw;
-  margin-top: 50px;
+  margin-top: 54px;
+  margin-bottom: 34px;
   background-blend-mode: lighten;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .czeny h2:first-of-type {
@@ -91,6 +95,12 @@
 }
 
 @media (max-width: 991px) {
+  .czeny h2 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
   .czeny.banner {
     padding: 100px 0 20px 0;
     color: white;

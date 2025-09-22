@@ -364,3 +364,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".tablepress td").forEach((td) => {
+    td.innerHTML = td.innerHTML.replace(
+      /\(([^)]+)\)/g,
+      '<span class="tablepress-note">($1)</span>'
+    );
+  });
+});

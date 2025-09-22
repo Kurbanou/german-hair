@@ -66,7 +66,14 @@ section .tablepress {
   table-layout: auto;
   width: 100%;
 }
-
+.tablepress tbody tr td:first-child {
+  max-width: 190px;
+  white-space: normal;
+  word-break: break-word;
+}
+.tablepress td span.tablepress-note {
+  opacity: 0.6;
+}
 @media (max-width: 991px) {
   .tablepress-table-name {
     margin-bottom: 20px;
