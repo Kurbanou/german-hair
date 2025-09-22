@@ -241,7 +241,11 @@
 }
 
 /* form */
+.comment-form {
+  position: relative;
+}
 .comment-form_content {
+  position: relative;
   margin-top: 100px;
   width: 100%;
   max-width: 880px;
@@ -260,6 +264,9 @@
   justify-content: center;
   align-items: center;
   min-height: 632px;
+}
+.bg-form {
+  display: none;
 }
 
 .obuchenie .comment-form_content {
@@ -485,6 +492,23 @@ body.popup-open {
 }
 
 @media screen and (max-width: 480px) {
+  .bg-form {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+  }
+  .obuchenie .comment-form_content {
+    background-image: url("../../images/form/form-bg2.svg");
+  }
+  .comment-form.obuchenie {
+    margin-top: 137px;
+  }
+  .comment-form.obuchenie .section-bg-mobile {
+    display: block;
+    transform: translateY(-85px);
+  }
   .popup {
     padding: 40px 20px;
   }

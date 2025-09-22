@@ -7,6 +7,13 @@
 <section class="comment-form obuchenie">
   <div class="container">
     <div class="comment-form_content">
+      <div class="bg-form">
+        <svg width="346" height="443" viewBox="0 0 346 443" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.6845 -242.884C36.2586 -177.273 101.928 -39.7471 192.011 -14.534C418.499 48.8569 540.931 260.915 572.2 326.325" stroke="#B88466" stroke-opacity="0.2" />
+          <rect x="303.242" y="15.7119" width="18" height="18" rx="9" transform="rotate(64.4503 303.242 15.7119)" fill="#F1DBC9" />
+        </svg>
+      </div>
+
       <h3 class="h3 text-second-dark mb-sm text-center">Если у вас еще остались вопросы,
         оставьте заявку - мы ответим на всё!</h3>
 
@@ -53,6 +60,12 @@
         <button class="btn btn-light btn-glowing submit" type="submit">Отправить</button>
       </form>
     </div>
+  </div>
+  <div class="section-bg-mobile rtl">
+    <svg width="480" height="39" viewBox="0 0 480 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M480 37.9794C480 37.9794 386.282 8.79602 323.447 4.78236C274.92 1.6827 246.919 3.32466 199.029 10.6701C160.384 16.5977 136.043 25.5765 96.2539 27.6726C59.3219 29.6183 26.8019 9.46846 -1.32248e-05 0.547852" stroke="#967866" stroke-opacity="0.2" />
+      <rect width="16" height="16" rx="8" transform="matrix(-1 0 0 1 429 13.4678)" fill="#EAE4E0" />
+    </svg>
   </div>
 
 </section>
