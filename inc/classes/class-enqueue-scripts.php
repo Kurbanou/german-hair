@@ -80,6 +80,9 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			if (is_page_template('page-czeny-na-narashhivanie.php')) {
 				wp_enqueue_style('czeny-style', gh_get_assets_uri('czeny', 'css'), array(), gh_get_version('czeny', 'css'));
 			}
+			if (is_page_template('page-removal.php')) {
+				wp_enqueue_style('removal-style', gh_get_assets_uri('removal', 'css'), array(), gh_get_version('removal', 'css'));
+			}
 
 
 			wp_enqueue_script('script', gh_get_assets_uri('script', 'js'), array('jquery'), gh_get_version('script', 'js'), true);

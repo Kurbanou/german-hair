@@ -1,0 +1,236 @@
+/* removal */
+
+.removal .section-bg,
+.removal .section-bg-mobile {
+  display: none;
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  transform: translateY(0px);
+}
+
+.mistakes .section-bg,
+.price .section-bg {
+  transform: translateY(-150px);
+}
+.withdrawal .section-bg {
+  transform: translateY(-180px);
+}
+.advantages .section-bg {
+  transform: translateY(-170px);
+}
+
+@media screen and (min-width: 990px) {
+  .removal .section-bg {
+    display: block;
+  }
+}
+
+.removal .content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: var(--e-font-family);
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+}
+.removal .content-text p,
+.removal .content-text ul {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+section.removal {
+  margin-top: 100px;
+  position: relative;
+}
+
+/* banner */
+.removal.banner {
+  margin-top: 0;
+  padding: 212px 0 144px 0;
+}
+
+.removal.banner h1 {
+  font-family: Vetrino;
+  font-weight: 400;
+  font-size: 60px;
+  color: var(--e-white-color);
+  line-height: 100%;
+  max-width: 869px;
+}
+
+.removal.banner h2 {
+    color: var(--e-white-color);
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.removal.banner .banner-p {
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--e-white-color);
+  line-height: 26px;
+  margin-top: 30px;
+}
+
+.removal.banner .btn {
+  margin-top: 60px;
+}
+
+/* guarantees */
+.removal.guarantees{ 
+    margin-top: 70px;
+}
+
+.removal-guarantees__content {}
+
+.removal h2 {
+    margin-bottom: 30px;
+}
+
+.guarantees__container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.guarantees__container .color-card {
+  max-width: 406px;
+}
+.color-card {
+  background: rgba(255, 241, 226, 0.6);
+  border-radius: 20px;
+  padding: 26px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.color-card:nth-child(even) {
+  background: rgba(226, 244, 255, 0.6);
+}
+
+.removal-guarantee__content_text {
+    font-family: var(--e-font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+/* mistakes */
+
+.removal-mistakes__content_text {
+    font-family: var(--e-font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0;
+    margin-bottom: 30px;
+}
+
+.mistakes__container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.mistakes__container .color-card {
+    max-width: 294px;
+    min-height: 170px;
+}
+
+.removal-mistake__content_text {
+    font-family: var(--e-font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+
+/* withdrawal */
+.withdrawal__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.withdrawal__container .color-card {
+    max-width: 620px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}   
+
+.removal-withdrawal__content_number {
+    font-family: var(--e-font-family-second);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 26px;
+    letter-spacing: 0;
+}
+.removal-withdrawal__content_title {
+    font-family: var(--e-font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+}
+.removal-withdrawal__content_text {
+    font-family: var(--e-font-family);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 26px;
+    letter-spacing: 0;
+}
+
+/* price */
+.price #tablepress-7-name {
+    display: none;
+}
+
+.removal-advantages__content {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* advantages */
+.removal.advantages {
+    margin: 100px;
+}
+.advantages__image {
+    max-width: 611px;
+    width: 100%;
+    min-height: 306px;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+.advantages__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.advantages .btn {
+    margin: 0 auto;
+    display: block;
+}
+

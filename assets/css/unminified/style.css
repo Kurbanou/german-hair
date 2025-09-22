@@ -751,9 +751,11 @@ a.text-second-dark {
 }
 
 .icon-size-xl {
+  max-width: 50px;
   width: 50px;
   height: 50px;
   flex: 0 0 50px;
+  color: transparent;
 }
 
 .icon-size-60 {
@@ -1146,4 +1148,81 @@ a.link-card {
   a.text-primary:active {
     color: var(--e-primary-color-active);
   }
+}
+
+/* additional-services */
+.section-bg.common-additional-services-section-bg {
+  transform: translateY(-160px);
+}
+.additional-services-list {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 44px;
+}
+.additional-services-item {
+  background-color: var(--e-card-bg-even);
+  border-radius: var(--e-card-radius-m);
+  max-width: 392px;
+  width: 100%;
+}
+.additional-services-item__title {}
+.additional-services-item-wrapper {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+.additional-services-item__title {
+  margin-bottom: 9px;
+}
+.additional-services-item__desc p {
+  margin-bottom: 9px;
+}
+.additional-services-item-wrapper li {
+    position: relative;
+    padding: var(--padding) 0;
+    padding-left: 1em;
+    display: flex;
+    align-items: center;
+}
+.additional-services-item-wrapper li::before {
+    content: "•";
+    position: absolute;
+    left: -0.125em;
+    font-size: 1.25em;
+}
+.additional-services-image-wrapper {
+  width: 100%;
+  height: 295px;
+  background-color: #F2F2F2;
+}
+.additional-services-image-wrapper,
+.additional-services-image-wrapper .img-cover {
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+}
+
+.special-offers {
+  background: linear-gradient(90deg, #BF2F3B 0%, #F17ED7 100%);
+  border-radius: 20px;
+  position: relative;
+  width: 100%;
+  min-height: 281px;
+  padding: 55px 64px;
+  overflow: hidden;
+}
+.special-offers::before {
+  content: url(../../images/additional-services/starts.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.special-offers::after {
+  content: url(../../images/additional-services/gift.png);
+  position: absolute;
+  right: -10%;
+  bottom: -50%;
+  z-index: 0;
 }
