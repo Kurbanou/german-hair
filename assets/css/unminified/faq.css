@@ -283,6 +283,11 @@
   margin-bottom: 0;
 }
 
+.removal .comment-form_content {
+  background-image: url("../../images/form/form-bg2.svg");
+  max-width: 100%;
+}
+
 form .btn {
   min-width: 195px;
 }

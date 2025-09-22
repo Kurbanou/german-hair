@@ -1,11 +1,18 @@
 /* Заголовок таблицы */
-.tablepress-table-name {
+section .tablepress-table-name {
   font-family: var(--e-font-family-second);
   font-size: 32px;
   font-weight: 400;
   line-height: 52px;
   color: rgba(184, 132, 102, 1);
   margin-bottom: 30px;
+}
+
+section .tablepress tbody tr td:first-child {
+  min-width: 160px;
+  max-width: 220px;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Заголовки колонок */
@@ -76,32 +83,32 @@ section .tablepress {
 }
 
 /* Прокрутка только таблицы */
-.tablepress-scroll {
+section .tablepress-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
 }
 
-.tablepress-scroll .tablepress {
+section .tablepress-scroll .tablepress {
   width: max-content;
   min-width: 100%;
   table-layout: auto !important;
 }
 
 /* Запрет переноса текста */
-.tablepress th,
-.tablepress td {
+section .tablepress th,
+section .tablepress td {
   white-space: nowrap;
 }
 
 /* Прозрачный текст в скобках */
-.tablepress td span.tablepress-note {
+section .tablepress td span.tablepress-note {
   opacity: 0.6;
 }
 
 /* Адаптивные стили */
 @media (max-width: 991px) {
-  .tablepress-table-name {
+  section .tablepress-table-name {
     margin-bottom: 20px;
     font-size: 18px;
     line-height: 25px;

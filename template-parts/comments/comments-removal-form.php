@@ -59,8 +59,12 @@
 
         <button class="btn btn-light btn-glowing submit" type="submit">Отправить</button>
       </form>
+
+      <div class="comment-form_contact">
+         
+      </div>
     </div>
-  </div>
+  </div> 
   <div class="section-bg-mobile rtl">
     <svg width="480" height="39" viewBox="0 0 480 39" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M480 37.9794C480 37.9794 386.282 8.79602 323.447 4.78236C274.92 1.6827 246.919 3.32466 199.029 10.6701C160.384 16.5977 136.043 25.5765 96.2539 27.6726C59.3219 29.6183 26.8019 9.46846 -1.32248e-05 0.547852" stroke="#967866" stroke-opacity="0.2" />
