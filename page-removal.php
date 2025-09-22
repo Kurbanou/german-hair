@@ -25,7 +25,7 @@ foreach ($sections as $section) {
 get_template_part( 'template-parts/common/common', 'team-section' );
 get_template_part( 'template-parts/common/common', 'additional-services' );
 
-// Форма комментария
-get_template_part('template-parts/comments/comments-obuchenie', 'form');
+// Форма
+get_template_part('template-parts/comments/comments-removal', 'form');
 
 get_footer();

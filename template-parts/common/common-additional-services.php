@@ -36,6 +36,19 @@ $additional_services_list = [
         'image' => get_template_directory_uri() . '/assets/images/team/additional-services-3.jpg',
     ],
 ];
+
+
+$special_offers_list = [
+    [
+        'text' => 'При заказе двух процедур — скидка 15% на домашний уход',
+    ],
+    [
+        'text' => 'Подарочный сертификат <br>на услуги салона',
+    ],
+        [
+        'text' => 'Бесплатная диагностика волос перед процедурой',
+    ],
+];
 ?>
 
 <section class="section common-additional-services-section relative">
@@ -65,7 +78,14 @@ $additional_services_list = [
             </div>
 
             <div class="special-offers">
-                
+                <div class="special-offers__title text-white weight-400">Специальные предложения</div>
+                <div class="special-offers__items flex flex-wrap flex-gap-m">
+                <?php foreach( $special_offers_list as $proposal ): ?>
+                    <div class="special-offers__item weight-600 text-m text-white flex justify-center items-center">
+                        <?php echo $proposal['text'];?>
+                    </div>
+                <?php endforeach; ?>
+                </div>
             </div>
 
         </div>

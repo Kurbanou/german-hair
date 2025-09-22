@@ -178,6 +178,21 @@
 							"fontFamily": "Manrope"
 						}
 					]
+				},
+								{
+					"name": "Ouvality",
+					"slug": "ouvality",
+					"fontFamily": "Ouvality, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/ouvality/Ouvality.woff2"
+							],
+							"fontWeight": "200 800",
+							"fontStyle": "normal",
+							"fontFamily": "Manrope"
+						}
+					]
 				}
 			]
 		},
