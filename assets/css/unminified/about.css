@@ -187,22 +187,27 @@
   position: relative;
 }
 
+.about-mission .container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
 .about-mission__content_item.text,
 .about-mission__content_item.reasons {
   width: 100%;
   max-width: 574px;
 }
 
-.about-mission {
-  position: relative;
+.about-mission__content_item.img {
+  width: 100%;
+  max-width: 890px;
 }
 
-.about-mission__content_item.img {
+.about-mission__content_item.img img {
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
-  max-width: 890px;
 }
 
 .about-mission__content_item.text {
@@ -269,7 +274,7 @@
   margin-top: 6px;
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1024px) {
   .reasons h2 {
     text-align: center;
   }
@@ -282,7 +287,7 @@
   }
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1024px) {
   .about-mission__content_item.img {
     position: relative;
     margin-top: 20px;
