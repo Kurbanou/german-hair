@@ -1155,17 +1155,17 @@ a.link-card {
   transform: translateY(-160px);
 }
 .additional-services-list {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 44px;
 }
 .additional-services-item {
   background-color: var(--e-card-bg-even);
   border-radius: var(--e-card-radius-m);
-  max-width: 392px;
+  max-width: 397px;
   width: 100%;
 }
-.additional-services-item__title {}
 .additional-services-item-wrapper {
   padding: 26px;
   display: flex;
@@ -1211,7 +1211,7 @@ a.link-card {
   overflow: hidden;
 }
 .special-offers::before {
-  content: url(../../images/additional-services/starts.png);
+  content: url(../../images/additional-services/stars.png);
   position: absolute;
   top: -14%;
   left: 0;

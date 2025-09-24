@@ -71,7 +71,8 @@ section.removal {
     line-height: 52px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 0 20px;
 }
 
 .removal.banner .banner-p {
@@ -80,7 +81,7 @@ section.removal {
   font-size: 18px;
   color: var(--e-white-color);
   line-height: 26px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .removal.banner .btn {
@@ -101,12 +102,13 @@ section.removal {
 .guarantees__container {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 30px;
+    justify-content: center;
+    gap: 30px;
 }
 
 .guarantees__container .color-card {
   max-width: 406px;
+  min-height: 164px;
 }
 .color-card {
   background: rgba(255, 241, 226, 0.6);
@@ -143,6 +145,7 @@ section.removal {
 .mistakes__container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     column-gap: 30px;
     row-gap: 30px;
 }
@@ -209,12 +212,16 @@ section.removal {
     margin-bottom: 60px;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 20px 60px;
 }
 
 /* advantages */
 .removal.advantages {
-    margin: 100px;
+    margin-bottom: 100px;
+}
+.advantages__container {
+    max-width: max-content;
+    width: 100%;
 }
 .advantages__image {
     max-width: 611px;
@@ -234,3 +241,170 @@ section.removal {
     display: block;
 }
 
+
+@media screen and (min-width: 990px) {
+  .removal .section-bg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 991px) {
+    .removal.banner {
+        padding: 100px 0 30px 0;
+    }
+    .removal.banner h1 {
+        font-size: 48px;
+        line-height: 100%;
+    }
+    section .tablepress-table-description {
+        margin-top: 0;
+    }
+    .removal-advantages__content {
+        flex-direction: column;
+    }
+    .additional-services-list {
+        gap: 25px;
+    }
+    .additional-services-item {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 481px) {
+    section.removal {
+        margin-top: 136px;
+    }
+    .removal.banner {
+        padding: 139px 0 28px 0;
+    }
+    .removal.banner h1 {
+        margin-bottom: 10px;
+    }
+    .removal.banner h2 {
+        line-height: 25px;
+        gap: 0 10px;
+        margin-bottom: 10px;
+    }
+    .removal.banner h2 svg {
+        width: auto;
+        height: 28px;
+    }
+    .removal.banner .banner-p {
+        font-size: 14px;
+        line-height: normal;
+    }
+    .removal.banner .banner-p br {
+        display: none;
+    }
+    .removal.banner .btn {
+        margin-top: 88px;
+    }
+    .removal.guarantees {
+        margin-top: 20px;
+    }
+    .removal h2 {
+        margin-bottom: 20px;
+    }
+    .guarantees__container .color-card {
+        max-width: 100%;
+        min-height: 102px;
+    }
+    .removal-guarantee__content_text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .removal-guarantee__content_text br {
+        display: none;
+    }
+    .guarantees__container {
+        gap: 24px;
+    }
+    .removal .section-bg-mobile {
+        display: block;
+    }
+    .removal.mistakes .section-bg-mobile {
+        transform: translateY(-80px);
+    }
+    .mistakes__container{
+        gap: 24px;
+    }
+    .removal-mistakes__content_text {
+        display: none;
+    }
+    .mistakes__container .color-card {
+        max-width: 100%;
+        min-height: 100px;
+        padding: 24px 74px;
+    }
+    .removal-mistake__content_text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .withdrawal .section-bg-mobile {
+        transform: translateY(-90px);
+    } 
+    .withdrawal__container {
+        gap: 24px;
+    }
+    .withdrawal__container .color-card {
+        gap: 6px;
+    }
+    .removal-withdrawal__content_number {
+        margin-bottom: 6px;
+    }
+    .removal-withdrawal__content_title {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+    .removal-withdrawal__content_text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .price .section-bg-mobile {
+        transform: translateY(-90px);
+    }
+    .advantages .section-bg-mobile {
+        transform: translateY(-90px);
+    } 
+    .removal-advantages__content {
+        margin-bottom: 20px;
+    }
+    .removal .content-text ul {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .advantages .section-bg-mobile {
+        transform: translateY(-90px);
+    }
+    .advantages .section-bg-mobile.bg-bottom {
+        transform: translateY(90px);
+        bottom: 0;
+        top: auto;
+    }
+    .advantages__image {
+        min-height: 193px;
+    }
+    .additional-services-list {
+        gap: 20px;
+    }
+    .additional-services-item {
+        max-width: 100%;
+    }
+    .additional-services-list {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+ .mistakes__container .color-card {
+    padding: 24px;
+ }
+}
+
+@media (max-width: 400px) {
+    .removal.banner h1 {
+        font-size: 32px;
+        line-height: 100%;
+    }
+}
