@@ -62,11 +62,11 @@ $nav_list_left = [
 $nav_list_right = [
 	[
 		'label' => 'Капсульное наращивание',
-		'href' => '/',
+		'href' => '/kapsulnoenarashhivanie',
 	],
 	[
 		'label' => 'Ленточное наращивание',
-		'href' => '/',
+		'href' => '/lentochnoe-narashhivanie',
 	],
 	[
 		'label' => 'Снятие волос',

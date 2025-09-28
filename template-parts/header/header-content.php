@@ -41,11 +41,11 @@ $nav_list_left = [
 		'sub_nav_list' => [
 			[
 				'label' => 'Капсульное наращивание',
-				'href' => '/',
+				'href' => '/kapsulnoenarashhivanie',
 			],
 			[
 				'label' => 'Ленточное наращивание',
-				'href' => '/',
+				'href' => '/lentochnoe-narashhivanie',
 			],
 			[
 				'label' => 'Снятие волос',
@@ -93,11 +93,11 @@ $nav_list_mobile = [
 		'sub_nav_list' => [
 			[
 				'label' => 'Капсульное наращивание',
-				'href' => '/',
+				'href' => '/kapsulnoenarashhivanie',
 			],
 			[
 				'label' => 'Ленточное наращивание',
-				'href' => '/',
+				'href' => '/lentochnoe-narashhivanie',
 			],
 			[
 				'label' => 'Снятие волос',
