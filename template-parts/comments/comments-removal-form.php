@@ -3,6 +3,30 @@
 /**
  * Подшаблон: Форма услуги
  */
+
+function get_contacts_block_data()
+{
+  return [
+    [
+      'icon'  => 'phone-group',
+      'title' => 'Телефоны',
+      'content' => [
+        ['type' => 'phone', 'value' => get_phone_formated(get_theme_mod('main_contact_phone_setting', ''))],
+        ['type' => 'phone', 'value' => get_phone_formated(get_theme_mod('second_contact_phone_setting', ''))],
+      ],
+    ],
+    [
+      'icon'  => 'time-group',
+      'title' => 'График работы',
+      'content' => [
+        ['type' => 'text', 'value' => get_theme_mod('main_contact_time_setting', '')],
+        ['type' => 'text', 'value' =>  'Ежедневно'],
+      ],
+    ]
+  ];
+}
+
+$contacts_block = get_contacts_block_data();
 ?>
 <section class="comment-form removal">
   <div class="container">
@@ -16,7 +40,7 @@
 
       <h3 class="h3 text-second-dark text-center">
         Оставьте заявку, и мы свяжемся с вами в ближайшее рабочее время
-      </h3>   
+      </h3>
 
       <form novalidate class="comment-form_form" method="post" action="<?php echo site_url('/wp-comments-post.php'); ?>">
 
@@ -58,33 +82,56 @@
           <p class="weight-400 text-s">Я ознакомлен и согласен с <a class="weight-600" href="#">политикой обработки персональных данных</a> и даю <a class="weight-600" href="#">согласие на обработку моих персональных данных</a>.</p>
         </div>
 
-        <button class="btn btn-light btn-glowing submit" type="submit">Отправить</button>
+        <button class="btn btn-light mb-l btn-glowing submit" type="submit">Отправить</button>
       </form>
+      <h3 class="h3 text-second-dark mb-s text-center">
+        Наши контакты
+      </h3>
 
-      <div class="comment-form_contact">
-         <h3 class="h3 text-second-dark mb-s text-center">
-            Наши контакты
-         </h3>
-         <div class="comment-form_contact-items">
-         <div class="comment-form_contact-item flex items-center flex-gap-m">
+      <div class="comment-form_contact-items">
+        <?php foreach ($contacts_block as $block): ?>
+          <div class="comment-form_contact-item flex items-center flex-gap-m">
+            <?php get_icon($block['icon'], '60'); ?>
+            <div class="weight-500 text-l flex flex-col">
+              <?php foreach ($block['content'] as $item): ?>
+                <?php if ($item['type'] === 'phone'): ?>
+                  <a href="tel:<?php echo preg_replace('/\D+/', '', $item['value']); ?>">
+                    <?php echo esc_html($item['value']); ?>
+                  </a>
+                <?php else: ?>
+                  <span><?php echo esc_html($item['value']); ?></span>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+
+      <!-- <div class="comment-form_contact">
+        <h3 class="h3 text-second-dark mb-s text-center">
+          Наши контакты
+        </h3>
+        <div class="comment-form_contact-items">
+          <div class="comment-form_contact-item flex items-center flex-gap-m">
             <? get_icon('form-phone', '60'); ?>
             <div class="weight-500 text-l flex flex-col">
-                <a href="tel:+71234567890">+7 (123)-456-78-90</a>
-                <a href="tel:+70987654321">+7 (098)-765-43-21</a>
+              <a href="tel:+71234567890">+7 (123)-456-78-90</a>
+              <a href="tel:+70987654321">+7 (098)-765-43-21</a>
             </div>
-         </div>
-         <div class="comment-form_contact-item flex items-center flex-gap-m ">
+          </div>
+          <div class="comment-form_contact-item flex items-center flex-gap-m ">
             <? get_icon('form-time', '60'); ?>
             <div class="weight-500 text-l flex flex-col">
-                <span>C 10:00 до 22:00</span>
-                <span>Ежедневно</span>
+              <span>C 10:00 до 22:00</span>
+              <span>Ежедневно</span>
             </div>
-         </div>
-         </div>
+          </div>
+        </div>
 
-      </div>
+      </div> -->
     </div>
-  </div> 
+  </div>
 
 </section>
 
