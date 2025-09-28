@@ -1,0 +1,38 @@
+/* extension-tape */
+/* banner */
+
+.tape.banner {
+  padding-top: 214px;
+  padding-bottom: 54px;
+  color: white;
+}
+
+.tape.banner h1 {
+  font-family: Vetrino;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 60px;
+  line-height: 100%;
+  max-width: 870px;
+}
+
+.tape.banner h2 {
+  font-family: Vetrino;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.tape.banner .cat {
+  display: flex;
+  gap: 10px;
+}
+.tape.banner .cat span {
+  font-family: Manrope;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  border-radius: 1000px;
+  border: 0.2px solid rgba(255, 231, 217, 1);
+  padding: 10px 22px;
+}

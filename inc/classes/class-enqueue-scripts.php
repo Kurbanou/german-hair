@@ -83,6 +83,9 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			if (is_page_template('page-removal.php')) {
 				wp_enqueue_style('removal-style', gh_get_assets_uri('removal', 'css'), array(), gh_get_version('removal', 'css'));
 			}
+			if (is_page_template('page-hair-extension-tape.php')) {
+				wp_enqueue_style('extension-tape-style', gh_get_assets_uri('extension-tape', 'css'), array(), gh_get_version('extension-tape', 'css'));
+			}
 
 
 			wp_enqueue_script('script', gh_get_assets_uri('script', 'js'), array('jquery'), gh_get_version('script', 'js'), true);
