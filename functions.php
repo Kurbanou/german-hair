@@ -148,3 +148,40 @@ function wrap_only_table_in_scroll($output, $table)
     }
     return $output;
 }
+
+// Сохраняем номер телефона как мета-данные комментария
+add_action('comment_post', 'save_comment_phone_meta', 10, 3);
+function save_comment_phone_meta($comment_ID, $comment_approved, $commentdata)
+{
+    if (isset($_POST['phone'])) {
+        $phone = sanitize_text_field($_POST['phone']);
+        add_comment_meta($comment_ID, 'phone', $phone);
+    }
+}
+
+// Добавляем колонку "Телефон" в админку комментариев
+add_filter('manage_edit-comments_columns', 'add_phone_column');
+function add_phone_column($columns)
+{
+    $columns['phone'] = 'Телефон';
+    return $columns;
+}
+
+add_action('manage_comments_custom_column', 'show_phone_column', 10, 2);
+function show_phone_column($column, $comment_ID)
+{
+    if ($column === 'phone') {
+        $phone = get_comment_meta($comment_ID, 'phone', true);
+        echo esc_html($phone);
+    }
+}
+
+// Проверяем, что поле "Телефон" заполнено
+add_filter('preprocess_comment', 'validate_phone_field');
+function validate_phone_field($commentdata)
+{
+    if (empty($_POST['phone'])) {
+        wp_die('Пожалуйста, укажите номер телефона.');
+    }
+    return $commentdata;
+}
