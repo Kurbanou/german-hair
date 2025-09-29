@@ -10,8 +10,8 @@ get_header();
 
 $sections = [
 	'banner',
-	'guarantees',
-	'mistakes',
+	'necessity',
+	'how-many',
 	'withdrawal',
 	'price', 
 	'advantages',
