@@ -10,10 +10,9 @@
 .tape.banner h1 {
   font-family: Vetrino;
   font-weight: 400;
-  font-style: Regular;
   font-size: 60px;
   line-height: 100%;
-  max-width: 870px;
+  max-width: 797px;
 }
 
 .tape.banner h2 {
@@ -21,11 +20,14 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 26px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .tape.banner .cat {
   display: flex;
   gap: 10px;
+  margin-bottom: 30px;
 }
 .tape.banner .cat span {
   font-family: Manrope;
@@ -35,4 +37,53 @@
   border-radius: 1000px;
   border: 0.2px solid rgba(255, 231, 217, 1);
   padding: 10px 22px;
+}
+
+.tape.banner .banner_title {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  width: fit-content;
+}
+
+.tape.banner .i-logo {
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+}
+
+.tape.banner .banner-p {
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+  .tape.banner {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  .tape.banner h1 {
+    font-size: 48px;
+  }
+
+  .tape.banner .i-logo {
+    position: static;
+  }
+  .tape.banner h2 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .tape.banner .banner-p {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 45px;
+  }
+  .tape.banner .cat {
+    display: none;
+  }
 }
