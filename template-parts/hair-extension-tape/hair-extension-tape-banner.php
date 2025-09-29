@@ -18,7 +18,7 @@ $fon = get_field('fon');
     ),
     url('<?php echo esc_url($fon); ?>');
   background-size: cover;
-  background-position: center;
+  background-position: 75%;
   background-repeat: no-repeat;
 ">
 
