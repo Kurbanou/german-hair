@@ -12,9 +12,9 @@ $sections = [
 	'banner',
 	'necessity',
 	'how-many',
-	'withdrawal',
-	'price', 
 	'advantages',
+	'price', 
+	// 'advantages',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/hair-correction/correction-{$section}.php")) {

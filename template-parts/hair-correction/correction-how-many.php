@@ -6,7 +6,7 @@
 
 ?>
 <section class="correction how-many">
-  <div class="section-bg rtl" bis_skin_checked="1">
+  <div class="section-bg rtl">
     <svg width="1911" height="189" viewBox="0 0 1911 189" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2463 1C2463 1 2001.61 91.6945 1692.26 109.244C1453.35 122.797 1315.5 141.362 1079.73 109.244C889.469 83.3261 755.757 109.244 557.5 109.244C375.478 109.244 132.951 148.995 1 188" stroke="#967866" stroke-opacity="0.2"/>
         <rect width="18" height="18" rx="9" transform="matrix(-1 0 0 1 1600 107)" fill="#EAE4E0"/>
@@ -16,14 +16,14 @@
     <div class="correction-how-many__content">
         <div class="how-many__container">
             <h2 class="h2 text-second-dark">Сколько стоит коррекция волос?</h2>
-            <div class="correction-how-many__content_text content-text">
+            <div class="correction-how-many__content_text weight-500 flex flex-col">
                 <span>От 50₽ за капсулу</span>
                 <span>Стоимость зависит от мастера и объема работы</span>
-                <div class="flex flex-gap-xs items-center weight-500">
+                <div class="how-many__contact flex flex-gap-xs items-center weight-500">
                     <? get_icon('correction-maps', 'l'); ?>
                     Москва, ул. Тверская, 18
                 </div>
-                <div class="flex flex-gap-xs items-center weight-500">
+                <div class="how-many__contact flex flex-gap-xs items-center weight-500">
                     <? get_icon('correction-time', 'l'); ?>
                     Ежедневно с 10:00 до 22:00
                 </div>

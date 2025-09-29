@@ -14,19 +14,13 @@
 }
 
 .how-many .section-bg {
-  transform: translateY(-150px);
+  transform: translateY(-170px);
 }
 .withdrawal .section-bg {
   transform: translateY(-180px);
 }
 .advantages .section-bg {
   transform: translateY(-170px);
-}
-
-@media screen and (min-width: 990px) {
-  .correction .section-bg {
-    display: block;
-  }
 }
 
 .correction .content-text {
@@ -47,6 +41,21 @@
 section.correction {
   margin-top: 100px;
   position: relative;
+}
+
+@media screen and (min-width: 990px) {
+  .correction .section-bg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 481px) {
+    section.correction {
+        margin-top: 135px;
+    }
+    .correction .section-bg-mobile {
+        display: block;
+    }
 }
 
 
@@ -87,7 +96,7 @@ section.correction {
     }
 }
 
-@media (max-width: 481px) {
+@media screen and (max-width: 481px) {
     .correction.banner {
         padding: 139px 0 28px 0;
     }
@@ -157,19 +166,26 @@ section.necessities {
     align-items: center;
     gap: 16px;
 }
-
-@media (max-width: 481px) { 
-    section.necessities {
-        margin-top: 50px;
-    }
+@media screen and (max-width: 991px) { 
     .necessities__container {
-        gap: 10px;
+        gap: 24px;
+    }
+}
+@media screen and (max-width: 481px) { 
+    .correction.necessities .section-bg-mobile {
+        transform: translateY(-90px);
+    }
+
+    section.necessities {
+        margin-top: 107px;
     }
     .necessities__container .color-card {
-        min-height: 85px;
+        max-width: 100%;
+        min-height: 124px;
     }
     .necessities p, .necessities h2 {
         margin-bottom: 20px;
+        line-height: 24px;
     }
     .color-card {
         padding: 14px;
@@ -189,11 +205,15 @@ section.necessities {
 }
 .correction-how-many__content {
     display: flex;
-    gap: 20px 60px;
+    gap: 60px;
     margin-bottom: 60px;
 }
-.correction .correction-how-many__content_text {
+.correction-how-many__content_text {
     gap: 16px;
+    font-size: clamp(14px, 2vw, 18px);
+}
+.how-many__contact {
+    font-size: clamp(14px, 2vw, 16px);
 }
 .how-many__image {
     max-width: 665px;
@@ -210,4 +230,30 @@ section.necessities {
 .how-many .btn {
     margin: 0 auto;
     display: block;
+}
+@media screen and (max-width: 1200px) { 
+    .correction-how-many__content {
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 991px) { 
+    .correction-how-many__content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 481px) {
+    .correction-how-many__content {
+        margin-bottom: 20px;
+        align-items: flex-start;
+    }
+    .how-many__container h2 {
+        margin-bottom: 20px;
+    }
+    .how-many__image {
+        min-height: 207px;
+    }
+    .correction.how-many .section-bg-mobile {
+        transform: translateY(-80px);
+    }
 }
