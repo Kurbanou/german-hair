@@ -95,8 +95,8 @@
 
 .discounts .icon-size-discounts-icon {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -18px;
+  right: -36px;
   width: 60px;
   height: 48px;
   z-index: 2;
@@ -126,5 +126,48 @@
   }
   .tape.banner .cat {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tape.banner h1 {
+    font-size: 48px;
+  }
+
+  .tape.banner h2 {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+  }
+
+  .tape.banner .banner-p {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 45px;
+  }
+
+  .discounts .icon-size-discounts-icon {
+    display: none;
+  }
+  .tape.banner .discount .text {
+    max-width: unset;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  .tape.banner .discount .proc {
+    font-size: 34px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 450px) {
+  .tape.banner h1 {
+    font-size: 32px;
+  }
+  .discount {
+    flex-wrap: wrap;
   }
 }
