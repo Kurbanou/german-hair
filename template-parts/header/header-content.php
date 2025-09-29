@@ -49,7 +49,7 @@ $nav_list_left = [
 			],
 			[
 				'label' => 'Снятие волос',
-				'href' => '/',
+				'href' => '/hair-removal',
 			],
 			[
 				'label' => 'Коррекция волос',
