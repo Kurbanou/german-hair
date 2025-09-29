@@ -27,7 +27,7 @@ $list_necessities = [
       <div class="necessities__container">
         <?php foreach ($list_necessities as $necessity): ?>
           <div class="color-card">
-            <div class="color-card__container">
+            <div class="color-card__container flex flex-col">
                 <div class="correction-necessities__content_icon"><? get_icon($necessity['icon'], 'xl'); ?></div>
                 <div class="correction-necessities__content_text"><?php echo $necessity['text']; ?></div>
             </div>

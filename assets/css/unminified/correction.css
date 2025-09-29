@@ -168,7 +168,7 @@ section.necessities {
     align-items: center;
 }
 
-.color-card__container {
+.necessities__container .color-card__container {
     max-width: 248px;
     display: flex;
     align-items: center;
@@ -268,11 +268,10 @@ section.necessities {
 
 
 /* advantages */
-.correction-advantages__content svg {
+.correction-advantages__content h2 svg {
     position: relative;
     top: 17px;
 }
-
 .advantages__container {
     display: flex;
     flex-wrap: wrap;
@@ -281,6 +280,7 @@ section.necessities {
 }
 .advantages__container .color-card {
     max-width: 392px;
+    min-height: 197px;
     display: flex;
     align-items: center;
     padding: 42px 26px;
@@ -293,4 +293,80 @@ section.necessities {
 .correction-advantage__content {
     font-size: clamp(14px, 2vw, 18px);
     line-height: clamp(24px, 2.5vw, 26px);
+    gap: 9px;
+}
+.correction-advantage__content_title {
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: clamp(24px, 2.5vw, 26px);
+}
+
+@media screen and (max-width: 768px) { 
+    .correction-advantages__content h2 svg {
+        width: auto;
+        height: 31px;
+        top: 10px;
+    }
+}
+@media screen and (max-width: 481px) { 
+    .correction-advantages__content h2 svg {
+        width: auto;
+        height: 31px;
+        top: 10px;
+    }
+    .correction.advantages .section-bg-mobile {
+        transform: translateY(-70px);
+    }
+    .advantages__container {
+        gap: 24px;
+    }
+    .advantages__container .color-card {
+        max-width: 100%;
+        min-height: 133px;
+        padding: 26px;
+        justify-content: center;
+    }
+    .color-card__container {
+        max-width: 340px;
+        width: 100%;
+    }
+}
+
+/* process */
+.process__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.process__container .color-card {
+    max-width: 620px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}   
+
+.correction-process__content_number {
+    font-family: var(--e-font-family-second);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 26px;
+    letter-spacing: 0;
+}
+.correction-process__content_title {
+    font-family: var(--e-font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+}
+.correction-process__content_text {
+    font-family: var(--e-font-family);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 26px;
+    letter-spacing: 0;
 }
