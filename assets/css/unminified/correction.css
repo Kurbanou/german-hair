@@ -16,8 +16,8 @@
 .how-many .section-bg {
   transform: translateY(-170px);
 }
-.withdrawal .section-bg {
-  transform: translateY(-180px);
+.advantages .section-bg {
+  transform: translateY(-210px)
 }
 .advantages .section-bg {
   transform: translateY(-170px);
@@ -43,6 +43,10 @@ section.correction {
   position: relative;
 }
 
+.correction h2 {
+    margin-bottom: 30px;
+}
+
 @media screen and (min-width: 990px) {
   .correction .section-bg {
     display: block;
@@ -55,6 +59,9 @@ section.correction {
     }
     .correction .section-bg-mobile {
         display: block;
+    }
+    .correction h2 {
+        margin-bottom: 20px;
     }
 }
 
@@ -121,9 +128,9 @@ section.necessities {
     margin-top: 70px;
 }
 
-.necessities h2 {
+/* .necessities h2 {
     margin-bottom: 30px;
-}
+} */
 
 .necessities p {
     max-width: 1019px;
@@ -158,6 +165,7 @@ section.necessities {
     min-height: 130px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .color-card__container {
@@ -200,9 +208,9 @@ section.necessities {
     max-width: max-content;
     width: 100%;
 }
-.how-many__container h2 {
+/* .how-many__container h2 {
     margin-bottom: 30px;
-}
+} */
 .correction-how-many__content {
     display: flex;
     gap: 60px;
@@ -247,13 +255,42 @@ section.necessities {
         margin-bottom: 20px;
         align-items: flex-start;
     }
-    .how-many__container h2 {
+    /* .how-many__container h2 {
         margin-bottom: 20px;
-    }
+    } */
     .how-many__image {
         min-height: 207px;
     }
     .correction.how-many .section-bg-mobile {
         transform: translateY(-80px);
     }
+}
+
+
+/* advantages */
+.correction-advantages__content svg {
+    position: relative;
+    top: 17px;
+}
+
+.advantages__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 52px;
+}
+.advantages__container .color-card {
+    max-width: 392px;
+    display: flex;
+    align-items: center;
+    padding: 42px 26px;
+}
+.color-card__container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.correction-advantage__content {
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: clamp(24px, 2.5vw, 26px);
 }
