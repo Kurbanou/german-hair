@@ -61,6 +61,47 @@
   margin-bottom: 30px;
 }
 
+.tape.banner .discounts {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.tape.banner .discount {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.tape.banner .discount .proc {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tape.banner .discount .text {
+  font-family: Manrope;
+  font-weight: 600;
+  max-width: 108px;
+
+  font-size: 18px;
+
+  line-height: 26px;
+}
+
+.discounts .icon-size-discounts-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 48px;
+  z-index: 2;
+}
+
 @media (max-width: 991px) {
   .tape.banner {
     padding-top: 100px;

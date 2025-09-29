@@ -38,13 +38,14 @@ $fon = get_field('fon');
         <div class="cat">
           <span>Запишитесь сейчас и получите бесплатную консультацию!</span>
         </div>
-        <button class="btn btn-light btn-glowing">Записаться</button>
+
         <div class="discounts">
+          <button class="btn btn-light btn-glowing">Записаться</button>
           <div class="discount">
-            <div class="proc">- 50%</div>
-            <div class="text">на первое наращивание</div>
+            <div class="proc">- 10%</div>
+            <div class="text">при первом посещении</div>
           </div>
-          <button class="btn btn-light btn-glowing">узнать стоимость со скидкой</button>
+          <?php get_icon('bant', 'discounts-icon') ?>
         </div>
       </div>
     </div>
