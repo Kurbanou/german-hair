@@ -62,7 +62,7 @@ $list_advantages = [
           <div class="color-card">
             <div class="color-card__container">
                 <? get_icon($advantage['icon'], 'xl'); ?>
-                <div class="correction-advantage__content">
+                <div class="correction-advantage__content flex flex-col">
                     <div class="correction-advantage__content_title weight-600"><?php echo $advantage['title']; ?></div>
                     <div class="correction-advantage__content_text weight-500"><?php echo $advantage['text']; ?></div>
                 </div>

@@ -28,15 +28,15 @@ $process_list = [
 
 ?>
 <section class="correction process">
-  <div class="section-bg rtl" bis_skin_checked="1">
-    <svg width="1920" height="298" viewBox="0 0 1920 298" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2514 297.5C2514 297.5 2037.18 241.54 1716 159.5C1532 112.5 1320.62 97.4487 1068.5 136.5C865.05 168.013 644 147.5 438 136.5C243.571 126.118 57.101 48.4253 -84 1" stroke="#967866" stroke-opacity="0.2"/>
-        <rect width="18" height="18" rx="9" transform="matrix(-1 0 0 1 263 98)" fill="#EAE4E0"/>
+  <div class="section-bg rtl">
+    <svg width="1920" height="201" viewBox="0 0 1920 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-373 200C-373 200 120.387 44.8504 451.189 23.5123C706.66 7.03329 854.076 15.7625 1106.19 54.8139C1309.64 86.3269 1505.25 143.263 1711.25 132.263C1905.68 121.881 2012.9 48.4253 2154 1" stroke="#967866" stroke-opacity="0.2"/>
+    <rect x="1588" y="123" width="18" height="18" rx="9" fill="#EAE4E0"/>
     </svg>
   </div>
   <div class="container">
     <div class="correction-process__content">
-      <h2 class="h2 text-second-dark">Как проходит профессиональное снятие волос</h2>
+      <h2 class="h2 text-second-dark">Как проходит коррекция волос на капсулах?</h2>
       <div class="process__container">
         <?php foreach ($process_list as $key => $point): ?>
           <div class="color-card">

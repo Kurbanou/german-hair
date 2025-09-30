@@ -14,8 +14,10 @@ $sections = [
 	'how-many',
 	'advantages',
 	'process',
+	'result', 
 	'price', 
-	// 'advantages',
+	'update', 
+	'choose-up',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/hair-correction/correction-{$section}.php")) {
