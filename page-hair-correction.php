@@ -13,6 +13,7 @@ $sections = [
 	'necessity',
 	'how-many',
 	'advantages',
+	'process',
 	'price', 
 	// 'advantages',
 ];
