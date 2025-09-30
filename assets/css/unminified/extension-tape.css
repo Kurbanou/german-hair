@@ -1,6 +1,6 @@
 /* extension-tape */
-.obuchenie .section-bg,
-.obuchenie .section-bg-mobile {
+.tape .section-bg,
+.tape .section-bg-mobile {
   display: none;
   position: absolute;
   bottom: unset;
@@ -11,6 +11,13 @@
   overflow: hidden;
   width: 100%;
   transform: translateY(0px);
+}
+
+@media screen and (max-width: 480px) {
+  .tape .section-bg-mobile {
+    display: block;
+    transform: translateY(30px);
+  }
 }
 /*  */
 h2 {
@@ -286,5 +293,69 @@ section:nth-child(2) {
 @media (max-width: 481px) {
   .tape.benefits .cards_container-card {
     width: 100%;
+  }
+}
+
+/* info */
+.photo-block {
+  flex-shrink: 0;
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(244, 244, 244, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.tape .content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: Manrope;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+}
+
+.tape .content-text h2 {
+  margin-bottom: 0;
+}
+
+.tape .content {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.info .photo-block {
+  max-width: 615px;
+  aspect-ratio: 1.484;
+  order: 1;
+}
+
+.info .photo-block img {
+  max-width: 100%;
+  max-height: unset;
+}
+
+@media (max-width: 991px) {
+  .info .photo-block {
+    order: 1;
+  }
+  .tape .content {
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+  .tape .content-text {
+    gap: 16px;
+  }
+  .tape .content-text p,
+  .tape .content-text ul,
+  .quote-block {
+    font-size: 14px;
+    line-height: 24px;
   }
 }
