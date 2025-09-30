@@ -186,3 +186,8 @@
     flex-wrap: wrap;
   }
 }
+
+.svgs svg {
+  width: 100%;
+  max-width: 60px;
+}

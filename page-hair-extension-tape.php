@@ -9,11 +9,7 @@ get_header();
 
 $sections = [
 	'banner',
-	'guarantees',
-	'mistakes',
-	'withdrawal',
-	'price',
-	'advantages',
+	'benefits',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/hair-extension-tape/hair-extension-tape-{$section}.php")) {
