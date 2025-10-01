@@ -9,6 +9,7 @@ get_header();
 
 $sections = [
 	'banner',
+	'benefits',
 
 ];
 foreach ($sections as $section) {
