@@ -13,8 +13,8 @@ body {
 }
 
 /*  */
-.tape .section-bg,
-.tape .section-bg-mobile {
+.section-bg,
+.section-bg-mobile {
   display: none;
   position: absolute;
   bottom: unset;
@@ -50,9 +50,13 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+  .section-bg-mobile,
   .tape .section-bg-mobile {
     display: block;
     transform: translateY(30px);
+  }
+  .common-team-section .section-bg-mobile {
+    transform: translateY(-50px);
   }
 }
 /*  */
