@@ -7,18 +7,13 @@
 
 get_header();
 
-
 $sections = [
 	'banner',
-	'guarantees',
-	'mistakes',
-	'withdrawal',
-	'price',
-	'advantages',
+
 ];
 foreach ($sections as $section) {
-	if (locate_template("template-parts/removal/removal-{$section}.php")) {
-		get_template_part("template-parts/removal/removal", $section);
+	if (locate_template("template-parts/hair-extension-capsule/hair-extension-capsule-{$section}.php")) {
+		get_template_part("template-parts/hair-extension-capsule/hair-extension-capsule", $section);
 	}
 }
 

@@ -86,6 +86,9 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			if (is_page_template('page-hair-extension-tape.php')) {
 				wp_enqueue_style('extension-tape-style', gh_get_assets_uri('extension-tape', 'css'), array(), gh_get_version('extension-tape', 'css'));
 			}
+			if (is_page_template('page-hair-extension-capsule.php')) {
+				wp_enqueue_style('extension-capsule-style', gh_get_assets_uri('extension-capsule', 'css'), array(), gh_get_version('extension-capsule', 'css'));
+			}
 			if (is_page_template('page-hair-correction.php')) {
 				wp_enqueue_style('correction-style', gh_get_assets_uri('correction', 'css'), array(), gh_get_version('correction', 'css'));
 			}
