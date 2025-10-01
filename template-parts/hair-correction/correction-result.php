@@ -21,7 +21,7 @@ $results_list = [
 
 ?>
 <section class="correction results">
-  <div class="section-bg rtl" bis_skin_checked="1">
+  <div class="section-bg rtl">
     <svg width="1920" height="201" viewBox="0 0 1920 201" fill="none">
         <path d="M2254 1C2254 1 1760.61 156.15 1429.81 177.488C1174.34 193.967 1026.92 185.237 774.806 146.186C571.356 114.673 336.5 151 130.5 162C-63.9293 172.382 -131.899 152.575 -273 200" stroke="#967866" stroke-opacity="0.2"/>
         <rect x="1660" y="159" width="18" height="18" rx="9" transform="rotate(180 1660 159)" fill="#EAE4E0"/>

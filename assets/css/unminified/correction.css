@@ -1,7 +1,6 @@
 /* correction */
 .correction .section-bg,
 .correction .section-bg-mobile,
-.section .common-additional-services-section, 
 .section .common-team-section-bg
 {
   display: none;
@@ -14,6 +13,12 @@
   overflow: hidden;
   width: 100%;
   transform: translateY(0px);
+}
+
+@media screen and (min-width: 482px) {
+    .correction .section-bg {
+        display: block;
+    }
 }
 
 .how-many .section-bg {
@@ -648,19 +653,23 @@ section.price .tablepress td span.tablepress-note {
 section.common-team-section,
 section.common-additional-services-section {
     margin-top: 100px;
+    margin-bottom: 0;
 }
 .section-bg.common-team-section-bg {
     display: none;
+    top: unset;
 }
 .section-bg.common-team-section-bg.reverse {
     display: block;
-    /* transform: translateY(20px); */
-    transform: translateY(2%);
+    transform: translateY(-90%);
+    top: 0;
+    bottom: unset;
 }
 .section-bg.common-additional-services-section-bg {
-    /* display: none; */
-    transform: translateY(-180px);
     transform: translateY(-90%);
+    top: 0;
+    bottom: unset;
+    /* bottom: 100%; */
 }
 .section-bg.common-additional-services-section-bg.reverse {
     /* display: block;
