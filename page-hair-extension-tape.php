@@ -11,6 +11,7 @@ $sections = [
 	'banner',
 	'benefits',
 	'info',
+	'beforeafter',
 	'transformation',
 	'price',
 	'buy',

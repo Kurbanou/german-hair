@@ -44,7 +44,7 @@ body {
     display: block;
   } */
   .common-team-section .section-bg {
-    transform: translateY(50px);
+    transform: translateY(-170px);
     display: block;
   }
 }
