@@ -400,6 +400,9 @@ section:nth-child(2) {
 }
 
 @media (max-width: 991px) {
+  .correction .photo-block {
+    order: 1;
+  }
   .info .photo-block {
     order: 1;
   }
@@ -582,6 +585,13 @@ section:nth-child(2) {
   font-size: 18px;
   line-height: 26px;
   text-align: center;
+}
+
+/* correction */
+
+.correction .photo-block {
+  max-width: 568px;
+  aspect-ratio: 1.6;
 }
 
 @media (max-width: 991px) {
