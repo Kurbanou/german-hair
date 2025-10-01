@@ -7,7 +7,7 @@ $url = get_field('lentochnoe_narashhivanie_volos_chto_eto');
 
 ?>
 <section class="tape info">
-  <div class="section-bg rtl">
+  <div class="section-bg ">
     <svg width="1920" height="189" viewBox="0 0 1920 189" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M-375 1C-375 1 86.3928 128.603 395.743 146.153C634.648 159.706 772.505 152.527 1008.27 120.409C1198.53 94.4909 1332.24 83.5 1530.5 83.5C1712.52 83.5 1955.05 148.995 2087 188" stroke="#967866" stroke-opacity="0.2" />
       <rect x="135" y="107" width="18" height="18" rx="9" fill="#EAE4E0" />

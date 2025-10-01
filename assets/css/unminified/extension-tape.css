@@ -1,4 +1,18 @@
 /* extension-tape */
+/* fonts */
+body {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+}
+@media (max-width: 991px) {
+  body {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+/*  */
 .tape .section-bg,
 .tape .section-bg-mobile {
   display: none;
@@ -11,6 +25,20 @@
   overflow: hidden;
   width: 100%;
   transform: translateY(0px);
+}
+@media screen and (min-width: 990px) {
+  .section-bg {
+    transform: translateY(-100px);
+    display: block;
+  }
+  section:nth-child(3) .section-bg {
+    transform: translateY(-56px);
+    display: block;
+  }
+  section:nth-child(4) .section-bg {
+    transform: translateY(-93px);
+    display: block;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -357,5 +385,34 @@ section:nth-child(2) {
   .quote-block {
     font-size: 14px;
     line-height: 24px;
+  }
+}
+
+/* transformation */
+
+.transformation_content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.transformation_content_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 991px) {
+  .transformation_content {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .transformation_content {
+    max-width: 327px;
+    margin: 0 auto;
+    flex-direction: column;
   }
 }
