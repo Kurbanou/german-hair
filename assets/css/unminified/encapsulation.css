@@ -1,0 +1,185 @@
+/* encapsulation */
+.encapsulation .section-bg,
+.encapsulation .section-bg-mobile,
+.section .common-team-section-bg
+{
+  display: none;
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  transform: translateY(0px);
+}
+
+@media screen and (min-width: 482px) {
+    .encapsulation .section-bg {
+        display: block;
+    }
+}
+
+.how-many .section-bg {
+  transform: translateY(-170px);
+  /* transform: translateY(-88%); */
+}
+.advantages .section-bg {
+  transform: translateY(-210px);
+  /* transform: translateY(-70%); */
+}
+.process .section-bg {
+  transform: translateY(-90px);
+  /* transform: translateY(-45%); */
+}
+.results .section-bg {
+  transform: translateY(-200px);
+  /* transform: translateY(-100%); */
+}
+.updates .section-bg {
+  transform: translateY(-180px);
+  /* transform: translateY(-90%); */
+}
+.choice .section-bg {
+  transform: translateY(-155px);
+  /* transform: translateY(-85%); */
+}
+
+
+.encapsulation .content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: var(--e-font-family);
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+}
+.encapsulation .content-text p,
+.encapsulation .content-text ul {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+section.encapsulation {
+  margin-top: 100px;
+  position: relative;
+}
+
+.encapsulation h2 {
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 990px) {
+  .encapsulation .section-bg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 481px) {
+    section.encapsulation {
+        margin-top: 135px;
+    }
+    .encapsulation .section-bg-mobile {
+        display: block;
+    }
+    .encapsulation h2 {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* banner */
+.encapsulation.banner {
+  margin-top: 0;
+  padding: 212px 0 70px 0;
+  position: relative;
+}
+.encapsulation.banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.4) 99.91%);
+    top: 0;
+    z-index: -1;
+}
+.banner-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+}
+
+.encapsulation.banner h1 {
+  font-family: Vetrino;
+  font-weight: 400;
+  font-size: clamp(48px, 5vw, 60px);
+  color: var(--e-white-color);
+  line-height: 100%;
+  max-width: 869px;
+}
+.encapsulation.banner h1 svg {
+    position: relative;
+    top: 12px;
+}
+
+.encapsulation.banner h2 {
+    color: var(--e-white-color);
+    font-size: clamp(18px, 3.5vw, 32px);
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.encapsulation-banner__btn {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.encapsulation-banner__btn-sale {
+    display: none;
+    color: var(--e-white-color);
+    font-size: 34px;
+}
+
+
+@media screen and (max-width: 991px) {
+    .encapsulation.banner {
+        padding: 100px 0 30px 0;
+    }
+    .encapsulation-banner__btn {
+        margin-top: 105px;
+    }
+    .encapsulation-banner__btn-sale {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .encapsulation.banner {
+        padding: 139px 0 28px 0;
+    }
+    .encapsulation.banner h1 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .encapsulation.banner h1 span {
+        font-size: 18px;
+    }
+    .encapsulation.banner h1 svg {
+        width: auto;
+        height: 28px;
+    }
+    .encapsulation.banner h2 br {
+        display: none;
+    }
+}

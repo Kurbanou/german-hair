@@ -16,6 +16,9 @@ $sections = [
 	'cost',
 	'correction',
 	'works',
+	'faq',
+	'whyus',
+	'reviews',
 
 ];
 foreach ($sections as $section) {

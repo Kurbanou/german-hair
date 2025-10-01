@@ -594,6 +594,14 @@ section:nth-child(2) {
   aspect-ratio: 1.6;
 }
 
+/* whyus */
+
+.whyus .photo-block {
+  max-width: 694px;
+  aspect-ratio: 2.268;
+  order: 1;
+}
+
 @media (max-width: 991px) {
   .recommendations_content {
     margin-top: 20px;
