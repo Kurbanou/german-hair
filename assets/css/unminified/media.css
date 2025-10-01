@@ -286,6 +286,10 @@
     .special-offers::after {
         zoom: 0.5;
     }
+    .breadcrumbs { 
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
 
 

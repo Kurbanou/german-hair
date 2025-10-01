@@ -92,6 +92,9 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			if (is_page_template('page-hair-correction.php')) {
 				wp_enqueue_style('correction-style', gh_get_assets_uri('correction', 'css'), array(), gh_get_version('correction', 'css'));
 			}
+			if (is_page_template('page-hair-encapsulation.php')) {
+				wp_enqueue_style('encapsulation-style', gh_get_assets_uri('encapsulation', 'css'), array(), gh_get_version('encapsulation', 'css'));
+			}
 
 
 			wp_enqueue_script('script', gh_get_assets_uri('script', 'js'), array('jquery'), gh_get_version('script', 'js'), true);
