@@ -39,7 +39,7 @@ $contacts_block = get_contacts_block_data();
       </div>
 
       <h3 class="h3 text-second-dark text-center">
-        Оставьте заявку, и мы свяжемся с вами в ближайшее рабочее время
+        Оставьте заявку, и мы свяжемся с вами в&nbspближайшее рабочее время
       </h3>
 
       <form novalidate class="comment-form_form" method="post" action="<?php echo site_url('/wp-comments-post.php'); ?>">
@@ -107,36 +107,15 @@ $contacts_block = get_contacts_block_data();
           <?php endforeach; ?>
         </div>
       </div>
-
-
-
-
-
-      <!-- <div class="comment-form_contact">
-        <h3 class="h3 text-second-dark mb-s text-center">
-          Наши контакты
-        </h3>
-        <div class="comment-form_contact-items">
-          <div class="comment-form_contact-item flex items-center flex-gap-m">
-            <? get_icon('form-phone', '60'); ?>
-            <div class="weight-500 text-l flex flex-col">
-              <a href="tel:+71234567890">+7 (123)-456-78-90</a>
-              <a href="tel:+70987654321">+7 (098)-765-43-21</a>
-            </div>
-          </div>
-          <div class="comment-form_contact-item flex items-center flex-gap-m ">
-            <? get_icon('form-time', '60'); ?>
-            <div class="weight-500 text-l flex flex-col">
-              <span>C 10:00 до 22:00</span>
-              <span>Ежедневно</span>
-            </div>
-          </div>
-        </div>
-
-      </div> -->
+      
     </div>
   </div>
-
+    <div class="section-bg-mobile">
+        <svg width="100%" height="100%" viewBox="0 0 480 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M480 37.6027C480 37.6027 390.045 12.7247 329.733 9.30318C283.156 6.66081 256.279 8.06052 210.312 14.3223C173.219 19.3754 147.15 21.5182 108.497 21.5182C73.0095 21.5182 25.7257 8.7491 9.98378e-06 1.14453" stroke="#967866" stroke-opacity="0.2"/>
+          <rect x="385" y="21.7441" width="16" height="16" rx="8" transform="rotate(180 385 21.7441)" fill="#EAE4E0"/>
+        </svg>
+    </div>
 </section>
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LcAJcMrAAAAAFanbR4i1YaBunnXmzUZhT1orJ4e"></script>

@@ -78,7 +78,7 @@ section .tablepress {
   border-collapse: collapse;
   border-spacing: 0;
   clear: both;
-  margin: 0 auto 1rem;
+  margin: 0 auto 0;
   table-layout: auto;
 }
 

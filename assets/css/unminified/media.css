@@ -111,32 +111,7 @@
         --outer-gap: 0px;
     }
 
-    .special-offers {
-        padding: 30px 20px;
-    }
-    .special-offers__title {
-        font-size: 40px;
-        line-height: 34px;
-        margin-bottom: 30px;
-    }
-    .special-offers__items {
-        flex-direction: column;
-        gap: 20px;
-        justify-content: flex-start;
-    }
-    .special-offers::before {
-        content: url(../../images/additional-services/stars-mobile.png);
-        top: 0;
-    }
-    .special-offers::after {
-        right: -10%;
-        bottom: -15%;
-        zoom: 0.5;
-    }
-    .special-offers__item {
-        max-width: 246px;
-        justify-content: flex-start;
-    }
+ 
 }
 
 @media screen and (max-width: 767px) {
@@ -266,6 +241,33 @@
     .sub-sectio-included-services .list-disk {
         --padding: 0;
     }
+
+    .special-offers {
+        padding: 30px 20px;
+    }
+    .special-offers__title {
+        font-size: 40px;
+        line-height: 34px;
+        margin-bottom: 30px;
+    }
+    .special-offers__items {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+    .special-offers::before {
+        content: url(../../images/additional-services/stars-mobile.png);
+        top: 0;
+    }
+    .special-offers::after {
+        right: -10%;
+        bottom: -15%;
+        zoom: 0.7;
+    }
+    .special-offers__item {
+        max-width: 246px;
+        justify-content: flex-start;
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -279,6 +281,13 @@
         --image-height: 270px;
     }
 }
+
+@media screen and (max-width: 481px) {
+    .special-offers::after {
+        zoom: 0.5;
+    }
+}
+
 
 @media screen and (max-width: 360px) {
     .text-break-word {

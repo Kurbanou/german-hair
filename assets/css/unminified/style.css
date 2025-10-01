@@ -1184,6 +1184,8 @@ a.link-card {
   padding: 26px;
   display: flex;
   flex-direction: column;
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: clamp(24px, 2.5vw, 26px);
 }
 .additional-services-item__title {
   margin-bottom: 9px;

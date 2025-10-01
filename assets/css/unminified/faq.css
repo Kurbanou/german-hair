@@ -532,7 +532,7 @@ body.popup-open {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 481px) {
   .bg-form {
     display: block;
     position: absolute;
@@ -553,6 +553,12 @@ body.popup-open {
   .removal h3 {
       font-size: 18px;
       line-height: 25px;
+      margin-bottom: 20px;
+  }
+  .removal.comment-form .section-bg-mobile {
+    transform: translateY(-210%);
+    bottom: unset;
+    top: 0;
   }
   .removal .comment-form_form {
     margin-top: 10px;
@@ -560,11 +566,19 @@ body.popup-open {
   .removal .comment-form_content {
       padding: 20px;
       border-radius: 14px;
+      margin-top: 136px;
   }
-  /* .comment-form_contact {
-    margin-top: 40px;
-  } */
+  .comment-form p {
+      line-height: normal;
+  }
+  .comment-form_contact {
+      max-width: 254px;
+      width: 100%;
+  }
 
+
+
+  
   .popup {
     padding: 40px 20px;
   }

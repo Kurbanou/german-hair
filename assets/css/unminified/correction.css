@@ -384,8 +384,8 @@ section.necessities {
         padding: 26px;
         justify-content: center;
     }
-    .color-card__container {
-        max-width: 340px;
+    .advantages__container .color-card__container {
+        max-width: 310px;
         width: 100%;
     }
 }
@@ -448,6 +448,9 @@ section.necessities {
         gap: 24px;
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr)); 
+    }
+    .process__container .color-card {
+        padding: 26px;
     }
     .process__container .color-card:nth-child(2n+1):last-child {
         grid-column: 1;     
@@ -683,6 +686,7 @@ section.price .tablepress td span.tablepress-note {
     } */
     .choice__container .color-card {
         max-width: 100%;
+        min-height: 102px;
     }
     .correction.choice .section-bg-mobile {
         transform: translateY(-90px)
@@ -725,3 +729,46 @@ section.common-additional-services-section {
     transform: translateY(20px); */
 }
  
+@media screen and (max-width: 482px) {
+    .section-bg.common-team-section-bg.reverse {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .section.common-team-section,
+    .section.common-additional-services-section {
+        margin-top: 86px;
+        padding-bottom: 0;
+    }
+    .common-team-section .section-bg-mobile {
+        transform: translateY(-40px);
+        top: 0;
+    }
+    .common-team-section .section-content h2 {
+        margin-bottom: 10px;
+    }
+    .common-team-section .section-content {
+        line-height: 24px;
+    }
+    .additional-services-list {
+        gap: 20px;
+    }
+    .additional-services-item {
+        max-width: 100%;
+    }
+    .additional-services-item-wrapper ul {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .additional-services-item-wrapper ul li br {
+        display: none;
+    }
+    .common-additional-services-section h2 {
+        margin-bottom: 20px;
+    }
+    .common-additional-services-section .section-bg-mobile {
+        transform: translateY(-40px);
+        top: 0;
+    }
+}

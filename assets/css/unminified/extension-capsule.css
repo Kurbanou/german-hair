@@ -552,6 +552,38 @@ section:nth-child(2) {
   background: rgba(255, 241, 226, 0.6);
 }
 
+/* time */
+
+.time_content {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.time_content .column-1,
+.time_content .column-2 {
+  width: 100%;
+}
+
+/* cost */
+.cost_content .tablepress tbody tr td:first-child {
+  max-width: unset;
+}
+
+.cost_content .tablepress-table-description {
+  margin-top: 26px;
+}
+
+.cost_content .tablepress-table-name {
+  color: rgba(33, 92, 129, 1);
+
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+}
+
 @media (max-width: 991px) {
   .recommendations_content {
     margin-top: 20px;
@@ -596,6 +628,10 @@ section:nth-child(2) {
   .title_card {
     font-size: 16px;
     line-height: 26px;
+  }
+  .cost_content .tablepress-table-name {
+    font-size: 14px;
+    line-height: 24px;
   }
 
   .content_card {
