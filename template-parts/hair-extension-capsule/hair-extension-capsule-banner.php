@@ -5,7 +5,7 @@
  */
 
 $fon = get_field('fon');
-function get_contacts_block_data()
+function get_contacts_data()
 {
   return [
     [
@@ -18,7 +18,7 @@ function get_contacts_block_data()
   ];
 }
 
-$contacts_block = get_contacts_block_data();
+$contacts_block = get_contacts_data();
 ?>
 
 <?php if ($fon): ?>
@@ -46,6 +46,7 @@ $contacts_block = get_contacts_block_data();
           <div class="discount">
             <div class="text">Горячее капсульное наращивание волос вы можете сделать <br />в нашем салоне <?php echo esc_html(wp_strip_all_tags($contacts_block[0]['content'][0]['value'])); ?>
             </div>
+            <div class="text">Запишитесь сейчас и получите бесплатную консультацию!</div>
           </div>
         </div>
       </div>

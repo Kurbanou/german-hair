@@ -106,30 +106,6 @@ $contacts_block = get_contacts_block_data();
           </div>
         <?php endforeach; ?>
       </div>
-
-
-      <!-- <div class="comment-form_contact">
-        <h3 class="h3 text-second-dark mb-s text-center">
-          Наши контакты
-        </h3>
-        <div class="comment-form_contact-items">
-          <div class="comment-form_contact-item flex items-center flex-gap-m">
-            <? get_icon('form-phone', '60'); ?>
-            <div class="weight-500 text-l flex flex-col">
-              <a href="tel:+71234567890">+7 (123)-456-78-90</a>
-              <a href="tel:+70987654321">+7 (098)-765-43-21</a>
-            </div>
-          </div>
-          <div class="comment-form_contact-item flex items-center flex-gap-m ">
-            <? get_icon('form-time', '60'); ?>
-            <div class="weight-500 text-l flex flex-col">
-              <span>C 10:00 до 22:00</span>
-              <span>Ежедневно</span>
-            </div>
-          </div>
-        </div>
-
-      </div> -->
     </div>
   </div>
 

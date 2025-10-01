@@ -162,7 +162,7 @@ section:nth-child(2) {
 
 .capsule.banner .i-logo {
   position: absolute;
-  right: 60px;
+  right: 136px;
   bottom: 0;
 }
 
@@ -214,7 +214,17 @@ section:nth-child(2) {
   z-index: 2;
 }
 
+.discounts .text:nth-child(2) {
+  display: none;
+}
+
 @media (max-width: 991px) {
+  .discounts .text:nth-child(2) {
+    display: block;
+  }
+  .discounts .text:nth-child(1) {
+    display: none;
+  }
   .capsule.banner {
     padding-top: 100px;
     padding-bottom: 30px;
@@ -239,9 +249,7 @@ section:nth-child(2) {
   .capsule.banner .cat {
     display: none;
   }
-}
 
-@media (max-width: 768px) {
   .capsule.banner h1 {
     font-size: 48px;
   }
@@ -275,18 +283,15 @@ section:nth-child(2) {
   }
 }
 
+@media (max-width: 768px) {
+  .capsule.banner {
+    background-position: 75% 0% !important;
+  }
+}
 @media (max-width: 481px) {
   .capsule.banner {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.25) 50%,
-        rgba(0, 0, 0, 0.4) 99.91%
-      ),
-      url("../../images/extension-capsule/bg.png") !important;
-    background-size: cover;
+    background-image: url("../../images/extension-capsule/bg.jpg") !important;
     background-position: center !important;
-    background-repeat: no-repeat;
   }
 }
 
