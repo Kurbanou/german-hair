@@ -602,7 +602,22 @@ section:nth-child(2) {
   order: 1;
 }
 
+/* capsule about-reviews */
+.reviews {
+  padding-bottom: 100px;
+}
+
+.reviews .btn {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 @media (max-width: 991px) {
+  .reviews .btn {
+    margin-top: 30px;
+  }
   .recommendations_content {
     margin-top: 20px;
   }
