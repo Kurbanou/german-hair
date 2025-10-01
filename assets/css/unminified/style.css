@@ -1191,18 +1191,22 @@ a.link-card {
 .additional-services-item__desc p {
   margin-bottom: 9px;
 }
+.additional-services-item-wrapper ul {
+  padding-left: 0.5em;
+}
 .additional-services-item-wrapper li {
-    position: relative;
-    padding: var(--padding) 0;
-    padding-left: 1em;
-    display: flex;
-    align-items: center;
+  position: relative;
+  padding: var(--padding) 0;
+  padding-left: 1em;
+  display: flex;
+  align-items: center;
 }
 .additional-services-item-wrapper li::before {
-    content: "•";
-    position: absolute;
-    left: -0.125em;
-    font-size: 1.25em;
+  content: "•";
+  position: absolute;
+  left: -0.125em;
+  font-size: 1.25em;
+  top: -5%;
 }
 .additional-services-image-wrapper {
   width: 100%;

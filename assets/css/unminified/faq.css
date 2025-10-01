@@ -369,6 +369,10 @@ textarea {
   gap: 12px;
 }
 
+.form-consent a {
+  text-decoration: underline;
+}
+
 input[type="checkbox"] {
   width: 24px;
   height: 24px;
@@ -512,6 +516,15 @@ body.popup-open {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .comment-form_contact {
+    margin: 0 auto;
+  }
+  .comment-form_contact-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media screen and (max-width: 400px) {
   .faq.title h1 {
     font-size: 20px;
@@ -548,13 +561,9 @@ body.popup-open {
       padding: 20px;
       border-radius: 14px;
   }
-
-  .comment-form_contact-items  {
-      grid-template-columns: repeat(1, 1fr);
-  }
-  .comment-form_contact {
+  /* .comment-form_contact {
     margin-top: 40px;
-  }
+  } */
 
   .popup {
     padding: 40px 20px;

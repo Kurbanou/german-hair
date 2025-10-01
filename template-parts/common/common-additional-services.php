@@ -3,7 +3,6 @@
 /**
  * Displays additional services section
  */
-
 $template_slug = basename(get_page_template(), '.php');
 
 if ($template_slug === 'page-hair-extension-tape') {
@@ -58,8 +57,8 @@ if ($template_slug === 'page-hair-extension-tape') {
             'name' => 'Окрашивание волос',
             'desc' => '
         <ul>
-            <li>Выполняем в самых разных техниках</li>
-            <li>Используем премиальные красители</li>
+            <li>Выполняем в самых разных<br> техниках</li>
+            <li>Используем премиальные<br> красители</li>
             <li>Подбираем оттенок индивидуально</li>
         </ul>',
             'image' => get_template_directory_uri() . '/assets/images/team/additional-services-2.jpg',
@@ -68,9 +67,9 @@ if ($template_slug === 'page-hair-extension-tape') {
             'name' => 'Процедуры восстановления волос',
             'desc' => '
         <ul>
-            <li>Горячее и холодное восстановление</li>
+            <li>Горячее и холодное<br> восстановление</li>
             <li>Подбор состава индивидуально</li>
-            <li>Для максимального здоровья и блеска</li>
+            <li>Для максимального здоровья и&nbspблеска</li>
         </ul>',
             'image' => get_template_directory_uri() . '/assets/images/team/additional-services-3.jpg',
         ],

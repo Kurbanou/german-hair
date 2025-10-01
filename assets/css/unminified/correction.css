@@ -97,6 +97,24 @@ section.correction {
 .correction.banner {
   margin-top: 0;
   padding: 212px 0 70px 0;
+  position: relative;
+}
+.correction.banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.4) 99.91%);
+    top: 0;
+    z-index: -1;
+}
+.banner-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+    top: 0;
 }
 
 .correction.banner h1 {
@@ -119,6 +137,12 @@ section.correction {
     margin-bottom: 0;
 }
 
+.correction-banner__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
 
 .correction.banner .btn {
   margin-top: 60px;
@@ -127,6 +151,9 @@ section.correction {
 @media screen and (max-width: 991px) {
     .correction.banner {
         padding: 100px 0 30px 0;
+    }
+    .correction.banner .btn {
+        margin-top: 105px;
     }
 }
 
@@ -137,6 +164,7 @@ section.correction {
     .correction.banner h1 {
         display: flex;
         flex-direction: column;
+        margin-bottom: 10px;
     }
     .correction.banner h1 span {
         font-size: 18px;
@@ -480,6 +508,13 @@ section.necessities {
 .price .tablepress-table-description span {
     margin-bottom: 16px;
     display: inline-flex;
+}
+.price .tablepress-table-description br {
+    display: none;
+}
+.price .tablepress-table-description ol {
+    list-style: disc;
+    padding-left: 30px;
 }
 section.price .tablepress td span.tablepress-note {
     opacity: 1;

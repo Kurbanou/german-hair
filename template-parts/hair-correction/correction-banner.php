@@ -9,7 +9,8 @@ $fon_mobile = get_field('fon-mobile');
 ?>
 
 <?php if ($fon): ?>
-  <section class="correction banner" style="
+  <!-- <section class="correction banner" 
+  style="
   background-image: 
     linear-gradient(
       180deg,
@@ -17,12 +18,17 @@ $fon_mobile = get_field('fon-mobile');
       rgba(0, 0, 0, 0.25) 50%,
       rgba(0, 0, 0, 0.4) 99.91%
     ),
-    url('<?php echo esc_url($fon); ?>');
+    url('<?//php echo esc_url($fon); ?>');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-">
-
+"
+> -->
+<section class="correction banner">
+<picture>
+  <source media="(max-width: 768px)" srcset="<?php echo esc_url($fon_mobile ? $fon_mobile : $fon); ?>">
+  <img src="<?php echo esc_url($fon); ?>" alt="Баннер" class="banner-img">
+</picture>
   <?php else: ?>
     <section class="correction banner">
     <?php endif; ?>
@@ -44,9 +50,15 @@ $fon_mobile = get_field('fon-mobile');
             </svg>
         </span> </h1> 
         <h2 class="h2 mb-sm mb-me_responsive">Продлите идеальный вид ваших волос<br>
-            с профессиональной коррекцией!
+            с&nbspпрофессиональной коррекцией!
         </h2>
-        <button class="btn btn-light btn-glowing">Записаться</button>
+        <div class="correction-banner__btn">
+            <button class="btn btn-light btn-glowing">Записаться</button>
+            <div class="correction-banner__btn-sale weight-700">
+                - 10%<span class="weight-600 text-m">на первую коррекцию!</span>
+            </div>
+        </div>
+        
       </div>
     </div>
 </section>
