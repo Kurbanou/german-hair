@@ -21,7 +21,7 @@ $list_necessities = [
 <section class="correction necessities">
   <div class="container">
     <div class="correction-necessities__content">
-      <h2 class="h2 text-second-dark">Наращивание волос и коррекция — две стороны одной монеты.<br> Почему же это необходимо?</h2>
+      <h2 class="h2 text-second-dark">Наращивание волос и коррекция — две&nbspстороны одной монеты.<br> Почему же это необходимо?</h2>
       <p class="weight-500">Со временем ваши натуральные волосы отрастают, и капсулы смещаются в среднем на 1,5–2 см, из-за чего прическа теряет аккуратность.
         Коррекция нарощенных волос возвращает первоначальную ухоженность, а также:</p>
       <div class="necessities__container">
