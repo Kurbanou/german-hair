@@ -12,7 +12,7 @@ function get_contacts_block_data()
       'icon'  => 'adress-group',
       'title' => 'Адрес',
       'content' => [
-        ['type' => 'text', 'value' => get_theme_mod('main_contact_address_setting', '')],
+        ['type' => 'text', 'value' => get_theme_mod('main_contact_short_address_setting', '')],
       ],
     ],
   ];

@@ -26,12 +26,6 @@ $list_choice = [
     <rect x="1597" y="111" width="18" height="18" rx="9" fill="#EAE4E0"/>
     </svg>
   </div>
-  <div class="section-bg rtl section-bg_bottom">
-    <svg width="1920" height="189" viewBox="0 0 1920 189" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M-272 1C-272 1 189.393 128.603 498.743 146.153C737.648 159.706 875.505 152.527 1111.27 120.409C1301.53 94.4909 1435.24 83.5 1633.5 83.5C1815.52 83.5 2058.05 148.995 2190 188" stroke="#967866" stroke-opacity="0.2"/>
-    <rect x="238" y="107" width="18" height="18" rx="9" fill="#EAE4E0"/>
-    </svg>
-  </div>
   <div class="container">
     <div class="correction-choice">
       <h2 class="h2 text-second-dark">

@@ -1,5 +1,5 @@
 /* correction */
-.correction .section-bg,
+/* .correction .section-bg, */
 .correction .section-bg-mobile {
   display: none;
   position: absolute;
@@ -14,13 +14,16 @@
 }
 
 .how-many .section-bg {
-  transform: translateY(-170px);
+  /* transform: translateY(-170px); */
+  transform: translateY(-88%);
 }
 .advantages .section-bg {
-  transform: translateY(-210px)
+  /* transform: translateY(-210px); */
+  transform: translateY(-70%);
 }
 .process .section-bg {
-  transform: translateY(-90px);
+  /* transform: translateY(-90px); */
+  transform: translateY(-50%);
 }
 .results .section-bg {
   transform: translateY(-200px);
@@ -31,9 +34,9 @@
 .choice .section-bg {
   transform: translateY(-155px);
 }
-.choice .section-bg_bottom {
+/* .choice .section-bg_bottom {
   transform: translateY(150px);
-}
+} */
 
 
 .correction .content-text {
@@ -470,11 +473,7 @@ section.necessities {
 section.price .tablepress td span.tablepress-note {
     opacity: 1;
 }
-section.price .tablepress tbody .row-2 .column-1{
-    display: flex;
-    flex-direction: column;
-    border: 0;
-}
+
 .btn-free-consultation {
     position: absolute;
     left: 50%;
@@ -515,6 +514,11 @@ section.price .tablepress tbody .row-2 .column-1{
 }
 
 @media screen and (max-width: 991px) { 
+    section.price .tablepress tbody .row-2 .column-1{
+        display: flex;
+        flex-direction: column;
+        border: 0;
+    }
     .btn-free-consultation {
        position: relative;
        left: 0;
@@ -577,9 +581,9 @@ section.price .tablepress tbody .row-2 .column-1{
 }
 
 /* choose-up */
-.choice {
+/* .choice {
     margin-bottom: 100px;
-}
+} */
 .correction-choice h2 svg {
     position: relative;
     top: 16px;
@@ -614,9 +618,9 @@ section.price .tablepress tbody .row-2 .column-1{
     }
 }
 @media screen and (max-width: 481px) {
-    .choice {
+    /* .choice {
         margin-bottom: 130px;
-    }
+    } */
     .choice__container .color-card {
         max-width: 100%;
     }
@@ -635,9 +639,23 @@ section.price .tablepress tbody .row-2 .column-1{
 
 
 /* other styles */
-section.common-team-section {
-    /* margin-top: 100px; */
+section.common-team-section,
+section.common-additional-services-section {
+    margin-top: 100px;
 }
-.common-team-section-bg {
+.section-bg.common-team-section-bg {
     display: none;
 }
+.section-bg.common-team-section-bg.reverse {
+    display: block;
+    transform: translateY(20px);
+}
+.section-bg.common-additional-services-section-bg {
+    /* display: none; */
+    transform: translateY(-180px);
+}
+.section-bg.common-additional-services-section-bg.reverse {
+    /* display: block;
+    transform: translateY(20px); */
+}
+ 

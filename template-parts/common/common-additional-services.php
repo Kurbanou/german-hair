@@ -93,9 +93,15 @@ $special_offers_list = [
 
 <section class="section common-additional-services-section relative">
     <div class="section-bg common-additional-services-section-bg">
-        <svg width="1920" height="298" viewBox="0 0 1920 298" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2562 297.5C2562 297.5 2085.18 241.54 1764 159.5C1580 112.5 1368.62 97.4487 1116.5 136.5C913.05 168.013 692 147.5 486 136.5C291.571 126.118 105.101 48.4253 -36 1" stroke="#967866" stroke-opacity="0.2" />
-            <rect width="18" height="18" rx="9" transform="matrix(-1 0 0 1 313 100)" fill="#EAE4E0" />
+        <svg width="1920" height="189" viewBox="0 0 1920 189" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-207 1C-207 1 254.393 128.603 563.743 146.153C802.648 159.706 940.505 152.527 1176.27 120.409C1366.53 94.4909 1504.74 120.409 1703 120.409C1885.02 120.409 2123.05 148.995 2255 188" stroke="#967866" stroke-opacity="0.2" />
+            <rect x="1643" y="111" width="18" height="18" rx="9" fill="#EAE4E0" />
+        </svg>
+    </div>
+    <div class="section-bg common-additional-services-section-bg reverse">
+        <svg width="1920" height="189" viewBox="0 0 1920 189" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-318 1C-318 1 143.393 128.603 452.743 146.153C691.648 159.706 829.505 178.271 1065.27 146.153C1255.53 120.235 1389.24 109.244 1587.5 109.244C1769.52 109.244 2012.05 148.995 2144 188" stroke="#967866" stroke-opacity="0.2" />
+            <rect x="1722" y="107" width="18" height="18" rx="9" fill="#EAE4E0" />
         </svg>
     </div>
     <div class="container">

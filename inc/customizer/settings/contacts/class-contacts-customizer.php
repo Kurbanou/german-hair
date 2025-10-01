@@ -147,7 +147,7 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
                     )
                 )
             ));
-             $wp_customize->add_control(new WP_Customize_Control(
+            $wp_customize->add_control(new WP_Customize_Control(
                 $wp_customize,
                 'second_contact_phone_setting',
                 array(
@@ -225,6 +225,19 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
                     )
                 )
             ));
+            $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                'main_contact_short_address_setting',
+                array(
+                    'label'    => 'Адрес короткий',
+                    'section'  => 'address_section',
+                    'settings' => 'main_contact_short_address_setting',
+                    'type'     => 'textarea',
+                    'input_attrs' => array(
+                        'placeholder' => 'Адрес...',
+                    )
+                )
+            ));
         }
 
         private function register_settings($wp_customize)
@@ -280,6 +293,11 @@ if (!class_exists('GH_Contacts_Customizer_Addition')) {
                 'default'           => '',
             ));
             $wp_customize->add_setting('main_contact_address_setting', array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'gh_sanitize_textarea',
+                'default'           => '',
+            ));
+            $wp_customize->add_setting('main_contact_short_address_setting', array(
                 'capability'        => 'edit_theme_options',
                 'sanitize_callback' => 'gh_sanitize_textarea',
                 'default'           => '',
