@@ -341,12 +341,9 @@ section:nth-child(2) {
   .custom_title {
     max-width: 396px;
   }
-  .card_content {
+  /* .card_content {
     max-width: 282px;
-  }
-  .capsule.benefits .cards_container-card {
-    width: 100%;
-  }
+  } */
 }
 
 /* info */
@@ -525,7 +522,50 @@ section:nth-child(2) {
   margin-top: 26px;
   font-weight: 500;
 }
-@media (max-width: 912px) {
+
+/* recommendations */
+.recommendations_content {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 24px;
+}
+
+.recommendations_content .card_text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recommendations_content .cards_container-card:nth-child(2),
+.recommendations_content .cards_container-card:nth-child(3),
+.recommendations_content .cards_container-card:nth-child(6),
+.recommendations_content .cards_container-card:nth-child(7) {
+  background: rgba(226, 244, 255, 0.6);
+}
+
+.recommendations_content .cards_container-card:nth-child(1),
+.recommendations_content .cards_container-card:nth-child(4),
+.recommendations_content .cards_container-card:nth-child(5),
+.recommendations_content .cards_container-card:nth-child(8) {
+  background: rgba(255, 241, 226, 0.6);
+}
+
+@media (max-width: 991px) {
+  .recommendations_content {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 914px) {
+  .capsule.benefits .cards_container-card {
+    width: 100%;
+  }
+
+  .recommendations_content {
+    grid-template-columns: 1fr;
+  }
   .process_container .card {
     max-width: unset;
   }

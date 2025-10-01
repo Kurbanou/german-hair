@@ -11,6 +11,7 @@ $sections = [
 	'banner',
 	'benefits',
 	'process',
+	'recommendations',
 
 ];
 foreach ($sections as $section) {
