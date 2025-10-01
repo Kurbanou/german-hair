@@ -416,3 +416,10 @@ section:nth-child(2) {
     flex-direction: column;
   }
 }
+
+/* price */
+
+.price_content {
+  max-width: 679px;
+  margin: 0 auto;
+}
