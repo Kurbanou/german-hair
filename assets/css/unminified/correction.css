@@ -22,28 +22,28 @@
 }
 
 .how-many .section-bg {
-  /* transform: translateY(-170px); */
-  transform: translateY(-88%);
+  transform: translateY(-170px);
+  /* transform: translateY(-88%); */
 }
 .advantages .section-bg {
-  /* transform: translateY(-210px); */
-  transform: translateY(-70%);
+  transform: translateY(-210px);
+  /* transform: translateY(-70%); */
 }
 .process .section-bg {
-  /* transform: translateY(-90px); */
-  transform: translateY(-50%);
+  transform: translateY(-90px);
+  /* transform: translateY(-45%); */
 }
 .results .section-bg {
-  /* transform: translateY(-200px); */
-  transform: translateY(-100%);
+  transform: translateY(-200px);
+  /* transform: translateY(-100%); */
 }
 .updates .section-bg {
-  /* transform: translateY(-180px); */
-  transform: translateY(-90%);
+  transform: translateY(-180px);
+  /* transform: translateY(-90%); */
 }
 .choice .section-bg {
-  /* transform: translateY(-155px); */
-  transform: translateY(-85%);
+  transform: translateY(-155px);
+  /* transform: translateY(-85%); */
 }
 /* .choice .section-bg_bottom {
   transform: translateY(150px);
@@ -102,7 +102,7 @@ section.correction {
 .correction.banner h1 {
   font-family: Vetrino;
   font-weight: 400;
-  font-size: clamp(32px, 5vw, 60px);
+  font-size: clamp(48px, 5vw, 60px);
   color: var(--e-white-color);
   line-height: 100%;
   max-width: 869px;

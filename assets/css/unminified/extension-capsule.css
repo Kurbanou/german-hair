@@ -338,6 +338,9 @@ section:nth-child(2) {
 }
 
 @media (max-width: 481px) {
+  .custom_title {
+    max-width: 396px;
+  }
   .card_content {
     max-width: 282px;
   }
@@ -476,9 +479,6 @@ section:nth-child(2) {
 }
 
 @media (max-width: 767px) {
-  .custom_title {
-    max-width: 396px;
-  }
   .logo-title {
     width: 138px;
     height: 28px;

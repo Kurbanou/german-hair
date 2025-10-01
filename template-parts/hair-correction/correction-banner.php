@@ -5,6 +5,7 @@
  */
 
 $fon = get_field('fon');
+$fon_mobile = get_field('fon-mobile');
 ?>
 
 <?php if ($fon): ?>
