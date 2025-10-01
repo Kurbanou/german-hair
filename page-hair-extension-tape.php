@@ -13,6 +13,7 @@ $sections = [
 	'info',
 	'transformation',
 	'price',
+	'buy',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/hair-extension-tape/hair-extension-tape-{$section}.php")) {
