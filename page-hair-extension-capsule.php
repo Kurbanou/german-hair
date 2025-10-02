@@ -17,6 +17,7 @@ $sections = [
 	'correction',
 	'works',
 	'faq',
+	'contraindications',
 	'whyus',
 	'reviews',
 

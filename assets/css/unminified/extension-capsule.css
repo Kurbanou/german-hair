@@ -20,6 +20,9 @@ body {
   width: 100%;
   transform: translateY(0px);
 }
+.section-bg.common-team-section-bg.reverse {
+  display: none;
+}
 @media screen and (min-width: 990px) {
   .section-bg {
     transform: translateY(-100px);
@@ -615,6 +618,30 @@ section:nth-child(2) {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+/*  contraindications */
+
+.comment-form_content {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 481px) {
+  .comment-form_content {
+    border-radius: 14px;
+  }
+  .comment-form.obuchenie.zayvka h2,
+  .comment-form.obuchenie.zayvka .text-center {
+    text-align: left;
+  }
+
+  .comment-form.obuchenie {
+    margin-top: 0px;
+  }
+  .comment-form.obuchenie .section-bg-mobile {
+    display: block;
+    transform: translateY(30px);
+  }
 }
 
 @media (max-width: 991px) {
