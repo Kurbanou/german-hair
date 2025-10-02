@@ -187,10 +187,10 @@ function validate_phone_field($commentdata)
 }
 
 //подключить twentytwenty.js для слайдера до после
-function enqueue_twenty_twenty_assets()
+function enqueue_twentytwenty_assets()
 {
-    wp_enqueue_style('twentytwenty-css', 'https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/twentytwenty.min.css');
+    wp_enqueue_style('twentytwenty-css', 'https://cdn.jsdelivr.net/gh/zurb/twentytwenty@master/css/twentytwenty.css');
     wp_enqueue_script('jquery-event-move', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js', ['jquery'], null, true);
-    wp_enqueue_script('twentytwenty-js', 'https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/jquery.twentytwenty.min.js', ['jquery', 'jquery-event-move'], null, true);
+    wp_enqueue_script('twentytwenty-js', 'https://cdn.jsdelivr.net/gh/zurb/twentytwenty@master/js/jquery.twentytwenty.js', ['jquery', 'jquery-event-move'], null, true);
 }
-add_action('wp_enqueue_scripts', 'enqueue_twenty_twenty_assets');
+add_action('wp_enqueue_scripts', 'enqueue_twentytwenty_assets');
