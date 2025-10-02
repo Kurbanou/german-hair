@@ -622,7 +622,23 @@ section:nth-child(2) {
 
 /*  contraindications */
 
-.comment-form_content {
+.contraindications_content {
+  display: flex;
+  gap: 40px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contraindications_content .item {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.obuchenie .comment-form_content {
+  max-width: 880px;
   margin-top: 0;
 }
 
