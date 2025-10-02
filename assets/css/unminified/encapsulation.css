@@ -265,3 +265,67 @@ section.encapsulation.bases {
     max-width: 336px;
   }
 }
+
+/* how-many */
+.encapsulation.how-many  {
+    margin-bottom: 100px;
+}
+.how-many__container {
+    max-width: max-content;
+    width: 100%;
+}
+.encapsulation-how-many__content {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+.encapsulation-how-many__content_text {
+    gap: 16px;
+    font-size: clamp(14px, 2vw, 18px);
+}
+.how-many__contact {
+    font-size: clamp(14px, 2vw, 16px);
+}
+.how-many__image {
+    max-width: 665px;
+    width: 100%;
+    min-height: 287px;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+.how-many__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.how-many .btn {
+    margin: 0 auto;
+    display: block;
+}
+@media screen and (max-width: 1200px) { 
+    .encapsulation-how-many__content {
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 991px) { 
+    .encapsulation-how-many__content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 481px) {
+    .encapsulation-how-many__content {
+        margin-bottom: 20px;
+        align-items: flex-start;
+    }
+    .encapsulation-advantage__content_text br {
+        display: none;
+    }
+    .how-many__image {
+        min-height: 207px;
+    }
+    .encapsulation.how-many .section-bg-mobile {
+        transform: translateY(-80px);
+    }
+}
+

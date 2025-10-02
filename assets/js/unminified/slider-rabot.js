@@ -1,76 +1,81 @@
 jQuery(document).ready(function ($) {
   const container = document.getElementById("slider-posts");
+  if (!container) return;
+
   const cards = Array.from(container.children);
+  if (cards.length === 0) return;
+
+  const rightBtn = document.querySelector(".rab-right");
+  const leftBtn = document.querySelector(".rab-left");
+  if (!rightBtn || !leftBtn) return;
+
   let index = 0;
 
   function getChunkSize() {
-    const width = window.innerWidth;
-    return width <= 1200 ? cards.length : 3;
+    return window.innerWidth <= 1200 ? cards.length : 3;
   }
 
-  function waitForImages(container, callback) {
-    const images = container.querySelectorAll("img");
-    let loaded = 0;
+  // function render() {
+  //   const chunkSize = getChunkSize();
+  //   const maxIndex = cards.length - chunkSize;
+  //   index = Math.min(index, maxIndex); // защита от выхода за пределы
 
-    if (images.length === 0) {
-      callback();
-      return;
-    }
+  //   cards.forEach((card, i) => {
+  //     const isVisible = i >= index && i < index + chunkSize;
+  //     card.classList.toggle("slider-card", isVisible);
+  //     card.classList.toggle("is-hidden", !isVisible);
 
-    images.forEach((img) => {
-      if (img.complete && img.naturalWidth !== 0) {
-        loaded++;
-      } else {
-        img.addEventListener("load", () => {
-          loaded++;
-          if (loaded === images.length) callback();
-        });
-        img.addEventListener("error", () => {
-          loaded++;
-          if (loaded === images.length) callback();
-        });
-      }
-    });
-
-    if (loaded === images.length) callback();
-  }
-
+  //     const tw = card.querySelector(".twentytwenty-container");
+  //     if (
+  //       isVisible &&
+  //       tw &&
+  //       !tw.classList.contains("twentytwenty-initialized")
+  //     ) {
+  //       $(tw).twentytwenty({
+  //         default_offset_pct: 0.5,
+  //         orientation: "horizontal",
+  //       });
+  //       tw.classList.add("twentytwenty-initialized");
+  //     }
+  //   });
+  // }
   function render() {
     const chunkSize = getChunkSize();
+    const maxIndex = cards.length - chunkSize;
+    index = Math.min(index, maxIndex); // защита от выхода за пределы
+
     cards.forEach((card, i) => {
       const isVisible = i >= index && i < index + chunkSize;
 
-      // Заменяем display: none на класс
-      card.classList.toggle("slider-card", isVisible);
+      // card.classList.toggle("slider-card", isVisible);
       card.classList.toggle("is-hidden", !isVisible);
-      card.style.animationDelay = isVisible ? `${(i - index) * 150}ms` : "0ms";
+      card.classList.toggle("visible", isVisible); // 👈 добавляем класс при показе
 
-      const twContainer = card.querySelector(".twentytwenty-container");
+      const tw = card.querySelector(".twentytwenty-container");
       if (
         isVisible &&
-        twContainer &&
-        !twContainer.classList.contains("twentytwenty-initialized")
+        tw &&
+        !tw.classList.contains("twentytwenty-initialized")
       ) {
-        waitForImages(twContainer, () => {
-          $(twContainer).twentytwenty({
-            default_offset_pct: 0.5,
-            orientation: "horizontal",
-          });
-          twContainer.classList.add("twentytwenty-initialized");
+        $(tw).twentytwenty({
+          default_offset_pct: 0.5,
+          orientation: "horizontal",
         });
+        tw.classList.add("twentytwenty-initialized");
       }
     });
   }
 
-  document.querySelector(".rab-right").addEventListener("click", () => {
+  rightBtn.addEventListener("click", () => {
     const chunkSize = getChunkSize();
-    index = (index + chunkSize) % cards.length;
+    const maxIndex = cards.length - chunkSize;
+    index = Math.min(index + chunkSize, maxIndex);
     render();
   });
 
-  document.querySelector(".rab-left").addEventListener("click", () => {
+  leftBtn.addEventListener("click", () => {
     const chunkSize = getChunkSize();
-    index = (index - chunkSize + cards.length) % cards.length;
+    index = Math.max(index - chunkSize, 0);
     render();
   });
 
