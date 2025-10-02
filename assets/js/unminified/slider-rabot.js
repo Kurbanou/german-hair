@@ -1,81 +1,76 @@
 jQuery(document).ready(function ($) {
   const container = document.getElementById("slider-posts");
-  if (!container) return;
-
   const cards = Array.from(container.children);
-  if (cards.length === 0) return;
-
-  const rightBtn = document.querySelector(".rab-right");
-  const leftBtn = document.querySelector(".rab-left");
-  if (!rightBtn || !leftBtn) return;
-
   let index = 0;
 
   function getChunkSize() {
-    return window.innerWidth <= 1200 ? cards.length : 3;
+    const width = window.innerWidth;
+    return width <= 1200 ? cards.length : 3;
   }
 
-  // function render() {
-  //   const chunkSize = getChunkSize();
-  //   const maxIndex = cards.length - chunkSize;
-  //   index = Math.min(index, maxIndex); // защита от выхода за пределы
+  function waitForImages(container, callback) {
+    const images = container.querySelectorAll("img");
+    let loaded = 0;
 
-  //   cards.forEach((card, i) => {
-  //     const isVisible = i >= index && i < index + chunkSize;
-  //     card.classList.toggle("slider-card", isVisible);
-  //     card.classList.toggle("is-hidden", !isVisible);
+    if (images.length === 0) {
+      callback();
+      return;
+    }
 
-  //     const tw = card.querySelector(".twentytwenty-container");
-  //     if (
-  //       isVisible &&
-  //       tw &&
-  //       !tw.classList.contains("twentytwenty-initialized")
-  //     ) {
-  //       $(tw).twentytwenty({
-  //         default_offset_pct: 0.5,
-  //         orientation: "horizontal",
-  //       });
-  //       tw.classList.add("twentytwenty-initialized");
-  //     }
-  //   });
-  // }
+    images.forEach((img) => {
+      if (img.complete && img.naturalWidth !== 0) {
+        loaded++;
+      } else {
+        img.addEventListener("load", () => {
+          loaded++;
+          if (loaded === images.length) callback();
+        });
+        img.addEventListener("error", () => {
+          loaded++;
+          if (loaded === images.length) callback();
+        });
+      }
+    });
+
+    if (loaded === images.length) callback();
+  }
+
   function render() {
     const chunkSize = getChunkSize();
-    const maxIndex = cards.length - chunkSize;
-    index = Math.min(index, maxIndex); // защита от выхода за пределы
-
     cards.forEach((card, i) => {
       const isVisible = i >= index && i < index + chunkSize;
 
-      // card.classList.toggle("slider-card", isVisible);
+      // Заменяем display: none на класс
+      card.classList.toggle("slider-card", isVisible);
       card.classList.toggle("is-hidden", !isVisible);
-      card.classList.toggle("visible", isVisible); // 👈 добавляем класс при показе
+      card.style.animationDelay = isVisible ? `${(i - index) * 150}ms` : "0ms";
 
-      const tw = card.querySelector(".twentytwenty-container");
+      const twContainer = card.querySelector(".twentytwenty-container");
       if (
         isVisible &&
-        tw &&
-        !tw.classList.contains("twentytwenty-initialized")
+        twContainer &&
+        !twContainer.classList.contains("twentytwenty-initialized")
       ) {
-        $(tw).twentytwenty({
-          default_offset_pct: 0.5,
-          orientation: "horizontal",
+        waitForImages(twContainer, () => {
+          $(twContainer).twentytwenty({
+            default_offset_pct: 0.5,
+            orientation: "horizontal",
+          });
+          twContainer.classList.add("twentytwenty-initialized");
         });
-        tw.classList.add("twentytwenty-initialized");
       }
     });
   }
 
-  rightBtn.addEventListener("click", () => {
+  document.querySelector(".rab-right").addEventListener("click", () => {
     const chunkSize = getChunkSize();
-    const maxIndex = cards.length - chunkSize;
-    index = Math.min(index + chunkSize, maxIndex);
+    index = (index + chunkSize) % cards.length;
     render();
   });
 
-  leftBtn.addEventListener("click", () => {
+  document.querySelector(".rab-left").addEventListener("click", () => {
     const chunkSize = getChunkSize();
-    index = Math.max(index - chunkSize, 0);
+    index = (index - chunkSize + cards.length) % cards.length;
     render();
   });
 
