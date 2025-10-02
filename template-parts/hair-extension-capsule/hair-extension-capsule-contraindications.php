@@ -7,10 +7,10 @@
 
 ?>
 <section class="capsule contraindications">
-  <div class="section-bg rtl">
-    <svg width="1920" height="201" viewBox="0 0 1920 201" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2218 1C2218 1 1724.61 156.15 1393.81 177.488C1138.34 193.967 990.924 216.539 738.806 177.488C535.356 145.975 339.75 89.0384 133.75 100.038C-60.6793 110.421 -167.899 152.575 -309 200" stroke="#967866" stroke-opacity="0.2" />
-      <rect x="1624" y="159" width="18" height="18" rx="9" transform="rotate(180 1624 159)" fill="#EAE4E0" />
+  <div class="section-bg ">
+    <svg width="1920" height="165" viewBox="0 0 1920 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-125 164.527C-125 164.527 281.014 37.0338 553.235 19.4993C763.465 5.95782 884.776 13.131 1092.25 45.2212C1259.67 71.1168 1365.12 110.342 1537.5 119.5C1697.5 128 1838.39 39.9715 1954.5 1" stroke="#967866" stroke-opacity="0.2" />
+      <rect x="250" y="54" width="18" height="18" rx="9" fill="#EAE4E0" />
     </svg>
   </div>
   <div class="container">

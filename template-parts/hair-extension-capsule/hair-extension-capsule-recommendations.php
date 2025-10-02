@@ -47,11 +47,12 @@ $card_list = [
 
 ?>
 <section class="capsule recommendations">
-  <div class="section-bg rtl">
-    <svg width="1920" height="189" viewBox="0 0 1920 189" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2111 1C2111 1 1649.61 128.603 1340.26 146.153C1101.35 159.706 963.495 152.527 727.726 120.409C537.469 94.4909 403.757 83.5 205.5 83.5C23.4779 83.5 -219.049 148.995 -351 188" stroke="#967866" stroke-opacity="0.2" />
-      <rect width="18" height="18" rx="9" transform="matrix(-1 0 0 1 1601 107)" fill="#EAE4E0" />
+  <div class="section-bg ">
+    <svg width="1920" height="298" viewBox="0 0 1920 298" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2508 297.5C2508 297.5 2031.18 241.54 1710 159.5C1526 112.5 1314.62 97.4487 1062.5 136.5C859.05 168.013 638 147.5 432 136.5C237.571 126.118 51.101 48.4253 -90 1" stroke="#967866" stroke-opacity="0.2" />
+      <rect width="18" height="18" rx="9" transform="matrix(-1 0 0 1 259 98)" fill="#EAE4E0" />
     </svg>
+
   </div>
   <div class="container">
     <h2 class="h2 text-second-dark">Рекомендации по домашнему уходу</h2>

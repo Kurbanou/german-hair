@@ -167,6 +167,11 @@
     scrollbar-width: none;
   }
 
+  .raboty .slider-post_container,
+  .slider-post.raboty {
+    height: 494px;
+  }
+
   .slider-post_container::-webkit-scrollbar {
     display: none;
   }

@@ -15,7 +15,9 @@
 
   <div class="container">
     <h2 class="h2 text-second-dark text-center">До и после</h2>
+
     <!-- slider -->
+    <?php get_template_part('template-parts/slider-rabot'); ?>
 
 
   </div>

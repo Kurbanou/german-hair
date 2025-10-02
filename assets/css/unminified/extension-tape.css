@@ -62,6 +62,10 @@ body {
     display: block;
     transform: translateY(30px);
   }
+
+  .section.common-additional-services-section.relative .section-bg-mobile {
+    transform: translateY(-33px);
+  }
   .common-team-section .section-bg-mobile {
     transform: translateY(-50px);
   }

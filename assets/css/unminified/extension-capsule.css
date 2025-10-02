@@ -36,6 +36,22 @@ body {
     transform: translateY(-93px);
     display: block;
   }
+  .contraindications .section-bg {
+    transform: translateY(30px);
+    display: block;
+  }
+  .whyus .section-bg {
+    transform: translateY(-80px);
+    display: block;
+  }
+  .reviews .section-bg {
+    transform: translateY(15px);
+    display: block;
+  }
+
+  .section-bg.common-additional-services-section-bg {
+    transform: translateY(-169px);
+  }
   /* section:nth-child(7) .section-bg {
     transform: translateY(-93px);
     display: block;
@@ -46,11 +62,14 @@ body {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 481px) {
   .section-bg-mobile,
   .capsule .section-bg-mobile {
     display: block;
     transform: translateY(30px);
+  }
+  .common-additional-services-section .section-bg-mobile {
+    transform: translateY(-50px);
   }
   .common-team-section .section-bg-mobile {
     transform: translateY(-50px);
@@ -643,6 +662,13 @@ section:nth-child(2) {
 }
 
 @media screen and (max-width: 481px) {
+  .faq-section .section-bg-mobile {
+    display: block;
+    transform: translateY(54px);
+  }
+  .faq-section {
+    margin-top: 0;
+  }
   .comment-form_content {
     border-radius: 14px;
   }
