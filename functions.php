@@ -185,3 +185,12 @@ function validate_phone_field($commentdata)
     }
     return $commentdata;
 }
+
+//подключить twentytwenty.js для слайдера до после
+function enqueue_twenty_twenty_assets()
+{
+    wp_enqueue_style('twentytwenty-css', 'https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/twentytwenty.min.css');
+    wp_enqueue_script('jquery-event-move', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js', ['jquery'], null, true);
+    wp_enqueue_script('twentytwenty-js', 'https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/jquery.twentytwenty.min.js', ['jquery', 'jquery-event-move'], null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_twenty_twenty_assets');

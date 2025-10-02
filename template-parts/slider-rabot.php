@@ -3,12 +3,11 @@
 /**
  * Displays slider rabot
  */
-$post_id = get_the_ID(); //  обязательно для data-post-id
-// надо получить из страницы пары изображений до и после и вставить в слайдер 
-
-$url = get_field('pochemu_klienty_vybirayut_nas2');
 
 
+use Carbon_Fields\Carbon_Fields;
+
+$raboty = carbon_get_post_meta(get_the_ID(), 'raboty_pairs');
 ?>
 
 
@@ -16,17 +15,16 @@ $url = get_field('pochemu_klienty_vybirayut_nas2');
 <div class="slider-post raboty">
   <div class="slider-post_container" id="slider-posts">
 
-
-    <div class="raboty-card ">Card 1</div>
-    <div class="raboty-card ">Card 2</div>
-    <div class="raboty-card ">Card 3</div>
-    <div class="raboty-card ">Card 4</div>
-    <div class="raboty-card ">Card 5</div>
-
-
-
-
-
+    <?php foreach ($raboty as $pair): ?>
+      <?php if (!empty($pair['do']) && !empty($pair['posle'])): ?>
+        <div class="raboty-card">
+          <div class="twentytwenty-container">
+            <img src="<?php echo wp_get_attachment_image_url($pair['do'], 'large'); ?>" alt="До">
+            <img src="<?php echo wp_get_attachment_image_url($pair['posle'], 'large'); ?>" alt="После">
+          </div>
+        </div>
+      <?php endif; ?>
+    <?php endforeach; ?>
 
   </div>
   <div class="slider-post_pag">

@@ -25,5 +25,14 @@ Container::make('post_meta', 'Контент страницы')
                 Field::make('textarea', 'text', 'Текст отзыва'),
                 Field::make('image', 'photo', 'Фото клиента'),
                 Field::make('date', 'created_at', 'Дата отзыва'),
+            ]),
+
+        // Работы
+        Field::make('separator', 'raboty_separator', 'Блок работ'),
+        Field::make('text', 'raboty_title', 'Заголовок блока работ'),
+        Field::make('complex', 'raboty_pairs', 'Пары до/после')
+            ->add_fields([
+                Field::make('image', 'do', 'Фото ДО попорции оптимально - 360/640'),
+                Field::make('image', 'posle', 'Фото ПОСЛЕ попорции оптимально - 360/640'),
             ])
     ]);
