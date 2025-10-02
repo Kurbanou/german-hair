@@ -13,15 +13,15 @@ $url = get_field('pochemu_klienty_vybirayut_nas2');
 
 
 
-<div class="slider-post">
-  <div class="slider-post_container raboty" id="slider-posts">
+<div class="slider-post raboty">
+  <div class="slider-post_container" id="slider-posts">
 
 
-    <div class="common-list-card test-card ">Card 1</div>
-    <div class="common-list-card test-card">Card 2</div>
-    <div class="common-list-card test-card">Card 3</div>
-    <div class="common-list-card test-card">Card 4</div>
-    <div class="common-list-card test-card">Card 5</div>
+    <div class="raboty-card ">Card 1</div>
+    <div class="raboty-card ">Card 2</div>
+    <div class="raboty-card ">Card 3</div>
+    <div class="raboty-card ">Card 4</div>
+    <div class="raboty-card ">Card 5</div>
 
 
 
