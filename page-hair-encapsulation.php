@@ -10,7 +10,7 @@ get_header();
 
 $sections = [
 	'banner',
-	'necessity',
+	'base',
 	'how-many',
 	'advantages',
 	'process',

@@ -4,23 +4,23 @@
  */
 $list_bases = [
   [
-    'icon' => 'correction-eye',
+    'icon' => 'encapsulation-eye',
     'text' => 'Устраняет видимость капсул',
   ],
   [
-    'icon' => 'correction-volume',
+    'icon' => 'encapsulation-volume',
     'text' => 'Восстанавливает равномерный объем',
   ],
   [
-    'icon' => 'correction-stopwatch',
+    'icon' => 'encapsulation-stopwatch',
     'text' => 'Продлевает срок носки наращивания еще на 2–3 месяца',
   ],
 ];
 
 ?>
-<section class="correction bases">
+<section class="encapsulation bases">
   <div class="container">
-    <div class="correction-bases__content">
+    <div class="encapsulation-bases__content">
       <h2 class="h2 text-second-dark">Капсуляция волос кератином – основа безупречного наращивания.</h2>
       <p class="weight-500">Это процесс обработки прядей специальным кератином для их последующего крепления к вашим натуральным волосам.</p>
       <p class="weight-500">В салоне German Hair мы предлагаем:</p>
@@ -28,8 +28,8 @@ $list_bases = [
         <?php foreach ($list_bases as $base): ?>
           <div class="color-card">
             <div class="color-card__container">
-                <div class="correction-base__content_icon"><? get_icon($base['icon'], 'xl'); ?></div>
-                <div class="correction-base__content_text"><?php echo $base['text']; ?></div>
+                <div class="encapsulation-base__content_icon"><? get_icon($base['icon'], 'xl'); ?></div>
+                <div class="encapsulation-base__content_text"><?php echo $base['text']; ?></div>
             </div>
          </div>
         <?php endforeach; ?>
