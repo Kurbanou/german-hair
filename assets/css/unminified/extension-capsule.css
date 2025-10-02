@@ -338,6 +338,9 @@ section:nth-child(2) {
 }
 
 @media (max-width: 481px) {
+  .process h2 {
+    text-align: center;
+  }
   .custom_title {
     max-width: 396px;
   }
@@ -624,6 +627,13 @@ section:nth-child(2) {
 }
 
 @media (max-width: 914px) {
+  .recommendations_content .cards_container-card:nth-child(even) {
+    background: rgba(226, 244, 255, 0.6);
+  }
+
+  .recommendations_content .cards_container-card:nth-child(odd) {
+    background: rgba(255, 241, 226, 0.6);
+  }
   .capsule.benefits .cards_container-card {
     width: 100%;
   }
