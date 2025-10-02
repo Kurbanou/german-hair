@@ -4,33 +4,34 @@
  */
 $list_bases = [
   [
-    'icon' => 'encapsulation-eye',
-    'text' => 'Устраняет видимость капсул',
+    'icon' => 'encapsulation-hands',
+    'title' => 'Ручную капсуляцию',
+    'text' => 'Для максимальной точности и качества',
   ],
   [
-    'icon' => 'encapsulation-volume',
-    'text' => 'Восстанавливает равномерный объем',
-  ],
-  [
-    'icon' => 'encapsulation-stopwatch',
-    'text' => 'Продлевает срок носки наращивания еще на 2–3 месяца',
+    'icon' => 'encapsulation-diamond',
+    'title' => 'Используем только премиальный кератин',
+    'text' => 'Гарантия надежного крепления',
   ],
 ];
 
 ?>
 <section class="encapsulation bases">
   <div class="container">
-    <div class="encapsulation-bases__content">
-      <h2 class="h2 text-second-dark">Капсуляция волос кератином – основа безупречного наращивания.</h2>
-      <p class="weight-500">Это процесс обработки прядей специальным кератином для их последующего крепления к вашим натуральным волосам.</p>
-      <p class="weight-500">В салоне German Hair мы предлагаем:</p>
+    <h2 class="h2 text-second-dark">Капсуляция волос кератином – основа безупречного наращивания.</h2>
+    <div class="encapsulation-bases__content weight-500">
+      <p class="encapsulation-bases__subtitle">Это процесс обработки прядей специальным кератином для их последующего крепления к вашим натуральным волосам.</p>
+      <p class="">В салоне German Hair мы предлагаем:</p>
       <div class="bases__container">
         <?php foreach ($list_bases as $base): ?>
-          <div class="color-card">
-            <div class="color-card__container">
-                <div class="encapsulation-base__content_icon"><? get_icon($base['icon'], 'xl'); ?></div>
-                <div class="encapsulation-base__content_text"><?php echo $base['text']; ?></div>
-            </div>
+              <div class="color-card">
+                <div class="color-card__container">
+                  <div class="encapsulation-base__content_icon"><? get_icon($base['icon'], 'xl'); ?></div>
+                  <div class="encapsulation-base__content">
+                      <div class="encapsulation-base__content_title weight-600"><?php echo $base['title']; ?></div>
+                      <div class="encapsulation-base__content_text"><?php echo $base['text']; ?></div>
+                </div>
+              </div>
          </div>
         <?php endforeach; ?>
       </div>
