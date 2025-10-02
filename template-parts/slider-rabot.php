@@ -28,10 +28,10 @@ $raboty = carbon_get_post_meta(get_the_ID(), 'raboty_pairs');
 
   </div>
   <div class="slider-post_pag">
-    <div class="slider-post_pag-left">
+    <div class="rab-left">
       <?php echo get_icon('arrow-left', 'l'); ?>
     </div>
-    <div class="slider-post_pag-right">
+    <div class="rab-right">
       <?php echo get_icon('arrow-right', 'l'); ?>
     </div>
   </div>

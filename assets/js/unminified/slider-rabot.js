@@ -39,9 +39,11 @@ jQuery(document).ready(function ($) {
     const chunkSize = getChunkSize();
     cards.forEach((card, i) => {
       const isVisible = i >= index && i < index + chunkSize;
-      card.style.display = isVisible ? "block" : "none";
-      card.style.animationDelay = isVisible ? `${(i - index) * 150}ms` : "0ms";
+
+      // Заменяем display: none на класс
       card.classList.toggle("slider-card", isVisible);
+      card.classList.toggle("is-hidden", !isVisible);
+      card.style.animationDelay = isVisible ? `${(i - index) * 150}ms` : "0ms";
 
       const twContainer = card.querySelector(".twentytwenty-container");
       if (
@@ -60,21 +62,17 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  document
-    .querySelector(".slider-post_pag-right")
-    .addEventListener("click", () => {
-      const chunkSize = getChunkSize();
-      index = (index + chunkSize) % cards.length;
-      render();
-    });
+  document.querySelector(".rab-right").addEventListener("click", () => {
+    const chunkSize = getChunkSize();
+    index = (index + chunkSize) % cards.length;
+    render();
+  });
 
-  document
-    .querySelector(".slider-post_pag-left")
-    .addEventListener("click", () => {
-      const chunkSize = getChunkSize();
-      index = (index - chunkSize + cards.length) % cards.length;
-      render();
-    });
+  document.querySelector(".rab-left").addEventListener("click", () => {
+    const chunkSize = getChunkSize();
+    index = (index - chunkSize + cards.length) % cards.length;
+    render();
+  });
 
   render();
 });

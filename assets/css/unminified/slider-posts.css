@@ -58,6 +58,8 @@
 }
 
 .slider-post_pag-left,
+.rab-left,
+.rab-right,
 .slider-post_pag-right {
   position: absolute;
   top: 50%;
@@ -67,10 +69,12 @@
   transition: all 0.3s linear;
   padding: 20px 0;
 }
-.slider-post_pag-left {
+.slider-post_pag-left,
+.rab-left {
   left: -56px;
 }
-.slider-post_pag-right {
+.slider-post_pag-right,
+.rab-right {
   right: -56px;
 }
 
@@ -86,7 +90,7 @@
   /* padding: var(--e-common-card-padding); */
   border-radius: var(--e-common-card-radius-m);
   border: 2px solid rgba(33, 92, 129, 0.05);
-  transition: var(--e-transition);
+  /* transition: var(--e-transition); */
   background: rgba(242, 242, 242, 1);
   line-height: 1.5em;
   cursor: pointer;
@@ -97,6 +101,28 @@
 .raboty .slider-card {
   flex: 0 0 360px;
   height: 640px;
+}
+
+.raboty-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  /* transition: opacity 0.3s ease, visibility 0.3s ease; */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.raboty-card.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* .twentytwenty-container {
@@ -113,6 +139,8 @@
 
 @media (max-width: 1440px) {
   .slider-post_pag-left,
+  .rab-left,
+  .rab-right,
   .slider-post_pag-right {
     position: static;
     transform: translateY(0);
