@@ -18,6 +18,13 @@
     <h2 class="h2 text-second-dark ">Наши работы</h2>
     <!-- slider -->
 
+    <?php
+
+    get_template_part('template-parts/slider-rabot');
+    ?>
+
+
+
 
   </div>
 

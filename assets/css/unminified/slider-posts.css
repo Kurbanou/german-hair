@@ -61,6 +61,31 @@
   height: 22px;
 }
 
+.slider-post_container.raboty {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 100px;
+  z-index: 2;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 640px;
+}
+.raboty-card {
+  width: 100%;
+  animation: fadeInUp 0.3s ease forwards;
+  position: relative;
+  padding: var(--e-common-card-padding);
+  border-radius: var(--e-common-card-radius-m);
+  border: 2px solid rgba(33, 92, 129, 0.05);
+  transition: var(--e-transition);
+  background: rgba(242, 242, 242, 1);
+  line-height: 1.5em;
+  cursor: pointer;
+}
+
 @media (max-width: 1440px) {
   .slider-post_pag-left,
   .slider-post_pag-right {
