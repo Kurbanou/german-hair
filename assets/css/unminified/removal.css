@@ -1,5 +1,4 @@
 /* removal */
-
 .removal .section-bg,
 .removal .section-bg-mobile {
   display: none;
@@ -163,15 +162,18 @@ section.removal {
 }
 
 .mistakes__container {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 294px));
+    column-gap: 34px;
+    row-gap: 34px;
     justify-content: center;
-    column-gap: 30px;
-    row-gap: 30px;
 }
 
 .mistakes__container .color-card {
-    max-width: 294px;
+    /* max-width: 294px; */
     min-height: 170px;
 }
 
@@ -185,9 +187,6 @@ section.removal {
 
 /* withdrawal */
 .withdrawal__container {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center; */
     gap: 40px;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
@@ -205,7 +204,6 @@ section.removal {
 }
 
 .withdrawal__container .color-card {
-    /* max-width: 620px; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -217,7 +215,6 @@ section.removal {
   justify-self: center;     
   align-self: center;  
   width: clamp(160px, 100%, 620px); 
-  /* max-width: 100%; */
 }  
 
 .removal-withdrawal__content_number {
@@ -275,7 +272,6 @@ section.removal {
     height: 100%;
     object-fit: cover;
 }
-
 .advantages .btn {
     margin: 0 auto;
     display: block;
@@ -311,6 +307,7 @@ section.removal {
     .removal.banner h2 svg {
         width: auto;
         height: 28px;
+        top: 6px;
     }
     .withdrawal__container {
         gap: 24px;
@@ -343,19 +340,12 @@ section.removal {
     }
     .removal.banner h2 {
         line-height: 25px;
-        gap: 0 10px;
         margin-bottom: 10px;
-    }
-    .removal.banner h2 svg {
-        width: auto;
-        height: 28px;
+        max-width: 340px;
     }
     .removal.banner .banner-p {
         font-size: 14px;
         line-height: normal;
-    }
-    .removal.banner .banner-p br {
-        display: none;
     }
     .removal.banner .btn {
         margin-top: 88px;

@@ -196,3 +196,5 @@ function get_whatsapp_link($phone)
 	$clean_number = preg_replace('/\D+/', '', $phone); // убираем всё кроме цифр
 	return 'https://wa.me/' . $clean_number;
 }
+
+

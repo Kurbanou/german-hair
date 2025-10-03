@@ -194,3 +194,7 @@ function enqueue_twentytwenty_assets()
     wp_enqueue_script('twentytwenty-js', 'https://cdn.jsdelivr.net/gh/zurb/twentytwenty@master/js/jquery.twentytwenty.js', ['jquery', 'jquery-event-move'], null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_twentytwenty_assets');
+
+// SEO Tags
+require_once __DIR__ . '/Kama_SEO_Tags.php';
+Kama_SEO_Tags::init();

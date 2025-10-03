@@ -55,8 +55,7 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			wp_enqueue_style('faq', gh_get_assets_uri('faq', 'css'), array(), gh_get_version('faq', 'css'));
 			wp_enqueue_style('table', gh_get_assets_uri('table', 'css'), array(), gh_get_version('table', 'css'));
 			wp_enqueue_style('reviews-style', gh_get_assets_uri('reviews', 'css'), array(), gh_get_version('reviews', 'css'));
-			wp_enqueue_style('portfolio-style', gh_get_assets_uri('slider-posts', 'css'), array(), gh_get_version('slider-posts', 'css'));
-			if (is_home()) {
+			if (is_home() || is_page_template('page-home.php')) {
 				wp_enqueue_style('home', gh_get_assets_uri('home', 'css'), array(), gh_get_version('home', 'css'));
 			}
 			if (gh_is_admin()) {
@@ -67,6 +66,9 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			if (is_page_template('page-about.php')) {
 				wp_enqueue_style('about-style', gh_get_assets_uri('about', 'css'), array(), gh_get_version('about', 'css'));
 				wp_enqueue_style('reviews-style', gh_get_assets_uri('reviews', 'css'), array(), gh_get_version('reviews', 'css'));
+				wp_enqueue_style('portfolio-style', gh_get_assets_uri('slider-posts', 'css'), array(), gh_get_version('slider-posts', 'css'));
+
+				wp_enqueue_script('portfolio-slider', gh_get_assets_uri('slider-posts', 'js'), array(), gh_get_version('slider-posts', 'js'), true);
 			}
 
 			if (is_page_template('page-contacts.php')) {
@@ -97,7 +99,7 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 
 
 			wp_enqueue_script('script', gh_get_assets_uri('script', 'js'), array('jquery'), gh_get_version('script', 'js'), true);
-			wp_enqueue_script('portfolio-slider', gh_get_assets_uri('slider-posts', 'js'), array(), gh_get_version('slider-posts', 'js'), true);
+
 			wp_enqueue_script('faq', gh_get_assets_uri('faq', 'js'), array(), gh_get_version('faq', 'js'), true);
 		}
 
