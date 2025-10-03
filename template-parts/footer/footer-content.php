@@ -70,15 +70,15 @@ $nav_list_right = [
 	],
 	[
 		'label' => 'Снятие волос',
-		'href' => '/',
+		'href' => '/hair-removal',
 	],
 	[
 		'label' => 'Коррекция волос',
-		'href' => '/',
+		'href' => '/hair-correction',
 	],
 	[
 		'label' => 'Капсуляция волос',
-		'href' => '/',
+		'href' => '/hair-encapsulation',
 	]
 ];
 ?>

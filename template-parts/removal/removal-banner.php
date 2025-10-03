@@ -5,23 +5,15 @@
  */
 
 $fon = get_field('fon');
+$fon_mobile = get_field('fon-mobile');
 ?>
 
 <?php if ($fon): ?>
-  <section class="removal banner" style="
-  background-image: 
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.25) 50%,
-      rgba(0, 0, 0, 0.4) 99.91%
-    ),
-    url('<?php echo esc_url($fon); ?>');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-">
-
+<section class="removal banner">
+<picture>
+  <source media="(max-width: 768px)" srcset="<?php echo esc_url($fon_mobile ? $fon_mobile : $fon); ?>">
+  <img src="<?php echo esc_url($fon); ?>" alt="Баннер" class="banner-img">
+</picture>
   <?php else: ?>
     <section class="removal banner">
     <?php endif; ?>
@@ -43,7 +35,7 @@ $fon = get_field('fon');
         </svg>
             — бережно и профессионально
         </h2>
-        <p class="banner-p">Когда приходит время снимать нарощенные волосы, доверьте<br> эту процедуру профессионалам салона German Hair.</p>
+        <p class="banner-p">Когда приходит время снимать нарощенные волосы, доверьте эту процедуру профессионалам салона German Hair.</p>
         <button class="btn btn-light btn-glowing">Записаться</button>
       </div>
     </div>

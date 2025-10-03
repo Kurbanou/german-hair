@@ -13,19 +13,19 @@ $sections = [
 	'base',
 	'how-many',
 	'advantages',
+	'handmade',
 	'process',
 	'result', 
-	'price', 
-	'update', 
-	'choose-up',
 ];
 foreach ($sections as $section) {
 	if (locate_template("template-parts/hair-encapsulation/encapsulation-{$section}.php")) {
-		get_template_part("template-parts/hair-encapsulation/encapsulation", $section);
+		get_template_part('template-parts/hair-encapsulation/encapsulation', $section);
 	}
 }
 
 get_template_part( 'template-parts/common/common', 'team-section' );
+get_template_part( 'template-parts/hair-encapsulation/encapsulation', 'price' );
+get_template_part( 'template-parts/hair-encapsulation/encapsulation', 'update' );
 get_template_part( 'template-parts/common/common', 'additional-services' );
 
 // Форма

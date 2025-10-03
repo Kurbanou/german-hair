@@ -54,7 +54,7 @@ $fon_mobile = get_field('fon-mobile');
         </h2>
         <div class="correction-banner__btn">
             <button class="btn btn-light btn-glowing">Записаться</button>
-            <div class="correction-banner__btn-sale weight-700">- 10% <span class="weight-600 text-m"> на первую коррекцию!</span></div>
+            <div class="correction-banner__btn-sale weight-700">-&nbsp10% <span class="weight-600 text-m"> на первую коррекцию!</span></div>
         </div>
         
       </div>

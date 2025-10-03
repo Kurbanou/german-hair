@@ -55,8 +55,25 @@ section.removal {
 .removal.banner {
   margin-top: 0;
   padding: 212px 0 144px 0;
+  position: relative;
 }
-
+.removal.banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.4) 99.91%);
+    top: 0;
+    z-index: -1;
+}
+.banner-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+}
 .removal.banner h1 {
   font-family: Vetrino;
   font-weight: 400;
@@ -64,15 +81,20 @@ section.removal {
   color: var(--e-white-color);
   line-height: 100%;
   max-width: 869px;
+  margin-bottom: 18px;
 }
 
 .removal.banner h2 {
     color: var(--e-white-color);
     line-height: 52px;
-    display: flex;
+    /* display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0 20px;
+    gap: 0 20px; */
+}
+.removal.banner h2 svg {
+    top: 16px;
+    position: relative;
 }
 
 .removal.banner .banner-p {
@@ -81,7 +103,7 @@ section.removal {
   font-size: 18px;
   color: var(--e-white-color);
   line-height: 26px;
-  /* margin-top: 30px; */
+  max-width: 560px;
 }
 
 .removal.banner .btn {
@@ -92,8 +114,6 @@ section.removal {
 .removal.guarantees{ 
     margin-top: 70px;
 }
-
-.removal-guarantees__content {}
 
 .removal h2 {
     margin-bottom: 30px;
@@ -268,12 +288,6 @@ section.removal {
   }
 }
 
-/* @media screen and (max-width: 1360px) { 
-    .withdrawal__container .color-card {
-        max-width: 430px;
-    }
-} */
-
 @media screen and (max-width: 991px) {
     .removal.banner {
         padding: 100px 0 30px 0;
@@ -291,12 +305,13 @@ section.removal {
     .additional-services-list {
         gap: 25px;
     }
-    /* .additional-services-item {
-        max-width: 300px;
-    } */
 }
 
 @media screen and (max-width: 768px) { 
+    .removal.banner h2 svg {
+        width: auto;
+        height: 28px;
+    }
     .withdrawal__container {
         gap: 24px;
         display: grid;

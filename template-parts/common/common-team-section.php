@@ -2,6 +2,13 @@
 /**
  * Displays our team section
  */
+$template_slug = basename(get_page_template(), '.php');
+
+if ($template_slug === 'page-hair-encapsulation') { 
+    $team_title = 'Наши мастера';
+} else {
+    $team_title = 'Команда профессионалов';
+}
 
 $team_hero_list = [
     [
@@ -35,6 +42,7 @@ $team_hero_list = [
         'image' => get_template_directory_uri() . '/assets/images/team/team-hero-5.jpg',
     ]
 ];
+
 ?>
 
 <section class="section common-team-section relative">
@@ -53,7 +61,8 @@ $team_hero_list = [
 
     <div class="container">
         <div class="section-content">
-            <h2 class="h2 mb-sm mb-s_responsive text-second-dark">Команда профессионалов</h2>
+            <h2 class="h2 mb-sm mb-s_responsive text-second-dark"><?= $team_title;?></h2>
+            <?php if($template_slug != 'page-hair-encapsulation'):?>
             <p class="text-l weight-600">
                 У нас есть три категории мастеров, для разных видов процедуры, и каждый мастер по наращиванию волос:
             </p>
@@ -62,6 +71,7 @@ $team_hero_list = [
                 <li>прошел 500+ часов практики</li>
                 <li>имеет международные сертификаты</li>
             </ul>
+            <?php endif; ?>
             <ul class="team-hero-list flex flex-gap-l flex-gap-l_responsive items-center justify-center flex-wrap">
                 <?php foreach( $team_hero_list as $hero ): ?>
                     <li class="team-hero-item flex flex-col text-center items-center">
@@ -84,6 +94,12 @@ $team_hero_list = [
         <svg width="100%" height="100%" viewBox="0 0 480 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M480 37.1803C480 37.1803 390.045 12.3023 329.733 8.88082C283.156 6.23844 256.279 7.63816 210.312 13.9C173.219 18.953 147.15 21.0958 108.497 21.0958C73.0095 21.0958 25.7257 8.32674 9.98378e-06 0.722168" stroke="#967866" stroke-opacity="0.2"/>
             <rect x="385" y="21.3218" width="16" height="16" rx="8" transform="rotate(180 385 21.3218)" fill="#EAE4E0"/>
+        </svg>
+    </div>
+    <div class="section-bg-mobile reverse">
+        <svg width="100%" height="100%" viewBox="0 0 480 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M480 35.3774C480 35.3774 407.926 9.01046 359.603 5.38416C322.284 2.58364 300.75 4.06713 263.921 10.7037C234.201 16.0592 221.068 18.6405 190.912 24.9787C169.25 29.5316 153.479 31.567 132.867 23.5073C119.463 18.266 100.432 7.26231 86.1597 5.38417C57.0241 1.55007 32.4988 15.3819 -5.126e-06 17.721" stroke="#967866" stroke-opacity="0.2"/>
+        <rect width="16" height="16" rx="8" transform="matrix(-1 0 0 1 62 0.0400391)" fill="#EAE4E0"/>
         </svg>
     </div>
 </section>

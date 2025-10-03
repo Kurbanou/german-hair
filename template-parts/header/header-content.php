@@ -53,11 +53,11 @@ $nav_list_left = [
 			],
 			[
 				'label' => 'Коррекция волос',
-				'href' => '/',
+				'href' => '/hair-correction',
 			],
 			[
 				'label' => 'Капсуляция волос',
-				'href' => '/',
+				'href' => '/hair-encapsulation',
 			]
 		],
 	],
@@ -101,15 +101,15 @@ $nav_list_mobile = [
 			],
 			[
 				'label' => 'Снятие волос',
-				'href' => '/',
+				'href' => '/hair-removal',
 			],
 			[
 				'label' => 'Коррекция волос',
-				'href' => '/',
+				'href' => '/hair-correction',
 			],
 			[
 				'label' => 'Капсуляция волос',
-				'href' => '/',
+				'href' => '/hair-encapsulation',
 			]
 		],
 	],

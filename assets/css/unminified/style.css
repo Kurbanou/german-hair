@@ -923,7 +923,8 @@ h2 + .sub-section {
   transform: translateY(40px);
 }
 
-.common-team-section-bg.reverse {
+.common-team-section-bg.reverse,
+.section-bg-mobile.reverse {
     display: none;
 }
 

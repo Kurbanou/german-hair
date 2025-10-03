@@ -23,32 +23,22 @@
 
 .how-many .section-bg {
   transform: translateY(-170px);
-  /* transform: translateY(-88%); */
 }
 .advantages .section-bg {
   transform: translateY(-210px);
-  /* transform: translateY(-70%); */
 }
 .process .section-bg {
   transform: translateY(-90px);
-  /* transform: translateY(-45%); */
 }
 .results .section-bg {
   transform: translateY(-200px);
-  /* transform: translateY(-100%); */
 }
 .updates .section-bg {
   transform: translateY(-180px);
-  /* transform: translateY(-90%); */
 }
 .choice .section-bg {
   transform: translateY(-155px);
-  /* transform: translateY(-85%); */
 }
-/* .choice .section-bg_bottom {
-  transform: translateY(150px);
-} */
-
 
 .correction .content-text {
   display: flex;

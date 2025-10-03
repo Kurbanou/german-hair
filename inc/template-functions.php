@@ -43,6 +43,13 @@ function get_icon_none_class(string $id)
 	echo "<svg> <use xlink:href=\"#icon-$id\"></use></svg>";
 }
 
+function get_icon_auto_size(string $id, int $w, int $h)
+{
+    echo "<svg width=\"$w\" height=\"$h\" viewBox=\"0 0 $w $h\" xmlns=\"http://www.w3.org/2000/svg\">
+            <use xlink:href=\"#icon-$id\"></use>
+          </svg>";
+}
+
 function get_footer_content(string $content)
 {
 

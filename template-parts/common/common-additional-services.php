@@ -106,7 +106,7 @@ $special_offers_list = [
     </div>
     <div class="container">
         <div class="section-content">
-            <h2 class="h2 mb-sm mb-s_responsive text-second-dark">Другие наши услуги</h2>
+            <h2 class="h2 mb-sm mb-s_responsive text-second-dark services-title">Другие наши услуги</h2>
             <div class="additional-services-list mb-sm">
                 <?php foreach ($additional_services_list as $service): ?>
                     <div class="additional-services-item content_text">
@@ -137,13 +137,15 @@ $special_offers_list = [
         </div>
     </div>
     <div class="section-bg-mobile">
-        <!-- <svg width="100%" height="100%" viewBox="0 0 480 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-6.37455e-06 0.618985C-6.37455e-06 0.618985 89.9547 25.497 150.267 28.9185C196.844 31.5608 223.721 30.1611 269.688 23.8993C306.781 18.8462 332.85 16.7034 371.503 16.7034C406.99 16.7034 454.274 29.4725 480 37.0771" stroke="#967866" stroke-opacity="0.2"/>
-        <rect x="95" y="16.4775" width="16" height="16" rx="8" fill="#EAE4E0"/>
-        </svg> -->
         <svg width="100%" height="100%" viewBox="0 0 480 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 37.1437C0 37.1437 89.9547 12.2657 150.267 8.84419C196.844 6.20182 223.721 7.60154 269.688 13.8634C306.781 18.9164 332.85 21.0592 371.503 21.0592C406.99 21.0592 454.274 8.29012 480 0.685547" stroke="#967866" stroke-opacity="0.2" />
             <rect width="16" height="16" rx="8" transform="matrix(1 0 0 -1 95 21.2852)" fill="#EAE4E0" />
+        </svg>
+    </div>
+    <div class="section-bg-mobile reverse">
+        <svg width="100%" height="100%" viewBox="0 0 480 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M480 37.4425C480 37.4425 390.045 12.5646 329.733 9.14302C283.156 6.50065 256.279 7.90037 210.312 14.1622C173.219 19.2152 147.15 21.3581 108.497 21.3581C73.0095 21.3581 25.7257 8.58895 9.98378e-06 0.984375" stroke="#967866" stroke-opacity="0.2"/>
+        <rect x="385" y="21.5845" width="16" height="16" rx="8" transform="rotate(180 385 21.5845)" fill="#EAE4E0"/>
         </svg>
     </div>
 </section>
