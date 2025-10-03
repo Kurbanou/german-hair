@@ -89,7 +89,7 @@ $nav_list_right = [
 			<div class="footer-copyright flex flex-col flex-gap-xl">
 				<div class="flex-1 flex flex-col flex-gap-thin text-primary">
 					<?php get_logo(); ?>
-					<div class="hide-mobile">Ваш путь к безупречным волосам без компромиссов!</div>
+					<div class="hide-mobile vertino">Ваш путь к безупречным волосам без компромиссов!</div>
 					<div class="hide-desktop font-family-second text-xl">Ваш путь к безупречным волосам без компромиссов!</div>
 				</div>
 				<ul class="footer-copyright-list flex flex-col flex-gap-thin flex-1 text-primary weight-300 hide-mobile">

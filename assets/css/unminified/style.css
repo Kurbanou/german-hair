@@ -120,6 +120,10 @@ MAIN
   box-sizing: border-box;
 }
 
+.vertino {
+  font-family: var(--e-font-family-second);
+}
+
 html,
 body {
   height: 100%;
@@ -942,7 +946,7 @@ h2 + .sub-section {
   font-family: var(--e-font-family-second);
 }
 
-.h1 {
+. .h1 {
   font-family: var(--e-font-family-second);
   font-size: 92px;
   font-weight: 400;

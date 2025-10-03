@@ -787,3 +787,7 @@ section:nth-child(2) {
     line-height: 24px;
   }
 }
+.section {
+  margin: 0;
+  padding: 0;
+}

@@ -372,6 +372,11 @@ section:nth-child(2) {
   }
   .tape.benefits .cards_container-card {
     height: auto;
+  }
+}
+
+@media (max-width: 408px) {
+  .tape.benefits .cards_container-card {
     text-align: center;
   }
 }
@@ -514,4 +519,9 @@ section:nth-child(2) {
   .tape .content-text {
     min-width: 100%;
   }
+}
+
+.section {
+  margin: 0;
+  padding: 0;
 }
