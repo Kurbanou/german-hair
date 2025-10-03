@@ -273,6 +273,10 @@
   background-image: url("../../images/form/form-bg2.svg");
   max-width: 100%;
 }
+.zayvka .comment-form_content {
+  background-image: url("../../images/form/form-bg4.png");
+  max-width: 100%;
+}
 
 .obuchenie .comment-form_content h3 {
   font-weight: 400;

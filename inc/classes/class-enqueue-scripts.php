@@ -98,7 +98,6 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 
 			wp_enqueue_script('script', gh_get_assets_uri('script', 'js'), array('jquery'), gh_get_version('script', 'js'), true);
 			wp_enqueue_script('portfolio-slider', gh_get_assets_uri('slider-posts', 'js'), array(), gh_get_version('slider-posts', 'js'), true);
-			wp_enqueue_script('rabot-slider', gh_get_assets_uri('slider-rabot', 'js'), array('jquery'), gh_get_version('slider-rabot', 'js'), true);
 			wp_enqueue_script('faq', gh_get_assets_uri('faq', 'js'), array(), gh_get_version('faq', 'js'), true);
 		}
 

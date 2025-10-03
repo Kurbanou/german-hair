@@ -15,7 +15,7 @@ $sections = [
 	'time',
 	'cost',
 	'correction',
-	'works',
+	// 'works',
 	'faq',
 	'contraindications',
 	'whyus',

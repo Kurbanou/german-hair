@@ -187,16 +187,21 @@ section:nth-child(2) {
   font-weight: 500;
   font-size: 18px;
   line-height: 26px;
-  margin-bottom: 30px;
 }
 
 .capsule.banner .discounts {
+  padding-top: 30px;
   display: flex;
   gap: 40px;
   align-items: center;
   position: relative;
   width: 100%;
   max-width: fit-content;
+}
+@media (min-width: 991px) {
+  .capsule.banner .discounts {
+    padding-top: 60px;
+  }
 }
 
 .capsule.banner .discount {
@@ -235,6 +240,9 @@ section:nth-child(2) {
 }
 
 @media (max-width: 991px) {
+  .banner-p {
+    padding-bottom: 5px;
+  }
   .discounts .text:nth-child(2) {
     display: block;
   }
@@ -260,7 +268,6 @@ section:nth-child(2) {
   .capsule.banner .banner-p {
     font-size: 14px;
     line-height: 16px;
-    margin-bottom: 45px;
   }
   .capsule.banner .cat {
     display: none;
@@ -280,7 +287,6 @@ section:nth-child(2) {
   .capsule.banner .banner-p {
     font-size: 14px;
     line-height: 16px;
-    margin-bottom: 45px;
   }
 
   .discounts .icon-size-discounts-icon {
@@ -400,6 +406,7 @@ section:nth-child(2) {
   width: 100%;
   height: 100%;
   min-width: 350px;
+  font-size: 15px;
 }
 
 .capsule .content-text h2 {
@@ -425,6 +432,9 @@ section:nth-child(2) {
 }
 
 @media (max-width: 991px) {
+  .capsule.benefits .cards_container {
+    gap: 24px;
+  }
   .correction .photo-block {
     order: 1;
   }
@@ -661,6 +671,19 @@ section:nth-child(2) {
   margin-top: 0;
 }
 
+.zayvka p.text-center {
+  font-size: 20px;
+}
+
+@media (min-width: 991px) {
+  .zayvka p.text-center span {
+    display: block;
+  }
+}
+.zayvka .form-consent {
+  font-size: 14px;
+}
+
 @media screen and (max-width: 481px) {
   .faq-section .section-bg-mobile {
     display: block;
@@ -687,6 +710,10 @@ section:nth-child(2) {
 }
 
 @media (max-width: 991px) {
+  .process .col,
+  .process .process_container {
+    gap: 20px;
+  }
   .reviews .btn {
     margin-top: 30px;
   }
@@ -705,6 +732,7 @@ section:nth-child(2) {
   }
   .capsule.benefits .cards_container-card {
     width: 100%;
+    max-width: 392px;
   }
 
   .recommendations_content {
@@ -732,6 +760,9 @@ section:nth-child(2) {
 }
 
 @media (max-width: 767px) {
+  .zayvka p.text-center {
+    font-size: 14px;
+  }
   .logo-title {
     width: 138px;
     height: 28px;

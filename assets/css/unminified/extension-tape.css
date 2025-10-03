@@ -148,12 +148,13 @@ section:nth-child(2) {
 .tape.banner .cat {
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+
+  margin-top: 33px;
 }
 .tape.banner .cat span {
   font-family: Manrope;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 100%;
   border-radius: 1000px;
   border: 0.2px solid rgba(255, 231, 217, 1);
@@ -179,10 +180,10 @@ section:nth-child(2) {
   font-weight: 500;
   font-size: 18px;
   line-height: 26px;
-  margin-bottom: 30px;
 }
 
 .tape.banner .discounts {
+  margin-top: 33px;
   display: flex;
   gap: 40px;
   align-items: center;
@@ -216,14 +217,21 @@ section:nth-child(2) {
 
 .discounts .icon-size-discounts-icon {
   position: absolute;
-  top: -18px;
-  right: -36px;
+  top: -7px;
+  right: -12px;
+  transform: translate(50%, -50%);
   width: 60px;
-  height: 48px;
+  height: 45px;
   z-index: 2;
 }
 
 @media (max-width: 991px) {
+  .tape.banner .discounts {
+    margin-top: 45px;
+  }
+  .banner-p {
+    padding-bottom: 5px;
+  }
   .tape.banner {
     padding-top: 100px;
     padding-bottom: 30px;
@@ -243,7 +251,6 @@ section:nth-child(2) {
   .tape.banner .banner-p {
     font-size: 14px;
     line-height: 16px;
-    margin-bottom: 45px;
   }
   .tape.banner .cat {
     display: none;
@@ -265,7 +272,6 @@ section:nth-child(2) {
   .tape.banner .banner-p {
     font-size: 14px;
     line-height: 16px;
-    margin-bottom: 45px;
   }
 
   .discounts .icon-size-discounts-icon {
@@ -342,8 +348,31 @@ section:nth-child(2) {
 }
 
 @media (max-width: 481px) {
+  .cards_container-card {
+    justify-content: center;
+  }
+  .cards_container-card {
+    gap: 16px;
+  }
+  .tape.benefits .card_title {
+    font-size: 16px;
+  }
+  .tape.benefits .card_text {
+    font-size: 14px;
+    width: 250px;
+  }
   .tape.benefits .cards_container-card {
     width: 100%;
+  }
+}
+
+@media (max-width: 481px) {
+  .cards_container-card {
+    flex-wrap: wrap;
+  }
+  .tape.benefits .cards_container-card {
+    height: auto;
+    text-align: center;
   }
 }
 
@@ -390,7 +419,7 @@ section:nth-child(2) {
 }
 
 .info .photo-block {
-  max-width: 615px;
+  max-width: 533px;
   aspect-ratio: 1.484;
   order: 1;
 }
@@ -452,6 +481,11 @@ section:nth-child(2) {
   margin: 0 auto;
 }
 
+.price .column-1,
+.column-2 {
+  width: 100%;
+}
+
 /* buy */
 
 .buy {
@@ -473,5 +507,11 @@ section:nth-child(2) {
   }
   .buy .photo-block {
     order: 0;
+  }
+}
+
+@media (max-width: 481px) {
+  .tape .content-text {
+    min-width: 100%;
   }
 }

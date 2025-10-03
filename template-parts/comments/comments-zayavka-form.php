@@ -16,7 +16,7 @@
 
 
       <h2 class="h2 text-second-dark text-center">Запишитесь на бесплатную консультацию</h2>
-      <p class="text-center">Наш мастер поможет подобрать идеальный вариант наращивания, <br />ответит на все вопросы и рассчитает точную стоимость именно для вашего случая.</p>
+      <p class="text-center"><span>Наш мастер поможет подобрать идеальный вариант наращивания,</span><span> ответит на все вопросы и рассчитает точную стоимость именно для вашего случая.</span> </p>
 
       <form novalidate class="comment-form_form" method="post" action="<?php echo site_url('/wp-comments-post.php'); ?>">
 
