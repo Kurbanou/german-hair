@@ -89,7 +89,7 @@ $nav_list_right = [
 			<div class="footer-copyright flex flex-col flex-gap-xl">
 				<div class="flex-1 flex flex-col flex-gap-thin text-primary">
 					<?php get_logo(); ?>
-					<div class="hide-mobile vertino">Ваш путь к безупречным волосам без компромиссов!</div>
+					<div class="hide-mobile">Ваш путь к безупречным волосам без компромиссов!</div>
 					<div class="hide-desktop font-family-second text-xl">Ваш путь к безупречным волосам без компромиссов!</div>
 				</div>
 				<ul class="footer-copyright-list flex flex-col flex-gap-thin flex-1 text-primary weight-300 hide-mobile">
@@ -138,7 +138,7 @@ $nav_list_right = [
 				</div>
 			</div>
 			<div class="footer-content-contacts _no-border flex-1">
-				<ul class="flex flex-col flex-gap-xs items-start">
+				<ul class="flex flex-col flex-gap-xs items-start weight-500">
 					<?php foreach ($footer_contacts as $contact): ?>
 						<? if ($contact['isset']): ?>
 							<li>

@@ -15,7 +15,6 @@ $services = get_services_prices( true, true );
     </div>
 
     <div class="container">
-        <h2 class="h2 text-second-dark">Сколько стоит снятие нарощенных волос?</h2>
         <?php
 		while (have_posts()) : the_post();
 			the_content();

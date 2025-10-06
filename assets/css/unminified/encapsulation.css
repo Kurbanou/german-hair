@@ -1,7 +1,6 @@
 /* encapsulation */
 .encapsulation .section-bg,
-.encapsulation .section-bg-mobile,
-.section .common-team-section-bg
+.encapsulation .section-bg-mobile
 {
   display: none;
   position: absolute;
@@ -16,13 +15,11 @@
 }
 
 @media screen and (min-width: 482px) {
-    .encapsulation .section-bg {
+    .encapsulation .section-bg  {
         display: block;
     }
-    /* .section-bg-mobile {
-        display: none;
-    } */
 }
+
 
 .how-many .section-bg {
   transform: translateY(-175px);
@@ -44,6 +41,9 @@
 }
 .updates .section-bg {
   transform: translateY(-190px);
+}
+.common-team-section .section-bg {
+  transform: translateY(0px);
 }
 
 .encapsulation .content-text {
@@ -631,12 +631,7 @@ section.encapsulation.bases {
 section.common-team-section {
   margin-top: 100px;
 }
-@media screen and (min-width: 482px) {
-  .common-team-section-bg.reverse {
-    display: block;
-    transform: translateY(-180px);
-  }
-}
+
 @media screen and (max-width: 481px) { 
   section.common-team-section {
     margin-top: 85px;
@@ -645,9 +640,6 @@ section.common-team-section {
     padding-bottom: 0;
   }
   .common-team-section .section-bg-mobile {
-    display: none;
-  }
-  .common-team-section .section-bg-mobile.reverse {
     transform: translateY(-40px);
     display: block;
     top: 0;
@@ -742,9 +734,6 @@ section.price .tablepress td span.tablepress-note {
       transform: translateY(-90px);
   }
   .common-additional-services-section .section-bg-mobile {
-    display: none;
-  }
-  .common-additional-services-section .section-bg-mobile.reverse {
     display: flex;
     transform: translateY(-40px);
   }

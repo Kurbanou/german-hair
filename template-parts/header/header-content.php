@@ -165,7 +165,7 @@ $header_contacts_mobile = [
 					<?php foreach ($header_contacts as $contact): ?>
 						<? if ($contact['isset']): ?>
 							<li>
-								<a class="text-second <?php echo $contact['icon'] ? ' text-second-ico' : ''; ?>" href="<?php echo esc_html($contact['href']); ?>"
+								<a class="text-second <?php echo $contact['icon'] ? ' text-second-ico' : ''; ?>" target="_blank" href="<?php echo esc_html($contact['href']); ?>"
 									<?php if ($contact['icon']) {
 										echo ' title="' . esc_html($contact['label']) . '"';
 									} ?>>

@@ -20,9 +20,7 @@ body {
   width: 100%;
   transform: translateY(0px);
 }
-.section-bg.common-team-section-bg.reverse {
-  display: none;
-}
+
 @media screen and (min-width: 990px) {
   .section-bg {
     transform: translateY(-100px);
@@ -50,14 +48,15 @@ body {
   }
 
   .section-bg.common-additional-services-section-bg {
-    transform: translateY(-169px);
+    /* transform: translateY(-169px); */
+    transform: translateY(-78px);
   }
   /* section:nth-child(7) .section-bg {
     transform: translateY(-93px);
     display: block;
   } */
   .common-team-section .section-bg {
-    transform: translateY(-170px);
+    transform: translateY(-190px);
     display: block;
   }
 }
@@ -69,10 +68,11 @@ body {
     transform: translateY(30px);
   }
   .common-additional-services-section .section-bg-mobile {
-    transform: translateY(-50px);
+    /* transform: translateY(-50px); */
+    transform: translateY(-90px);
   }
   .common-team-section .section-bg-mobile {
-    transform: translateY(-50px);
+    transform: translateY(-85px);
   }
 }
 /*  */

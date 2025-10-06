@@ -55,7 +55,7 @@ if (! class_exists('GH_Enqueue_Scripts')) {
 			wp_enqueue_style('faq', gh_get_assets_uri('faq', 'css'), array(), gh_get_version('faq', 'css'));
 			wp_enqueue_style('table', gh_get_assets_uri('table', 'css'), array(), gh_get_version('table', 'css'));
 			wp_enqueue_style('reviews-style', gh_get_assets_uri('reviews', 'css'), array(), gh_get_version('reviews', 'css'));
-			if (is_home() || is_page_template('page-home.php')) {
+			if (is_front_page()) {
 				wp_enqueue_style('home', gh_get_assets_uri('home', 'css'), array(), gh_get_version('home', 'css'));
 			}
 			if (gh_is_admin()) {

@@ -1,5 +1,5 @@
 <section class="section home-main-section text-white relative">
-    <?php if ( is_home() || is_page_template('page-home.php') ) get_template_part( 'template-parts/home/home', 'banner' ); ?>
+    <?php if ( is_front_page() ) get_template_part( 'template-parts/home/home', 'banner' ); ?>
     <div class="container">
         <div class="section-content flex flex-col flex-gap-xl flex-gap-xl_responsive">
             <div class="home-main-section__header">

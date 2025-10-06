@@ -38,11 +38,5 @@
       <rect width="16" height="16" rx="8" transform="matrix(-1 0 0 1 385 17.1025)" fill="#EAE4E0"/>
     </svg>
   </div>
-  <div class="section-bg-mobile bg-bottom">
-    <svg width="100%" height="100%" viewBox="0 0 480 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-3.18727e-06 37.1606C-3.18727e-06 37.1606 89.9547 12.2826 150.267 8.86105C196.844 6.21868 223.721 7.6184 269.688 13.8802C306.781 18.9333 332.85 21.0761 371.503 21.0761C406.99 21.0761 454.274 8.307 480 0.702435" stroke="#967866" stroke-opacity="0.2"/>
-      <rect width="16" height="16" rx="8" transform="matrix(1 8.74228e-08 8.74228e-08 -1 95 21.3022)" fill="#EAE4E0"/>
-    </svg>
-  </div>
 
 </section>

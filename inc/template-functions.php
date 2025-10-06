@@ -74,7 +74,7 @@ function get_logo(string $type = '')
 			printf('<span class="i-logo inline-logo inline-logo_size-s">%1$s</span>', file_get_contents($logoUri), esc_html(GH_THEME_NAME));
 		} else if ($type === 'large') {
 			printf('<span class="i-logo large-logo">%1$s</span>', file_get_contents($logoUri), esc_html(GH_THEME_NAME));
-		} else if (is_home()) {
+		} else if (is_front_page()) {
 			printf('<div class="i-logo flex">%1$s</div>', file_get_contents($logoUri), esc_html(GH_THEME_NAME));
 		} else {
 			printf('<a href="%1$s" title="%2$s" class="i-logo flex logo-href">%3$s</a>', esc_url(home_url()), esc_html(GH_THEME_NAME), file_get_contents($logoUri));

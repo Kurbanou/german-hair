@@ -502,7 +502,7 @@ section.necessities {
 .price-contain {
     position: relative;
 }
-.price #tablepress-12-name {
+.price .tablepress-table-name {
     text-align: center;
 }
 .price .tablepress {
@@ -580,7 +580,7 @@ section.price .tablepress td span.tablepress-note {
     }
 }
 @media screen and (max-width: 481px) {  
-    .price #tablepress-12-name {
+    .price .tablepress-table-name {
         text-align: start;
     }
     .correction.price .section-bg-mobile {
@@ -699,32 +699,25 @@ section.common-additional-services-section {
     margin-bottom: 0;
 }
 .section-bg.common-team-section-bg {
-    display: none;
-    top: unset;
-}
-.section-bg.common-team-section-bg.reverse {
     display: block;
     transform: translateY(-90%);
     top: 0;
     bottom: unset;
 }
+
 .section-bg.common-additional-services-section-bg {
     transform: translateY(-90%);
     top: 0;
     bottom: unset;
     /* bottom: 100%; */
 }
-.section-bg.common-additional-services-section-bg.reverse {
-    /* display: block;
-    transform: translateY(20px); */
-}
- 
+
 @media screen and (max-width: 482px) {
-    .section-bg.common-team-section-bg.reverse {
+    .section-bg.common-team-section-bg {
         display: none;
     }
 }
-
+ 
 @media screen and (max-width: 481px) {
     .section.common-team-section,
     .section.common-additional-services-section {

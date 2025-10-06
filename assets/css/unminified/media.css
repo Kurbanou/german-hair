@@ -103,6 +103,10 @@
     gap: var(--e-gap-m);
   }
 
+  .common-team-section h2 {
+    margin-bottom: 20px;
+  }
+
   .team-hero-list {
     --items-per-row: 3;
   }
@@ -110,6 +114,8 @@
   .team-hero-item-wrapper {
     --outer-gap: 0px;
   }
+
+
 }
 
 @media screen and (max-width: 767px) {
@@ -282,6 +288,10 @@
 }
 
 @media screen and (max-width: 481px) {
+  main.page-content {
+    margin-bottom: 20px;
+  }
+
   .special-offers::after {
     zoom: 0.5;
   }
@@ -292,6 +302,10 @@
   .services-title {
     margin-bottom: 20px;
   }
+  .common-team-section h2 {
+    margin-bottom: 10px;
+  }
+
 }
 
 @media screen and (max-width: 360px) {

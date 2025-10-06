@@ -198,3 +198,19 @@ add_action('wp_enqueue_scripts', 'enqueue_twentytwenty_assets');
 // SEO Tags
 require_once __DIR__ . '/Kama_SEO_Tags.php';
 Kama_SEO_Tags::init();
+
+# Отключение провайдера карт сайтов: пользователи и таксономии
+add_filter( 'wp_sitemaps_add_provider', 'kama_remove_sitemap_provider', 10, 2 );
+
+function kama_remove_sitemap_provider( $provider, $name ){
+
+	$remove_providers = [ 'users', 'taxonomies' ];
+
+	// отключаем архивы пользователей
+	if( in_array( $name, $remove_providers ) ){
+		return false;
+	}
+
+	return $provider;
+}
+

@@ -14,10 +14,10 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/icons/sprite' ); ?>
-<?php if ( is_home() ) get_template_part( 'template-parts/icons/home-sprite' ); ?>
+<?php if ( is_front_page() ) get_template_part( 'template-parts/icons/home-sprite' ); ?>
 	<div id="page" class="site">
 		<header class="header header-floating">
-			<?php //if ( is_home() ) get_template_part( 'template-parts/home/home', 'banner' );?>
+			<?php //if ( is_front_page() ) get_template_part( 'template-parts/home/home', 'banner' );?>
 			<?php get_template_part( 'template-parts/header/header', 'content' ); ?>
 		</header>
-		<main id="main" class="site-main">
+		<main id="main" class="site-main <?php if ( !is_front_page() ) echo 'page-content'; ?>">
